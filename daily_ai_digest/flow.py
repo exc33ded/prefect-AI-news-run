@@ -1,3 +1,6 @@
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
 from prefect import flow, get_run_logger
 
 from daily_ai_digest.config import get_secret
@@ -44,7 +47,13 @@ def daily_ai_digest():
     except Exception as e:
         logger.warning(f"Archive fetch failed, starting fresh: {e}")
         editions = []
-    page_html, meta = render_page(digest, editions)
+
+    fallback_iso_date = datetime.now(ZoneInfo("Asia/Calcutta")).date().isoformat()
+    try:
+        page_html, meta = render_page(digest, editions)
+    except Exception as e:
+        logger.warning(f"Page rendering failed, email will still be sent: {e}")
+        page_html, meta = None, {"iso_date": fallback_iso_date}
 
     logger.info("Delivering email")
     try:
@@ -53,9 +62,12 @@ def daily_ai_digest():
     except Exception as e:
         logger.warning(f"Email delivery failed: {e}")
 
-    logger.info("Publishing GitHub Pages edition")
-    try:
-        publish_page(page_html, editions, meta)
-        print("GitHub Pages published")
-    except Exception as e:
-        logger.warning(f"GitHub publish failed: {e}")
+    if page_html is not None:
+        logger.info("Publishing GitHub Pages edition")
+        try:
+            publish_page(page_html, editions, meta)
+            print("GitHub Pages published")
+        except Exception as e:
+            logger.warning(f"GitHub publish failed: {e}")
+    else:
+        logger.warning("Skipping GitHub publish: page did not render")
