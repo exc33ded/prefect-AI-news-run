@@ -56,6 +56,26 @@ def search_category(query: str) -> list[dict]:
         return []
 
 
+@task
+def fetch_lead_image(url: str) -> str | None:
+    """Best-effort og:image for the front-page lead story only, via Tavily extract."""
+    keys = _tavily_keys()
+    for key in keys:
+        try:
+            client = TavilyClient(api_key=key)
+            result = client.extract(url, include_images=True)
+            for r in result.get("results", []):
+                images = r.get("images") or []
+                if images:
+                    return images[0]
+            return None
+        except (UsageLimitExceededError, InvalidAPIKeyError):
+            continue
+        except Exception:
+            return None
+    return None
+
+
 def submit_all_searches() -> dict:
     """Submits one search_category task per entry in CATEGORIES, keyed by category key."""
     return {category["key"]: search_category.submit(category["query"]) for category in CATEGORIES}

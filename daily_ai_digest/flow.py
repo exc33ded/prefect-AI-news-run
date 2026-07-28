@@ -5,7 +5,7 @@ from daily_ai_digest.format_email import render_email
 from daily_ai_digest.format_page import render_page
 from daily_ai_digest.notify import send_email
 from daily_ai_digest.process import process_results
-from daily_ai_digest.publish_github import publish_page
+from daily_ai_digest.publish_github import fetch_archive_editions, publish_page
 from daily_ai_digest.search import submit_all_searches
 
 
@@ -39,18 +39,23 @@ def daily_ai_digest():
     logger.info("Rendering email and page")
     edition_url = _edition_url()
     email_html = render_email(digest, edition_url)
-    page_html, iso_date = render_page(digest)
+    try:
+        editions = fetch_archive_editions()
+    except Exception as e:
+        logger.warning(f"Archive fetch failed, starting fresh: {e}")
+        editions = []
+    page_html, meta = render_page(digest, editions)
 
     logger.info("Delivering email")
     try:
-        send_email(email_html, iso_date)
+        send_email(email_html, meta["iso_date"])
         print("Email sent")
     except Exception as e:
         logger.warning(f"Email delivery failed: {e}")
 
     logger.info("Publishing GitHub Pages edition")
     try:
-        publish_page(page_html, iso_date)
+        publish_page(page_html, editions, meta)
         print("GitHub Pages published")
     except Exception as e:
         logger.warning(f"GitHub publish failed: {e}")

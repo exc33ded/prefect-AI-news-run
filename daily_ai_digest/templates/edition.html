@@ -19,6 +19,7 @@
     50% { transform: translateY(-4px) rotate(2deg); }
   }
 
+  * { box-sizing: border-box; }
   body {
     background-color: #ecdfc0;
     background-image:
@@ -26,6 +27,7 @@
       radial-gradient(circle at 80% 70%, rgba(120,90,40,0.10), transparent 60%),
       repeating-linear-gradient(0deg, rgba(120,90,40,0.02) 0px, transparent 2px, transparent 4px);
     font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    font-size: 18px;
     color: #2b1d0e;
     max-width: 900px;
     margin: 0 auto;
@@ -33,10 +35,10 @@
   }
 
   .masthead { text-align: center; border-bottom: 6px double #2b1d0e; padding-bottom: 12px; margin-bottom: 8px; }
-  .masthead .eyebrow { font-size: 12px; letter-spacing: 4px; animation: flicker 4s ease-in-out infinite; }
+  .masthead .eyebrow { font-size: 13px; letter-spacing: 4px; animation: flicker 4s ease-in-out infinite; }
   .masthead h1 {
     font-family: 'Old English Text MT', 'Times New Roman', Georgia, serif;
-    font-size: 58px;
+    font-size: 64px;
     letter-spacing: 2px;
     margin: 10px 0;
     color: #2b1d0e;
@@ -55,7 +57,7 @@
   .masthead .byline {
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #6b5636;
@@ -66,9 +68,11 @@
 
   .dateline {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
+    gap: 4px 12px;
+    font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
     border-bottom: 2px solid #2b1d0e;
@@ -77,7 +81,7 @@
   }
 
   .disclaimer {
-    font-size: 13px;
+    font-size: 14px;
     font-style: italic;
     text-align: center;
     margin-bottom: 20px;
@@ -86,7 +90,7 @@
 
   .index {
     text-align: center;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     padding: 8px 0;
@@ -99,8 +103,17 @@
   .index .sep { color: #8a6a2f; margin: 0 6px; }
 
   .lead { margin-bottom: 36px; }
+  .lead .thumb {
+    display: block;
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    margin-bottom: 14px;
+    border: 1px solid #2b1d0e;
+    filter: sepia(20%);
+  }
   .lead .kicker {
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #8a2727;
@@ -108,7 +121,7 @@
   }
   .lead a {
     display: block;
-    font-size: 34px;
+    font-size: 38px;
     line-height: 1.15;
     font-weight: bold;
     color: #2b1d0e;
@@ -117,17 +130,17 @@
   }
   .lead a:hover { text-decoration: underline; }
   .lead p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
   }
   .lead p::first-letter {
     float: left;
     font-family: 'Old English Text MT', 'Times New Roman', serif;
-    font-size: 52px;
+    font-size: 56px;
     line-height: 40px;
     padding: 4px 8px 0 0;
   }
-  .lead .source { font-size: 12px; color: #6b5636; margin-top: 4px; }
+  .lead .source { font-size: 13px; color: #6b5636; margin-top: 4px; }
 
   .divider {
     text-align: center;
@@ -148,7 +161,7 @@
   .divider span { display: inline-block; font-size: 20px; animation: float 3s ease-in-out infinite; }
 
   .section-title {
-    font-size: 22px;
+    font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-bottom: 3px solid #2b1d0e;
@@ -156,7 +169,7 @@
     margin-bottom: 14px;
     scroll-margin-top: 16px;
   }
-  .count { font-size: 12px; text-transform: none; letter-spacing: 0; color: #6b5636; }
+  .count { font-size: 13px; text-transform: none; letter-spacing: 0; color: #6b5636; }
 
   .columns { columns: 2; column-gap: 32px; column-rule: 1px solid rgba(43,29,14,0.35); }
   .list { columns: 1; }
@@ -164,7 +177,7 @@
   .item a {
     color: #2b1d0e;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 18px;
     text-decoration: none;
     background-image: linear-gradient(#2b1d0e, #2b1d0e);
     background-position: 0 100%;
@@ -173,8 +186,11 @@
     transition: background-size 0.25s ease;
   }
   .item a:hover { background-size: 100% 1px; }
-  .item p { font-size: 14px; line-height: 1.5; margin: 6px 0 2px; }
-  .source { font-size: 11px; color: #6b5636; }
+  .item p { font-size: 15px; line-height: 1.5; margin: 6px 0 2px; }
+  .source { font-size: 12px; color: #6b5636; }
+
+  .archive-link { text-align: center; font-size: 13px; margin-top: 14px; }
+  .archive-link a { color: #6b5636; }
 
   .seal {
     display: block;
@@ -213,6 +229,19 @@
   @media (prefers-color-scheme: dark) and ((-webkit-background-clip: text) or (background-clip: text)) {
     .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
   }
+
+  @media (max-width: 640px) {
+    body { font-size: 17px; padding: 14px 16px 40px; }
+    .masthead h1 { font-size: 40px; letter-spacing: 1px; }
+    .masthead .eyebrow { font-size: 11px; letter-spacing: 2px; }
+    .dateline { font-size: 11px; }
+    .lead a { font-size: 26px; }
+    .lead p { font-size: 17px; }
+    .lead .thumb { max-height: 200px; }
+    .section-title { font-size: 20px; }
+    .columns { columns: 1; }
+    .item a { font-size: 17px; }
+  }
 </style>
 </head>
 <body>
@@ -221,7 +250,7 @@
     <div class="eyebrow">THE MAGICAL PRESS OF ARTIFICIAL MINDS</div>
     <h1>THE AI PROPHET</h1>
     <div class="byline">
-      <span>Daily Edition</span>
+      <span>Vol. {{ volume }} &mdash; No. {{ issue }}</span>
       <span>Price: One Sickle</span>
     </div>
   </div>
@@ -243,6 +272,7 @@
   {% if lead %}
   <div class="lead">
     <div class="kicker">Top Story &mdash; {{ lead.label }}</div>
+    {% if lead.image %}<img class="thumb" src="{{ lead.image }}" alt="">{% endif %}
     <a href="{{ lead.item.url }}">{{ lead.item.title }}</a>
     <p>{{ lead.item.summary }}</p>
     <div class="source">{{ lead.item.source_name }}{% if lead.item.published_date %} &nbsp;&bull;&nbsp; {{ lead.item.published_date }}{% endif %}</div>
@@ -265,6 +295,7 @@
 
   <div class="seal"></div>
   <div class="footer-note">Delivered by owl post, automated daily</div>
+  <div class="archive-link"><a href="archive.html">Browse past editions &rarr;</a></div>
 
 </body>
 </html>
