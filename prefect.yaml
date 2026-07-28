@@ -1,0 +1,21 @@
+name: daily-ai-digest
+prefect-version: 3.x
+
+pull:
+  - prefect.deployments.steps.git_clone:
+      id: clone-step
+      repository: https://github.com/exc33ded/prefect-AI-news-run.git
+      branch: main
+  - prefect.deployments.steps.pip_install_requirements:
+      directory: "{{ clone-step.directory }}"
+      requirements_file: requirements.txt
+
+deployments:
+  - name: daily-ai-digest
+    entrypoint: daily_ai_digest/flow.py:daily_ai_digest
+    work_pool:
+      name: ai-digest-managed-pool
+      work_queue_name: default
+    schedules:
+      - cron: "0 8 * * *"
+        timezone: "Asia/Calcutta"
