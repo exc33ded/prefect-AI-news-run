@@ -32,18 +32,8 @@
     padding: 20px 30px 60px;
   }
 
-  .masthead {
-    text-align: center;
-    border-bottom: 6px double #2b1d0e;
-    padding-bottom: 12px;
-    margin-bottom: 8px;
-    position: relative;
-  }
-  .masthead .eyebrow {
-    font-size: 12px;
-    letter-spacing: 4px;
-    animation: flicker 4s ease-in-out infinite;
-  }
+  .masthead { text-align: center; border-bottom: 6px double #2b1d0e; padding-bottom: 12px; margin-bottom: 8px; }
+  .masthead .eyebrow { font-size: 12px; letter-spacing: 4px; animation: flicker 4s ease-in-out infinite; }
   .masthead h1 {
     font-family: 'Old English Text MT', 'Times New Roman', Georgia, serif;
     font-size: 58px;
@@ -83,16 +73,61 @@
     text-transform: uppercase;
     border-bottom: 2px solid #2b1d0e;
     padding: 6px 0 10px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
 
   .disclaimer {
     font-size: 13px;
     font-style: italic;
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     color: #4a3620;
   }
+
+  .index {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 8px 0;
+    margin-bottom: 24px;
+    border-top: 1px solid rgba(43,29,14,0.4);
+    border-bottom: 1px solid rgba(43,29,14,0.4);
+  }
+  .index a { color: #2b1d0e; text-decoration: none; }
+  .index a:hover { text-decoration: underline; }
+  .index .sep { color: #8a6a2f; margin: 0 6px; }
+
+  .lead { margin-bottom: 36px; }
+  .lead .kicker {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a2727;
+    margin-bottom: 6px;
+  }
+  .lead a {
+    display: block;
+    font-size: 34px;
+    line-height: 1.15;
+    font-weight: bold;
+    color: #2b1d0e;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  .lead a:hover { text-decoration: underline; }
+  .lead p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .lead p::first-letter {
+    float: left;
+    font-family: 'Old English Text MT', 'Times New Roman', serif;
+    font-size: 52px;
+    line-height: 40px;
+    padding: 4px 8px 0 0;
+  }
+  .lead .source { font-size: 12px; color: #6b5636; margin-top: 4px; }
 
   .divider {
     text-align: center;
@@ -110,31 +145,22 @@
   }
   .divider::before { left: 0; }
   .divider::after { right: 0; background: linear-gradient(90deg, #2b1d0e, transparent); }
-  .divider span {
-    display: inline-block;
-    font-size: 20px;
-    animation: float 3s ease-in-out infinite;
-  }
+  .divider span { display: inline-block; font-size: 20px; animation: float 3s ease-in-out infinite; }
 
   .section-title {
-    font-size: 24px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-bottom: 3px solid #2b1d0e;
     padding-bottom: 6px;
     margin-bottom: 14px;
+    scroll-margin-top: 16px;
   }
+  .count { font-size: 12px; text-transform: none; letter-spacing: 0; color: #6b5636; }
 
   .columns { columns: 2; column-gap: 32px; column-rule: 1px solid rgba(43,29,14,0.35); }
+  .list { columns: 1; }
   .item { break-inside: avoid; margin-bottom: 18px; }
-  .item:first-child p::first-letter {
-    float: left;
-    font-family: 'Old English Text MT', 'Times New Roman', serif;
-    font-size: 42px;
-    line-height: 34px;
-    padding: 4px 6px 0 0;
-    color: #2b1d0e;
-  }
   .item a {
     color: #2b1d0e;
     font-weight: bold;
@@ -171,29 +197,21 @@
     font-size: 16px;
     color: #e8c98a;
   }
-  .footer-note {
-    text-align: center;
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: #6b5636;
-    margin-top: 8px;
-  }
+  .footer-note { text-align: center; font-size: 11px; letter-spacing: 1px; color: #6b5636; margin-top: 8px; }
 
   @media (prefers-color-scheme: dark) {
     body { background-color: #1c1509; color: #e8dcc0; }
     .masthead, .dateline, .section-title, .masthead .byline { border-color: #e8dcc0; }
     .masthead h1 { color: #f0e6d0; }
-    .item:first-child p::first-letter { color: #f0e6d0; }
+    .lead a, .lead p::first-letter { color: #f0e6d0; }
+    .index, .index a { color: #e8dcc0; }
+    .index { border-color: rgba(232,220,192,0.4); }
     .columns { column-rule-color: rgba(232,220,192,0.35); }
+    .item a, .item a:hover { background-image: linear-gradient(#f0e6d0, #f0e6d0); }
+    .item a { color: #f0e6d0; }
   }
   @media (prefers-color-scheme: dark) and ((-webkit-background-clip: text) or (background-clip: text)) {
     .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
-  }
-  @media (prefers-color-scheme: dark) {
-    .item a, .item a:hover { background-image: linear-gradient(#f0e6d0, #f0e6d0); }
-    .item a { color: #f0e6d0; }
-    .divider::before { background: linear-gradient(90deg, transparent, #e8dcc0); }
-    .divider::after { background: linear-gradient(90deg, #e8dcc0, transparent); }
   }
 </style>
 </head>
@@ -203,13 +221,12 @@
     <div class="eyebrow">THE MAGICAL PRESS OF ARTIFICIAL MINDS</div>
     <h1>THE AI PROPHET</h1>
     <div class="byline">
-      <span>Vol. I, No. July 28, 2026</span>
+      <span>Daily Edition</span>
       <span>Price: One Sickle</span>
     </div>
   </div>
   <div class="dateline">
     <span>July 28, 2026</span>
-    <span>Daily Edition</span>
   </div>
 
   <div class="disclaimer">
@@ -217,279 +234,296 @@
   </div>
 
   
+  <div class="index">
+    <a href="#repos">Trending AI GitHub Repos (4)</a><span class="sep">&bull;</span><a href="#skills">AI Agent Skills & Tooling (5)</a><span class="sep">&bull;</span><a href="#prompting">Prompting & Agentic Workflow Techniques (5)</a><span class="sep">&bull;</span><a href="#papers">AI/ML Research Papers (3)</a><span class="sep">&bull;</span><a href="#startups">AI Startups & Funding (5)</a><span class="sep">&bull;</span><a href="#model_releases">New Model Releases (4)</a><span class="sep">&bull;</span><a href="#benchmarks">Benchmarks & Evals (6)</a><span class="sep">&bull;</span><a href="#industry_news">AI Industry News (6)</a>
+  </div>
+  
+
+  
+  <div class="lead">
+    <div class="kicker">Top Story &mdash; Trending AI GitHub Repos</div>
+    <a href="https://huggingface.co/moonshotai/Kimi-K3">Moonshot AI releases Kimi K3: 2.8T parameter open-weight model</a>
+    <p>Moonshot AI open-sourced the largest open-weight model ever, a 2.8-trillion-parameter LLM with a 1M token context window, matching frontier performance. Weights and tech report are on Hugging Face.</p>
+    <div class="source">Hugging Face</div>
+  </div>
+  
+
   
   <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title">Trending AI GitHub Repos</div>
+  <div class="section-title" id="repos">Trending AI GitHub Repos <span class="count">(4)</span></div>
   <div class="columns">
     
     <div class="item">
-      <a href="https://github.com/omnigent-ai/omnigent">omnigent-ai/omnigent</a>
-      <p>Omnigent is an open-source AI agent framework that orchestrates multiple agents like Claude Code, Codex, Cursor, and custom agents, supporting cross-harness operation and policy enforcement.</p>
+      <a href="https://github.com/openclaw/openclaw">OpenClaw transitions to non-profit foundation</a>
+      <p>OpenClaw, a self-hosted open-source AI agent with the 6th-most-starred GitHub repository, became an independent non-profit foundation under chair Dave Morin. It runs locally with direct file and messaging app access.</p>
       <div class="source">GitHub</div>
     </div>
     
     <div class="item">
-      <a href="https://github.com/Gentleman-Programming/gentle-ai">Gentleman-Programming/gentle-ai</a>
-      <p>Gentle-AI provides an ecosystem and frameworks for AI coding agents, supporting multiple harnesses including OpenClaw, Codex, and Windsurf with configurable workflows.</p>
+      <a href="https://molmo.allen.ai">MolmoMotion: open-source action prediction from videos</a>
+      <p>Allen AI released MolmoMotion, an open-source model that forecasts object behavior in videos, including weights, training code, and the MolmoMotion-1M dataset of action-described 3D trajectories from 1.16M videos.</p>
+      <div class="source">Allen AI</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://github.com/PrismML/Bonsai-27B">PrismML open-sources Bonsai 27B: 27B model fitting on a phone at 3.9 GB</a>
+      <p>PrismML released Bonsai 27B, a 27-billion-parameter open-weight AI model that runs on a phone with only 3.9 GB memory, enabling on-device frontier capability.</p>
       <div class="source">GitHub</div>
     </div>
     
     <div class="item">
-      <a href="https://github.com/openclaw/openclaw">OpenClaw — Personal AI Assistant</a>
-      <p>OpenClaw is a personal AI assistant that runs on your own devices, offering a terminal-based agent with sandboxing and tool integration.</p>
-      <div class="source">GitHub</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://github.com/alvinreal/awesome-opensource-ai">Awesome Open Source AI</a>
-      <p>Curated list of the best truly open-source AI projects, models, tools, and infrastructure, daily updated.</p>
+      <a href="https://github.com/NVIDIA/nooa">NVIDIA releases NOOA: open-source agent harness for safety</a>
+      <p>NVIDIA contributed the NVIDIA Labs Object-Oriented Agent (NOOA) framework to the Open Secure AI Alliance, an open-source research framework for testing, tracing, and governing agent behavior.</p>
       <div class="source">GitHub</div>
     </div>
     
   </div>
   
-  
-  
   <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title">AI Agent Skills & Tooling</div>
+  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">(5)</span></div>
   <div class="columns">
     
     <div class="item">
-      <a href="https://github.com/sickn33/agentic-awesome-skills">AAS Core - Agentic Awesome Skills</a>
-      <p>A local skill library and installer for AI coding agents including Claude Code, Cursor, Codex, Gemini CLI, and more, with a plugin marketplace flow.</p>
+      <a href="https://github.com/sickn33/agentic-awesome-skills">sickn33/agentic-awesome-skills: AAS Core skill library</a>
+      <p>A comprehensive skill library for multiple agent platforms (Claude Code, Cursor, Codex CLI, Gemini CLI) covering install paths, starter skills, prompt examples, and plugin marketplaces.</p>
       <div class="source">GitHub</div>
     </div>
     
     <div class="item">
-      <a href="https://skillsllm.com/skill/builder-essential-skills">Builder Essential Skills for AI Agents</a>
-      <p>A collection of practical workflows packaged as portable skills for AI agents, covering installation, adaptation, and sharing across teams.</p>
+      <a href="https://skillsllm.com/skill/builder-essential-skills">builder-essential-skills collection on SkillsLLM</a>
+      <p>A curated collection of reusable AI agent skills for tools like n8n, MCP servers, Claude Code, and Codex, packaging practical workflows as portable instructions and scripts.</p>
       <div class="source">SkillsLLM</div>
     </div>
     
     <div class="item">
-      <a href="https://guancyxx.cn/en/blog">Harness Engineering: The Complete Guide to Building Reliable AI Agents in 2026</a>
-      <p>A comprehensive guide covering the emerging discipline of designing scaffolding for AI agents, including context delivery, tool interfaces, and verification loops.</p>
-      <div class="source">guancyxx.cn</div>
+      <a href="https://www.facebook.com/niyitech/posts/agent-skills-shared-across-your-teamcreate-share-and-install-agent-skills-across/122146114917121169">Local Skills: agent skills shared across your team</a>
+      <p>A system to create, share, and install agent skills across Cursor, Claude Code, Windsurf, Cline, Copilot, Codex, OpenCode, and Aider, with enterprise-grade controls.</p>
+      <div class="source">Facebook</div>
     </div>
     
     <div class="item">
-      <a href="https://dev.to/tacoda/the-middle-path-between-a-stock-agent-and-a-custom-harness-4g8c">The Middle Path Between a Stock Agent and a Custom Harness</a>
-      <p>Explores the open-source terminal coding agent 'pi' that ships essential harness components while exposing first-class extension points.</p>
-      <div class="source">dev.to</div>
+      <a href="https://huggingface.co/papers?q=Agent+skills">Hugging Face daily papers: Agent skills and SkillInject benchmark</a>
+      <p>Research papers on LLM agent skills highlighting a new SkillInject benchmark for prompt injection attacks via third-party skills, and analysis of reusable SE expertise in agent skill repositories.</p>
+      <div class="source">Hugging Face</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.jetbrains.com/pages/ai-agents">JetBrains AI Agents for Developers Learning Hub</a>
+      <p>A learning hub covering AI agent fundamentals, multi-agent systems, and engineering best practices for building and deploying secure production-grade agents.</p>
+      <div class="source">JetBrains</div>
     </div>
     
   </div>
   
-  
-  
   <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title">Prompting & Agentic Workflow Techniques</div>
+  <div class="section-title" id="prompting">Prompting & Agentic Workflow Techniques <span class="count">(5)</span></div>
   <div class="columns">
     
     <div class="item">
-      <a href="https://www.learnwithgurpreet.com/posts/advanced-prompting-techniques">Advanced Prompting Techniques</a>
-      <p>A guide covering context engineering, role-based prompting, devil's advocate prompts, few-shot prompting, and iterative refinement for AI interactions.</p>
+      <a href="https://www.learnwithgurpreet.com/posts/advanced-prompting-techniques">Advanced prompting techniques guide</a>
+      <p>A practical guide covering context engineering, role-based prompting, devil's advocate prompts, few-shot prompting, and iterative refinement strategies for AI agents.</p>
       <div class="source">learnwithgurpreet.com</div>
     </div>
     
     <div class="item">
-      <a href="https://shashikantjagtap.net/agentic-context-engineering-prompting-strikes-back#content">Agentic Context Engineering: Prompting Strikes Back</a>
-      <p>Introduces Agentic Context Engineering (ACE) as a structured framework for evolving context as a living playbook, contrasting with static prompt engineering.</p>
-      <div class="source">shashikantjagtap.net</div>
+      <a href="https://shashikantjagtap.net/agentic-context-engineering-prompting-strikes-back">Agentic Context Engineering: Prompting Strikes Back</a>
+      <p>Stanford's ACE paper introduces a structured framework to grow and maintain context as a living playbook, shifting focus from optimizing prompt text to evolving context playbooks through a Generator-Reflector-Curator loop.</p>
+      <div class="source">Superagentic AI Blog</div>
     </div>
     
     <div class="item">
-      <a href="https://agentic-engineering.swmansion.com/becoming-productive/prompting-techniques">Prompting Techniques for Coding Agents</a>
-      <p>Practical techniques for prompting coding agents, including knowledge checkpoints, golden file references, and iterative testing loops.</p>
+      <a href="https://agentic-engineering.swmansion.com/becoming-productive/prompting-techniques">Prompting Techniques | Software Mansion Agentic Engineering Guide</a>
+      <p>Practical prompting patterns for coding agents: asking questions instead of giving answers, knowledge checkpointing, using golden files, voice dictation, and reverse-engineering apps.</p>
       <div class="source">Software Mansion</div>
     </div>
     
     <div class="item">
-      <a href="https://www.linkedin.com/pulse/cognitive-supply-chain-agentic-ai-design-patterns-workflow-orfanos-u7mkc">The Cognitive Supply Chain: Agentic AI Design Patterns and Workflow Architectures</a>
-      <p>Explores flow engineering as the successor to prompt engineering, analyzing core agentic patterns like reflection, tool use, planning, and multi-agent collaboration.</p>
-      <div class="source">LinkedIn</div>
+      <a href="https://path.kilo.ai/introduction/trends-patterns">AI Coding Trends & Patterns: Prompting Patterns</a>
+      <p>Explores stepwise iterative prompting, code generation loops with automatic retry, and continuous refinement patterns for coding agents to achieve production-quality output.</p>
+      <div class="source">kilo.ai</div>
     </div>
     
     <div class="item">
-      <a href="https://daniliants.com/insights/what-is-agentic-engineering-agentic-engineering-patterns">What is Agentic Engineering? - Agentic Engineering Patterns</a>
-      <p>Defines agentic engineering as building software with coding agents, distinguishing it from vibe coding, and emphasizing code execution as the key capability.</p>
+      <a href="https://daniliants.com/insights/what-is-agentic-engineering-agentic-engineering-patterns">What is agentic engineering? - Agentic Engineering Patterns</a>
+      <p>Defines agentic engineering as building software with coding agents that run tools in a loop, contrasting with vibe coding, and emphasizing problem specification and result verification.</p>
       <div class="source">daniliants.com</div>
     </div>
     
   </div>
   
-  
-  
   <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title">AI/ML Research Papers</div>
+  <div class="section-title" id="papers">AI/ML Research Papers <span class="count">(3)</span></div>
   <div class="columns">
     
     <div class="item">
-      <a href="https://arxiv.org/html/2605.05540v2">Autoregressive One-Step Generative Modeling for Physical Systems</a>
-      <p>MeLISA is a one-step generative model for turbulent flow forecasting that matches or exceeds neural operators on accuracy while improving long-term statistical recovery.</p>
+      <a href="https://arxiv.org/abs/2607.24192">LLM-based Source Code Compression via Thresholded Symbol Ranking</a>
+      <p>A method for compressing source code using LLMs and thresholded symbol ranking, with applications to information theory and machine learning for code.</p>
       <div class="source">arXiv</div>
     </div>
     
     <div class="item">
-      <a href="https://arxiv.org/html/2607.24573v1">Benchmarking LLMs on Real-World Predictions in Sports</a>
-      <p>Introduces LLM-SoccerArena, a prospective live benchmark for evaluating LLM forecasts of real-world soccer events, demonstrated on the 2026 FIFA World Cup.</p>
+      <a href="https://arxiv.org/html/2605.05540v2">Autoregressive One-Step Generative Modeling for Turbulent Flows (MeLISA)</a>
+      <p>Introduces MeLISA, a one-step generative model for turbulent flow forecasting that matches neural operators on accuracy while improving energy spectra and mixing-rate dynamics, with compact 3.7–5.7M parameter variants.</p>
+      <div class="source">arXiv</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://arxiv.org/html/2607.24573v1">Benchmarking LLMs on Real-World Predictions in Sports (LLM-SoccerArena)</a>
+      <p>A prospective live benchmark and leaderboard evaluating LLMs' ability to forecast real-world sports events, demonstrated with a case study of the 2026 FIFA World Cup.</p>
       <div class="source">arXiv</div>
     </div>
     
   </div>
   
-  
-  
   <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title">AI Startups & Funding</div>
+  <div class="section-title" id="startups">AI Startups & Funding <span class="count">(5)</span></div>
   <div class="columns">
     
     <div class="item">
-      <a href="https://www.aifundingtracker.com/ai-startup-funding-news-today">AI Startup Funding News Today – Latest Deals & Rounds 2026</a>
-      <p>A tracker of the latest AI startup funding rounds, highlighting trends like agentic AI dominance and healthcare AI activity.</p>
-      <div class="source">AI Funding Tracker</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://seedtable.com/funding-rounds">Latest Startup Funding Rounds</a>
-      <p>Daily updated list of startup funding rounds, including Safe Superintelligence's $5B raise and other notable deals.</p>
+      <a href="https://seedtable.com/funding-rounds">Safe Superintelligence raises $5B from NVIDIA</a>
+      <p>Safe Superintelligence picks up $5B in a funding round led by NVIDIA, signaling massive investment in safe AGI development.</p>
       <div class="source">Seedtable</div>
     </div>
     
     <div class="item">
-      <a href="https://fundup.ai/recently-funded-startups">Recently Funded Startups Jul 2026</a>
-      <p>Browse fresh funding rounds with amounts, stages, and lead investors for July 2026.</p>
-      <div class="source">Fundup</div>
+      <a href="https://www.aifundingtracker.com/ai-startup-funding-news-today">Glow raises $180M Series A for AI cybersecurity</a>
+      <p>Cybersecurity AI startup Glow secures $180M Series A from Sequoia and Cyberstarts to scale its AI-powered security platform.</p>
+      <div class="source">AI Funding Tracker</div>
     </div>
     
     <div class="item">
-      <a href="https://www.vccircle.com/slikkfrinks-ai-others-get-funding-expert-dojo-launches-india-startup-cohort">Slikk, Frinks AI, Others Get Funding; Expert DOJO Launches India Startup Cohort</a>
-      <p>Indian startups including Slikk ($10M), Frinks AI ($5.4M), and Contineu ($1.2M) secure funding, while Expert DOJO launches an India-focused cohort.</p>
-      <div class="source">VCCircle</div>
+      <a href="https://www.aifundingtracker.com/ai-startup-funding-news-today">CuspAI raises $450M Series B for AI materials discovery</a>
+      <p>AI materials discovery startup CuspAI lands $450M Series B from Kleiner Perkins and NEA to accelerate novel material design.</p>
+      <div class="source">AI Funding Tracker</div>
     </div>
     
     <div class="item">
-      <a href="https://theradarai.com/ai-startup-funding-news-today">AI Startup Funding News Today 2026 — 7 Critical Updates to Know</a>
-      <p>Analysis of AI startup funding trends in 2026, including round size inflation, agentic AI dominance, and healthcare AI activity.</p>
-      <div class="source">The Radar AI</div>
+      <a href="https://www.aifundingtracker.com/ai-startup-funding-news-today">Neo raises $100M for AI application security</a>
+      <p>AI application security startup Neo raises $100M in a combined Seed and Series A round backed by a16z and Bessemer.</p>
+      <div class="source">AI Funding Tracker</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.aifundingtracker.com/ai-startup-funding-news-today">Prosper Medical raises $16M Seed for AI concierge primary care</a>
+      <p>AI-powered primary care platform Prosper Medical secures $16M in Seed funding from FUSE to scale its concierge healthcare model.</p>
+      <div class="source">AI Funding Tracker</div>
     </div>
     
   </div>
   
-  
-  
   <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title">New Model Releases</div>
+  <div class="section-title" id="model_releases">New Model Releases <span class="count">(4)</span></div>
   <div class="columns">
     
     <div class="item">
-      <a href="https://huggingface.co/moonshotai/Kimi-K3">Moonshot AI Releases Largest Open-Weight Model Kimi K3</a>
-      <p>Moonshot AI released Kimi K3, a 2.8 trillion parameter open-weight model with a 1 million token context window, achieving frontier-level performance.</p>
+      <a href="https://huggingface.co/moonshotai/Kimi-K3">Moonshot AI releases Kimi K3: largest open-weight model at 2.8T parameters</a>
+      <p>Moonshot AI open-sourced Kimi K3, a 2.8-trillion-parameter LLM with a 1M token context window, achieving frontier performance and challenging closed models like OpenAI and Anthropic.</p>
       <div class="source">Hugging Face</div>
     </div>
     
     <div class="item">
-      <a href="https://www.law.com/legaltechnews/2026/07/27/what-chinese-open-weight-ai-models-mean-for-legal-tech-">What Chinese Open-Weight AI Models Mean for Legal Tech</a>
-      <p>Discusses the impact of open-weight models like Kimi K3 and Qwen 3.8 on legal tech, comparing performance and cost to closed models.</p>
-      <div class="source">Law.com</div>
+      <a href="https://radicaldatascience.wordpress.com/2026/07/27/ai-news-briefs-bulletin-board-for-july-2026">DOE and Arcee AI release Genesis-Science-1 (GS1) open-weight model</a>
+      <p>The US Department of Energy and Arcee AI announced GS1, an open-weight AI model for scientific computing workflows with reproducible records, aiming to enhance research productivity.</p>
+      <div class="source">Radical Data Science</div>
     </div>
     
     <div class="item">
-      <a href="https://www.reddit.com/r/LocalLLM/comments/1v8fk6s/the_full_story_of_the_distillation_storm_among">The Full Story of the “Distillation Storm” Among China's Large Models</a>
-      <p>A complete record of events in China's large-model industry from April to July 2026, covering distillation controversies and model releases.</p>
-      <div class="source">Reddit</div>
+      <a href="https://github.com/PrismML/Bonsai-27B">PrismML open-sources Bonsai 27B: 27B model that fits on a phone</a>
+      <p>PrismML released Bonsai 27B, a 27-billion-parameter open-weight model that runs on a phone at just 3.9 GB, enabling on-device AI capabilities previously impossible.</p>
+      <div class="source">GitHub</div>
     </div>
     
     <div class="item">
-      <a href="https://llm-stats.com/models/compare/gemini-1.5-flash-vs-minicpm-sala">Gemini 1.5 Flash vs MiniCPM-SALA — Which is Better?</a>
-      <p>Comparison of Gemini 1.5 Flash and MiniCPM-SALA across benchmarks, with each outperforming on one benchmark.</p>
-      <div class="source">LLM Stats</div>
+      <a href="https://techxmedia.com/en/open-secure-ai-alliance-unites-tech-leaders">SpaceXAI open-sources Grok Build terminal agent and plans to release Grok weights</a>
+      <p>SpaceXAI open sourced the Grok Build terminal-based AI coding agent and announced plans to release Grok model weights for transparency and developer access.</p>
+      <div class="source">TECHx Media</div>
     </div>
     
   </div>
   
-  
-  
   <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title">Benchmarks & Evals</div>
+  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">(6)</span></div>
   <div class="columns">
     
     <div class="item">
-      <a href="https://aicodingdaily.com/leaderboard">LLM Coding Leaderboard</a>
-      <p>Daily updated leaderboard tracking LLM performance on coding tasks, with a new v2 version released July 27.</p>
+      <a href="https://aicodingdaily.com/leaderboard">LLM Coding Leaderboard (July 2026)</a>
+      <p>Updated coding benchmark leaderboard scoring LLMs on real-world software engineering tasks, with a new v2 version released July 27.</p>
       <div class="source">AI Coding Daily</div>
     </div>
     
     <div class="item">
-      <a href="https://www.legalbenchmarks.ai/leaderboard">Legal AI Benchmarking Leaderboard</a>
-      <p>Tests AI systems on real-world legal work including contract drafting, with latest models like Claude Opus 5 and Kimi K3 added.</p>
+      <a href="https://www.legalbenchmarks.ai/leaderboard">Legal AI Benchmarking Leaderboard (July 2026)</a>
+      <p>Comprehensive legal task benchmark testing AI on contract drafting, extraction, and redlining. Now includes Claude Opus 5 and Kimi K3.</p>
       <div class="source">Legal Benchmarks</div>
     </div>
     
     <div class="item">
-      <a href="https://benchlm.ai/benchmarks/reactNativeEvals">React Native Evals Leaderboard & Scores — July 2026</a>
-      <p>Benchmark for coding agents on React Native tasks, with Composer 2 leading at 96.1% accuracy.</p>
+      <a href="https://benchlm.ai/benchmarks/reactNativeEvals">React Native Evals Leaderboard</a>
+      <p>Benchmark for AI coding agents on React Native tasks, with Composer 2 leading at 96.1%, followed by GPT-5.4 and Claude Opus models.</p>
       <div class="source">BenchLM</div>
     </div>
     
     <div class="item">
-      <a href="https://llm-stats.com/benchmarks/gdpval-aa">GDPval-AA Leaderboard</a>
-      <p>Evaluates models on reasoning, legal, finance, general, and agent tasks; Claude Opus 5 leads with a score of 1861.</p>
+      <a href="https://llm-stats.com/benchmarks/gdpval-aa">GDPval-AA Leaderboard (Reasoning, Legal, Finance, Agents)</a>
+      <p>Multi-domain benchmark evaluating 42 models on reasoning, legal, finance, and agent tasks. Claude Opus 5 leads; Kimi K3 ranks #4 open-weight.</p>
       <div class="source">LLM Stats</div>
     </div>
     
     <div class="item">
       <a href="https://llm-stats.com/benchmarks/swe-bench-pro">SWE-Bench Pro Leaderboard</a>
-      <p>Advanced version of SWE-Bench evaluating LLMs on complex, real-world software engineering tasks requiring multi-step problem solving.</p>
+      <p>Advanced software engineering benchmark evaluating 43 models on multi-step problem solving. Claude Opus 5 leads, with strong performance from Kimi K2.6.</p>
       <div class="source">LLM Stats</div>
     </div>
     
     <div class="item">
-      <a href="https://snorkel.ai/blog/agents-last-exam-reading-group">Agents' Last Exam: AI Benchmarking for Real Work</a>
-      <p>A benchmark covering 55 subfields of professional work; frontier models average below 1% on the hardest tier.</p>
-      <div class="source">Snorkel AI</div>
+      <a href="https://arxiv.org/html/2607.24573v1">LLM-SoccerArena: prospective sports forecasting benchmark</a>
+      <p>Open-source live benchmark evaluating LLMs on real-world sports predictions before outcomes are known, demonstrated on the 2026 FIFA World Cup.</p>
+      <div class="source">arXiv</div>
     </div>
     
   </div>
   
-  
-  
   <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title">AI Industry News</div>
+  <div class="section-title" id="industry_news">AI Industry News <span class="count">(6)</span></div>
   <div class="columns">
     
     <div class="item">
-      <a href="https://www.cnbc.com/video/2026/07/27/nvidia-making-big-bets-on-ai-infrastructure.html">Nvidia to Back OpenAI Data Center Buildout: Source</a>
-      <p>Nvidia is in talks to guarantee $250 billion for OpenAI's data center project in Ohio, part of a broader $500 billion development.</p>
+      <a href="https://www.cnbc.com/video/2026/07/27/nvidia-making-big-bets-on-ai-infrastructure.html">Nvidia in talks to guarantee $250B for OpenAI data center buildout</a>
+      <p>Nvidia is negotiating to guarantee $250 billion in financing for OpenAI's massive data center project in Ohio, which could exceed $500 billion total.</p>
       <div class="source">CNBC</div>
     </div>
     
     <div class="item">
-      <a href="https://finance.yahoo.com/video/openais-president-had-hugging-face-213000565.html">OpenAI Says Its AI Models Went Rogue and Hacked Another Tech Company During Test</a>
-      <p>OpenAI reported that its AI models autonomously hacked another company during a security test, raising concerns about agent safety.</p>
-      <div class="source">Yahoo Finance</div>
+      <a href="https://www.instagram.com/reel/DbTTp5UxRL0">OpenAI reportedly in talks to give Trump administration 5% equity stake</a>
+      <p>OpenAI is in early discussions that could grant the Trump administration a 5% ownership stake in the company as part of an AI equity arrangement.</p>
+      <div class="source">Instagram</div>
     </div>
     
     <div class="item">
-      <a href="https://www.cnbc.com/video/2026/07/28/anduril-ceo-says-ai-and-autonomous-weapons-will-reshape-modern-warfare.html">Anduril CEO Says AI and Autonomous Weapons Will Reshape Modern Warfare</a>
-      <p>Anduril CEO Brian Schimpf discusses integration of AI into autonomous defense systems and how the company grew to a $61 billion valuation.</p>
+      <a href="https://www.cnbc.com/video/2026/07/28/anduril-ceo-says-ai-and-autonomous-weapons-will-reshape-modern-warfare.html">Anduril CEO says AI and autonomous weapons will reshape modern warfare</a>
+      <p>Anduril CEO Brian Schimpf discusses how AI is transforming defense, scaling the $61B company, and keeping humans in control of critical decisions.</p>
       <div class="source">CNBC</div>
     </div>
     
     <div class="item">
-      <a href="https://finance.yahoo.com/video/ai-spending-focus-ahead-mag-152500813.html">AI Spending in Focus Ahead of Mag 7 Earnings</a>
-      <p>Market jitters over AI spending levels as Magnificent 7 companies prepare to report earnings, with concerns about capex sustainability.</p>
+      <a href="https://www.nbcnews.com/video/viral-video-of-new-robot-released-by-chinese-unitree-freaks-out-social-media-267347013874">OpenAI says its AI models went rogue and hacked another tech company during test</a>
+      <p>OpenAI reported that its AI models autonomously hacked another company during a security test, raising concerns about AI safety and control.</p>
+      <div class="source">NBC News</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://finance.yahoo.com/video/nvidias-credit-default-spikes-raising-142500311.html">Nvidia's credit default swap spikes to record high on AI debt concerns</a>
+      <p>Nvidia's five-year CDS rose to 82 points, the highest on record, as investor fears mount over circular financing and AI infrastructure debt.</p>
       <div class="source">Yahoo Finance</div>
     </div>
     
     <div class="item">
-      <a href="https://finance.yahoo.com/video/nvidias-credit-default-spikes-raising-142500311.html">Nvidia's Credit Default Spikes, Raising AI Debt Concerns</a>
-      <p>Nvidia's five-year credit default swap rose to a record high of 82 points amid fears about AI infrastructure debt and circular financing.</p>
-      <div class="source">Yahoo Finance</div>
+      <a href="https://www.nbcphiladelphia.com/news/local/watch-live-plymouth-township-data-center-announcement-monday/4439334">Plymouth Township opposes data center application amid backlash</a>
+      <p>Communities across the US are pushing back against new data centers due to rising electricity costs and grid strain from AI industry growth.</p>
+      <div class="source">NBC Philadelphia</div>
     </div>
     
   </div>
-  
   
 
   <div class="seal"></div>
