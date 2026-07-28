@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>The AI Herald — July 28, 2026</title>
+<title>The AI Herald — July 29, 2026</title>
 <style>
   :root {
     --ink: #2b1d0e;
@@ -158,13 +158,15 @@
   .index-rail a {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
     color: var(--ink);
     text-decoration: none;
     font-size: 13px;
     padding: 5px 0;
     border-bottom: 1px dotted #bbb;
   }
-  .index-rail a span.n { color: var(--gray); font-size: 11px; }
+  .index-rail a span:first-child { min-width: 0; flex: 1 1 auto; overflow-wrap: break-word; }
+  .index-rail a span.n { flex: 0 0 auto; color: var(--gray); font-size: 11px; }
   .index-rail a:hover { color: var(--red); }
 
   .section-title {
@@ -351,7 +353,7 @@
   </script>
 
   <div class="topline">
-    <span>Vol. I &mdash; No. 1</span>
+    <span>Vol. I &mdash; No. 2</span>
     <span>An Automated Daily Digest of Artificial Intelligence</span>
   </div>
 
@@ -361,8 +363,8 @@
   </div>
 
   <div class="dateline">
-    <span>July 28, 2026</span>
-    <span>Last Updated: 11:58 PM IST</span>
+    <span>July 29, 2026</span>
+    <span>Last Updated: 12:06 AM IST</span>
   </div>
 
   <div class="disclaimer">The text below is an AI-generated summary. Click any headline to read the full original piece.</div>
@@ -371,14 +373,14 @@
   <div class="frontpage">
     <div class="lead">
       <div class="kicker">Top Story &mdash; Trending AI GitHub Repos</div>
-      <a class="headline" href="https://github.com/EvanLi/Github-Ranking/blob/master/Top100/Go.md">Nvidia Labs Object-Oriented Agent (NOOA) Project</a>
-      <div class="dek">Nvidia open-sourced NOOA, a Python framework for managing AI agent behavior, including harness, memory system, capability tests, and benchmark agents.</div>
-      <div class="source">Reuters</div>
+      <a class="headline" href="https://www.develeap.com/news/microsoft-is-racing-to-make-openai-optional-fb5ba0a6" target="_blank" rel="noopener noreferrer">OpenClaw – self-hosted open-source AI agent</a>
+      <div class="dek">OpenClaw, the 6th most-starred GitHub repository, transitioned to an independent non-profit foundation. It runs locally with direct file and messaging app access for task automation.</div>
+      <div class="source">develeap</div>
     </div>
     
     <div class="index-rail">
       <h3>Inside Today</h3>
-      <a href="#repos"><span>Trending AI GitHub Repos</span><span class="n">3</span></a><a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">2</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#papers"><span>AI/ML Research Papers</span><span class="n">4</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">6</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">6</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">6</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">6</span></a>
+      <a href="#repos"><span>Trending AI GitHub Repos</span><span class="n">5</span></a><a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">5</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#papers"><span>AI/ML Research Papers</span><span class="n">4</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">4</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">4</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">5</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">5</span></a><a href="#productivity"><span>AI Productivity Tips</span><span class="n">5</span></a>
     </div>
     
   </div>
@@ -386,44 +388,74 @@
 
   
   
-  <div class="section-title" id="repos">Trending AI GitHub Repos <span class="count">3 stories</span></div>
+  <div class="section-title" id="repos">Trending AI GitHub Repos <span class="count">5 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://tldr.tech/dev/2026-07-28">Scriptc GitHub Repo</a>
-      <p>A new GitHub repository for Scriptc, a scripting tool mentioned in the TLDR Dev newsletter.</p>
-      <div class="source">TLDR Dev</div>
+      <a href="https://github.com/headroomlabs-ai/headroom" target="_blank" rel="noopener noreferrer">headroomlabs-ai/headroom – LLM token compression proxy</a>
+      <p>Headroom compresses tool outputs and logs to slash LLM token costs, supporting Claude Code, Codex, Cursor, and CI agents. Open source under Apache 2.0.</p>
+      <div class="source">GitHub</div>
     </div>
     
     <div class="item">
-      <a href="https://www.marktechpost.com/2026/07/28/microsoft-ai-releases-mai-cyber-1-flash-a-5b-active-parameter-cyber-model-that-pushes-mdash-to-95-95-on-cybergym?amp=">AgentENV: Open-Source Distributed System for Agentic RL Training</a>
-      <p>Kimi AI and kvcache-ai released AgentENV, a distributed system enabling agentic reinforcement learning training for models like Kimi K3.</p>
-      <div class="source">MarkTechPost</div>
+      <a href="https://radicaldatascience.wordpress.com/2026/07/27/ai-news-briefs-bulletin-board-for-july-2026" target="_blank" rel="noopener noreferrer">MolmoMotion – open-source 3D action forecasting</a>
+      <p>Extends Molmo 2 to forecast object behavior using 3D point trajectories. Includes model weights, training code, and a dataset of 1.16M videos.</p>
+      <div class="source">Radical Data Science</div>
     </div>
     
     <div class="item">
-      <a href="https://www.marktechpost.com/2026/07/28/microsoft-ai-releases-mai-cyber-1-flash-a-5b-active-parameter-cyber-model-that-pushes-mdash-to-95-95-on-cybergym?amp=">KAT-Coder-V2.5: Agentic Coding Model</a>
-      <p>KwaiKAT team released KAT-Coder-V2.5, an agentic coding model trained on 100,000+ verifiable repository environments.</p>
-      <div class="source">MarkTechPost</div>
+      <a href="https://radicaldatascience.wordpress.com/2026/07/27/ai-news-briefs-bulletin-board-for-july-2026" target="_blank" rel="noopener noreferrer">Leanstral – theorem-proving and code-verification agent</a>
+      <p>An open-source 119B-parameter agent built on Mistral, designed for theorem proving and code verification. Available on GitHub.</p>
+      <div class="source">Radical Data Science</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://techxmedia.com/en/open-secure-ai-alliance-unites-tech-leaders" target="_blank" rel="noopener noreferrer">NOOA – NVIDIA Labs Object-Oriented Agent</a>
+      <p>NVIDIA contributed NOOA as an open-source research framework to improve AI safety by making agent behavior easier to test, trace, audit, and govern.</p>
+      <div class="source">TechX Media</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.augmentcode.com/guides/ai-governance-framework-for-engineering" target="_blank" rel="noopener noreferrer">augment-swebench-agent – code agent governance harness</a>
+      <p>An open-source agent for SWE-bench that enforces replayable workflow history and human-in-the-loop checkpoints. Part of Augment's AI governance framework.</p>
+      <div class="source">Augment Code</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">2 stories</span></div>
+  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">5 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://github.com/sickn33/agentic-awesome-skills">sickn33/agentic-awesome-skills</a>
-      <p>A comprehensive collection of AI agent skills, supporting Claude Code, Cursor, Codex CLI, Gemini CLI, and more, with a focus on local setup and plugin marketplace flow.</p>
+      <a href="https://github.com/sickn33/agentic-awesome-skills" target="_blank" rel="noopener noreferrer">agentic-awesome-skills – curated agent skills collection</a>
+      <p>A comprehensive repository of agent skills for Claude Code, Cursor, Codex CLI, Gemini CLI, and more, covering installation, prompt examples, and plugin marketplace flows.</p>
       <div class="source">GitHub</div>
     </div>
     
     <div class="item">
-      <a href="https://skillsllm.com/skill/builder-essential-skills">builder-essential-skills - AI Agents on GitHub | SkillsLLM</a>
-      <p>A curated pack of portable skills for AI agents, including MCP servers, harness optimization, and workflow automation, designed for n8n, Claude Code, and other agent frameworks.</p>
-      <div class="source">SkillsLLM</div>
+      <a href="https://www.reddit.com/r/LLMDevs/comments/1v8wtic/i_built_a_foss_agent_skill_that_preserves_the" target="_blank" rel="noopener noreferrer">Keep the Why – preserve engineering rationale in repos</a>
+      <p>A free MIT-licensed agent skill that captures and preserves the reasoning behind code changes, making it easier for teams to understand design decisions over time.</p>
+      <div class="source">Reddit</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://dev.to/tacoda/the-middle-path-between-a-stock-agent-and-a-custom-harness-4g8c" target="_blank" rel="noopener noreferrer">pi – extensible terminal coding agent with skill system</a>
+      <p>An open-source terminal coding agent that exposes first-class extension points for custom tools, commands, skills, and system prompts without requiring framework forks.</p>
+      <div class="source">dev.to</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://huggingface.co/papers?q=Agent+skills" target="_blank" rel="noopener noreferrer">SkillInject – benchmark for skill-based prompt injection</a>
+      <p>A benchmark identified as a significant threat in the agent supply chain, testing how skills can be used for prompt injection attacks.</p>
+      <div class="source">Hugging Face</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://github.com/sickn33/agentic-awesome-skills" target="_blank" rel="noopener noreferrer">AgentPhone-AI/skills – telephony workflows for Claude Code</a>
+      <p>An API-first collection of skills enabling AI agents to handle phone calls, SMS, number management, voice-agent setup, and streaming webhooks.</p>
+      <div class="source">GitHub</div>
     </div>
     
   </div>
@@ -434,33 +466,33 @@
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://www.turingpost.com/p/is-graph-engineering-real-why-everyone-is-talking-about-it">What Is Graph Engineering? Why Everyone Is Talking About It</a>
-      <p>Explores the shift from prompt engineering to loop engineering and graph engineering, emphasizing structured feedback loops and agent workflows.</p>
-      <div class="source">Turing Post</div>
+      <a href="https://agentic-engineering.swmansion.com/becoming-productive/prompting-techniques" target="_blank" rel="noopener noreferrer">Prompting Techniques (Software Mansion Agentic Engineering Guide)</a>
+      <p>A practical guide to interacting with coding agents, covering walkthroughs, parallel implementation patterns, and how to give the right guidance at the right time.</p>
+      <div class="source">Software Mansion</div>
     </div>
     
     <div class="item">
-      <a href="https://www.tiktok.com/discover/loop-engineering-to-graph-engineering-in-ai-agents">Loop Engineering to Graph Engineering in AI Agents</a>
-      <p>A TikTok explainer contrasting prompt engineering with loop engineering, highlighting the move toward autonomous agent workflows.</p>
-      <div class="source">TikTok</div>
+      <a href="https://shashikantjagtap.net/agentic-context-engineering-prompting-strikes-back" target="_blank" rel="noopener noreferrer">Agentic Context Engineering: Prompting Strikes Back</a>
+      <p>Introduces ACE, a framework that reframes context as a living playbook evolving through feedback, arguing that prompting enters a new era of dynamic, reflective loops.</p>
+      <div class="source">Shashikant Jagtap</div>
     </div>
     
     <div class="item">
-      <a href="https://todatabeyond.substack.com/p/only-5-seat-left-hands-on-loop-engineering">Only 5 Seat Left - Hands-On Loop Engineering with Claude</a>
-      <p>A 3-hour live workshop teaching how to build Claude loops for state management, verification, and safety in agentic coding tasks.</p>
-      <div class="source">Substack</div>
+      <a href="https://www.linkedin.com/pulse/cognitive-supply-chain-agentic-ai-design-patterns-workflow-orfanos-u7mkc" target="_blank" rel="noopener noreferrer">The Cognitive Supply Chain: Agentic AI Design Patterns</a>
+      <p>Explores the shift from prompt engineering to flow engineering, analyzing core patterns like Reflection, Tool Use, Planning, and Multi-Agent Collaboration.</p>
+      <div class="source">LinkedIn</div>
     </div>
     
     <div class="item">
-      <a href="https://www.facebook.com/JetBrains/posts/a-prompting-technique-claims-that-speaking-to-ai-coding-agents-in-compressed-cav/1073521058336127">JetBrains: Caveman-Style Prompting Reduces Tokens by 8.5%</a>
-      <p>JetBrains tested compressed, caveman-style prompts on 86 coding tasks and found only 8.5% token reduction with no quality loss, debunking larger claims.</p>
-      <div class="source">JetBrains (Facebook)</div>
+      <a href="https://daniliants.com/insights/what-is-agentic-engineering-agentic-engineering-patterns" target="_blank" rel="noopener noreferrer">What is agentic engineering? – Agentic Engineering Patterns</a>
+      <p>Defines agentic engineering as building with coding agents that run tools in a loop, distinguishing it from vibe coding and emphasizing problem specification and verification.</p>
+      <div class="source">Daniliants</div>
     </div>
     
     <div class="item">
-      <a href="https://www.dynatrace.com/news/blog/how-observability-transforms-vibe-coding-into-ai-engineering">How Observability Turns Vibe Coding into AI Engineering</a>
-      <p>Dynatrace discusses combining prompt engineering, structured planning, skills, and observability feedback loops to transform AI-generated code into reliable engineering.</p>
-      <div class="source">Dynatrace</div>
+      <a href="https://www.learnwithgurpreet.com/posts/advanced-prompting-techniques" target="_blank" rel="noopener noreferrer">Advanced Prompting Techniques</a>
+      <p>Covers iterative refinement loops, persona-based prompts, and how to craft targeted follow-up prompts for better agent output.</p>
+      <div class="source">Learn With Gurpreet</div>
     </div>
     
   </div>
@@ -472,26 +504,26 @@
     <div class="columns-3">
       
       <div class="side-item">
-        <a href="https://snorkel.ai/blog/agents-last-exam-reading-group">Agents' Last Exam: AI Benchmarking for Real Work</a>
-        <p>Introduces a new benchmark and live leaderboard evaluating AI agents on real-world software engineering tasks, with results showing GPT-5.5 and Claude Code leading.</p>
-        <div class="source">Snorkel AI</div>
-      </div>
-      
-      <div class="side-item">
-        <a href="https://arxiv.org/html/2605.05540v2">MeLISA: Autoregressive One-Step Generative Modeling for Fluid Dynamics</a>
-        <p>Proposes a generative model that matches or exceeds neural operators on short-term accuracy while improving energy spectra and turbulence recovery.</p>
+        <a href="https://arxiv.org/abs/2607.24647" target="_blank" rel="noopener noreferrer">Efficiency Matters in Autonomous Research</a>
+        <p>Explores how efficiency and cost-awareness impact autonomous AI research systems, proposing methods to balance performance with resource usage.</p>
         <div class="source">arXiv</div>
       </div>
       
       <div class="side-item">
-        <a href="https://arxiv.org/abs/2607.24647">Efficiency Matters in Autonomous Research</a>
-        <p>Argues that the efficiency of the solution-search process is an overlooked but critical dimension of performance in autonomous AI research systems.</p>
+        <a href="https://arxiv.org/abs/2607.24192" target="_blank" rel="noopener noreferrer">LLM-based Source Code Compression via Thresholded Symbol Ranking</a>
+        <p>A novel compression technique for source code using LLMs and thresholded symbol ranking, achieving high compression ratios while preserving code structure.</p>
         <div class="source">arXiv</div>
       </div>
       
       <div class="side-item">
-        <a href="https://arxiv.org/html/2607.24573v1">LLM-SoccerArena: Benchmarking LLMs on Real-World Sports Predictions</a>
-        <p>An open-source, prospective benchmark and live leaderboard for evaluating LLM forecasts on real-world sports events, demonstrated with the 2026 FIFA World Cup.</p>
+        <a href="https://arxiv.org/html/2605.05540v2" target="_blank" rel="noopener noreferrer">Autoregressive One-Step Generative Modeling (MeLISA)</a>
+        <p>A one-step generative model for turbulent flow forecasting that outperforms neural operators on short-term accuracy and long-horizon statistical metrics.</p>
+        <div class="source">arXiv</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2607.24573v1" target="_blank" rel="noopener noreferrer">Benchmarking LLMs on Real-World Predictions in Sports (LLM-SoccerArena)</a>
+        <p>Introduces an open-source, continuously operating benchmark for evaluating LLM forecasts on real-world sports events, with a case study on the 2026 FIFA World Cup.</p>
         <div class="source">arXiv</div>
       </div>
       
@@ -500,129 +532,99 @@
   
   
   
-  <div class="section-title" id="startups">AI Startups & Funding <span class="count">6 stories</span></div>
+  <div class="section-title" id="startups">AI Startups & Funding <span class="count">4 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://techcrunch.com/2026/07/28/recursive-superintelligence-signs-400-compute-deal-with-amazon">Recursive Superintelligence Signs $410M Compute Deal with AWS</a>
-      <p>The AI company focused on open-ended self-improving systems announced a multi-year $410 million compute deal with Amazon Web Services to scale its systems.</p>
-      <div class="source">TechCrunch</div>
+      <a href="https://www.aifundingtracker.com/ai-startup-funding-news-today" target="_blank" rel="noopener noreferrer">AI Startup Funding News Today – July 2026</a>
+      <p>Comprehensive list of AI startup funding rounds in July 2026, including CuspAI ($450M), Neo ($100M), Glow ($180M), and many others across categories.</p>
+      <div class="source">AI Funding Tracker</div>
     </div>
     
     <div class="item">
-      <a href="https://www.businessinsider.com/harmony-pitch-deck-ai-startup-34-million-seed-founders-cisco-2026-7">Harmony Raises $34 Million Seed for AI Workplace Assistant</a>
-      <p>Harmony operates inside Slack and Microsoft Teams to handle employee requests like onboarding and password resets, with backing from Lightspeed and others.</p>
-      <div class="source">Business Insider</div>
+      <a href="https://www.todaysstartupnews.com/news/startup-news-today-april-29-2026-latest-funding-rounds-ai-deals-tech-updates-roundup" target="_blank" rel="noopener noreferrer">Startup News Today: April 29, 2026 – Aidoc, Rogo, BMW Fund</a>
+      <p>Covers Aidoc's $150M Series E, Rogo's $160M Series D, and BMW i Ventures launching a $300M fund focused on AI in automotive.</p>
+      <div class="source">Today's Startup News</div>
     </div>
     
     <div class="item">
-      <a href="https://www.facebook.com/Reuters/posts/nvidia-to-invest-5-billion-in-ilya-sutskevers-ai-startup-source-saysclick-the-li/1622996193024440">Nvidia to Invest $5 Billion in Ilya Sutskever's AI Startup</a>
-      <p>Nvidia plans a $5 billion investment in a new AI startup by Ilya Sutskever, signaling major industry backing.</p>
-      <div class="source">Reuters (Facebook)</div>
+      <a href="https://www.vccircle.com/slikkfrinks-ai-others-get-funding-expert-dojo-launches-india-startup-cohort" target="_blank" rel="noopener noreferrer">Slikk, Frinks AI, others get funding</a>
+      <p>Early-stage funding rounds in India, including fashion delivery platform Slikk and deeptech startup Frinks AI ($5.4M pre-Series A).</p>
+      <div class="source">VCCircle</div>
     </div>
     
     <div class="item">
-      <a href="https://www.uschamber.com/co/good-company/launch-pad/ai-fueling-teen-startups">Teen-Founded AI Startup Aaru Reaches $1 Billion Valuation</a>
-      <p>Aaru, founded by teenagers in 2024, uses generative AI to simulate human behavior for market research and has raised significant funding from top investors.</p>
-      <div class="source">U.S. Chamber of Commerce</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.facebook.com/commobserver/posts/ai-company-antares-labs-launches-with-7m-seed-round/1729416579187186">Antares Labs Launches With $7.25 Million Seed Round</a>
-      <p>AI company Antares Labs announced a $7.25 million seed round to develop its platform.</p>
-      <div class="source">Commercial Observer (Facebook)</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://kingy.ai/ai-launches/today">kausable Raises €12 Million Seed for Causal AI Models</a>
-      <p>Heidelberg-based kausable raised €12 million to develop causal AI models that adapt to new contexts with minimal data.</p>
-      <div class="source">kingy.ai</div>
+      <a href="https://theradarai.com/ai-startup-funding-news-today" target="_blank" rel="noopener noreferrer">AI Startup Funding News Today – 7 Critical Updates</a>
+      <p>Highlights key AI funding trends in 2026, including seed round inflation, healthcare AI dominance, and the rise of agentic AI startups.</p>
+      <div class="source">The Radar AI</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="model_releases">New Model Releases <span class="count">6 stories</span></div>
+  <div class="section-title" id="model_releases">New Model Releases <span class="count">4 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://www.instagram.com/reel/DbViDYJu1g8">Moonshot AI Releases Kimi K3 Open-Weight Model (2.8 Trillion Parameters)</a>
-      <p>Kimi K3 is the largest open-weight model ever released, with a 1M token context window and frontier-level performance, challenging closed models.</p>
-      <div class="source">Instagram (Keyangle)</div>
+      <a href="https://medium.com/@Micheal-Lanham/the-0-94-model-that-cost-10-57-a-task-31f1d3f27e3a" target="_blank" rel="noopener noreferrer">Kimi K3 – 2.8 trillion parameter open-weight model</a>
+      <p>Moonshot AI released Kimi K3, the largest open-weight model ever at 2.8T parameters with a 1M token context window, rivaling closed flagship models on benchmarks.</p>
+      <div class="source">Medium</div>
     </div>
     
     <div class="item">
-      <a href="https://aiagentstore.ai/ai-agent-news/this-week">Meituan Releases LongCat-2.0 Open-Source Model for Agentic Coding</a>
-      <p>LongCat-2.0 is a 1.6T parameter model with 48B active parameters, using sparse attention and N-gram embeddings for complex coding tasks.</p>
-      <div class="source">AI Agent Store</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://slator.com/european-commission-institutional-llm-benchmark-eu-languages">European Commission Launches Institutional LLM for All 24 EU Languages</a>
-      <p>The EU released an open LLM trained on institutional data and a human-translated benchmark for 24 official EU languages.</p>
+      <a href="https://slator.com/european-commission-institutional-llm-benchmark-eu-languages" target="_blank" rel="noopener noreferrer">European Commission Launches Institutional LLM for All EU Languages</a>
+      <p>The EU Commission released an open LLM trained on institutional data for all 24 official EU languages, along with a human-translated benchmark.</p>
       <div class="source">Slator</div>
     </div>
     
     <div class="item">
-      <a href="https://www.marktechpost.com/2026/07/28/microsoft-ai-releases-mai-cyber-1-flash-a-5b-active-parameter-cyber-model-that-pushes-mdash-to-95-95-on-cybergym?amp=">Microsoft Releases MAI-Cyber-1-Flash: 5B Active Parameter Cyber Model</a>
-      <p>A specialized cyber model achieving 95.95% on CyberGym benchmark, designed for cybersecurity tasks.</p>
-      <div class="source">MarkTechPost</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.morphllm.com/best-open-source-coding-model-2026">GLM-5.2 Open-Weight Coding Model Tops Open Model Index</a>
-      <p>GLM-5.2 (744B total / 40B active MoE) achieved top score on Artificial Analysis Intelligence Index with strong coding benchmark results.</p>
+      <a href="https://www.morphllm.com/best-open-source-coding-model-2026" target="_blank" rel="noopener noreferrer">Best Open-Source Coding Model 2026: Kimi K3 vs GLM-5.2 vs DeepSeek V4</a>
+      <p>Independent comparison of top open-weight coding models using SWE-bench, Terminal-Bench, and human-vote leaderboards. GLM-5.2 leads the intelligence index.</p>
       <div class="source">Morph LLM</div>
     </div>
     
     <div class="item">
-      <a href="https://aiagentstore.ai/ai-agent-news/this-week">Microsoft Aion 1.0 Plan: 14B On-Device Model for Agentic Workflows</a>
-      <p>Part of Microsoft's first-party AI stack, Aion 1.0 Plan is a 14B-parameter on-device model with 32K context window for reasoning and tool-calling on Windows.</p>
-      <div class="source">AI Agent Store</div>
+      <a href="https://www.law.com/legaltechnews/2026/07/27/what-chinese-open-weight-ai-models-mean-for-legal-tech-" target="_blank" rel="noopener noreferrer">What Chinese Open-Weight AI Models Mean for Legal Tech</a>
+      <p>Analysis of how open-weight models like Kimi K3 and GLM-5.2 offer competitive performance for legal tasks at lower cost, with comparisons to Anthropic and OpenAI.</p>
+      <div class="source">Law.com</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">6 stories</span></div>
+  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">5 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://snorkel.ai/blog/agents-last-exam-reading-group">Agents' Last Exam: New Benchmark for Real-World AI Agent Work</a>
-      <p>A comprehensive benchmark evaluating agents on software engineering tasks, with GPT-5.5 and Claude Code leading in the initial leaderboard.</p>
+      <a href="https://snorkel.ai/blog/agents-last-exam-reading-group" target="_blank" rel="noopener noreferrer">Agents' Last Exam: AI Benchmarking for Real Work</a>
+      <p>A new benchmark evaluating AI agents on multi-step, real-world tasks across domains, with a live leaderboard and subdomain breakdowns by harness and model.</p>
       <div class="source">Snorkel AI</div>
     </div>
     
     <div class="item">
-      <a href="https://arxiv.org/html/2607.24573v1">LLM-SoccerArena: Live Benchmark for Sports Predictions</a>
-      <p>An open-source, prospective benchmark for LLM forecasts on real-world sports events, starting with the 2026 FIFA World Cup.</p>
-      <div class="source">arXiv</div>
+      <a href="https://artificialanalysis.ai/evaluations/harvey-lab-aa?eval-score=all-pass-rate" target="_blank" rel="noopener noreferrer">Harvey LAB-AA Benchmark Leaderboard</a>
+      <p>Artificial Analysis implementation of Harvey's Legal Agent Benchmark, testing AI agents on 120 private legal tasks across 24 practice areas.</p>
+      <div class="source">Artificial Analysis</div>
     </div>
     
     <div class="item">
-      <a href="https://www.legalbenchmarks.ai/leaderboard">Legal AI Benchmarking Adds Claude Opus 5 and Kimi K3</a>
-      <p>The Legal Benchmarks leaderboard expanded to 13 models, testing contract drafting and other legal tasks with new top performers.</p>
-      <div class="source">Legal Benchmarks</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://llm-stats.com/benchmarks/gdpval-aa">GDPval-AA Leaderboard: Claude Opus 5 Leads with Score 1861</a>
-      <p>The GDPval-AA benchmark for reasoning, legal, finance, and agent tasks ranks Claude Opus 5 first, with Kimi K3 as the top open-weight model.</p>
+      <a href="https://llm-stats.com/benchmarks/gdpval-aa" target="_blank" rel="noopener noreferrer">GDPval-AA Leaderboard</a>
+      <p>A text benchmark evaluating models on reasoning, legal, finance, general, and agent tasks. Claude Opus 5 currently leads, with Kimi K3 as the top open-weight model.</p>
       <div class="source">LLM Stats</div>
     </div>
     
     <div class="item">
-      <a href="https://aicodingdaily.com/leaderboard">LLM Coding Leaderboard v2: More Complex Projects</a>
-      <p>AI Coding Daily updated its leaderboard with only two complex PHP/Laravel/React projects, adding Opus 5 High and GPT-5.6-Sol Medium.</p>
+      <a href="https://aicodingdaily.com/leaderboard" target="_blank" rel="noopener noreferrer">LLM Coding Leaderboard</a>
+      <p>Updated July 27, 2026, ranking models on PHP/Laravel/React projects. Includes recent additions like Opus 5 High, GPT-5.6-Sol, and Kimi K3.</p>
       <div class="source">AI Coding Daily</div>
     </div>
     
     <div class="item">
-      <a href="https://llm-stats.com/benchmarks/swe-bench-pro">SWE-Bench Pro Leaderboard Updated with 43 Models</a>
-      <p>The advanced software engineering benchmark tracks 43 models on complex multi-step coding tasks, with Claude Opus 5 leading.</p>
-      <div class="source">LLM Stats</div>
+      <a href="https://arxiv.org/html/2607.24573v1" target="_blank" rel="noopener noreferrer">LLM-SoccerArena: Benchmarking LLMs on Real-World Predictions in Sports</a>
+      <p>An open-source, continuously operating benchmark for forecasting real-world sports events, with a case study on the 2026 FIFA World Cup.</p>
+      <div class="source">arXiv</div>
     </div>
     
   </div>
@@ -633,76 +635,107 @@
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://www.cnbc.com/video/2026/07/27/nvidia-making-big-bets-on-ai-infrastructure.html">Nvidia Making Big Bets on AI Infrastructure, Including OpenAI Partnership</a>
-      <p>CNBC reports on Nvidia's spending on GPU purchases and its partnership to back OpenAI data center buildout.</p>
+      <a href="https://www.cnbc.com/video/2026/07/27/nvidia-making-big-bets-on-ai-infrastructure.html" target="_blank" rel="noopener noreferrer">Nvidia making big bets on AI infrastructure</a>
+      <p>CNBC reports on Nvidia's spending around its OpenAI partnership, GPU purchases, and plans to back OpenAI data center buildout.</p>
       <div class="source">CNBC</div>
     </div>
     
     <div class="item">
-      <a href="https://www.youtube.com/watch?v=VtC6abC4h3U">How Chinese AI Turned Silicon Valley Against Anthropic</a>
-      <p>A YouTube analysis discusses how open-weight model releases from China, like Kimi K3, are pressuring Anthropic and sparking industry alliances.</p>
-      <div class="source">YouTube</div>
+      <a href="https://www.youtube.com/watch?v=VtC6abC4h3U" target="_blank" rel="noopener noreferrer">How Chinese AI Turned Silicon Valley Against Anthropic</a>
+      <p>Analysis of how Moonshot AI's Kimi K3 open-weight release and the Open Secure AI Alliance have shifted the debate around open vs closed models.</p>
+      <div class="source">YouTube (Turing Post)</div>
     </div>
     
     <div class="item">
-      <a href="https://www.cnbc.com/video/2026/07/28/anduril-ceo-says-ai-and-autonomous-weapons-will-reshape-modern-warfare.html">Anduril CEO: AI and Autonomous Weapons Will Reshape Modern Warfare</a>
-      <p>Anduril CEO Brian Schimpf discusses AI integration in defense systems, human oversight, and the company's $61B valuation.</p>
+      <a href="https://www.cnbc.com/video/2026/07/28/anduril-ceo-says-ai-and-autonomous-weapons-will-reshape-modern-warfare.html" target="_blank" rel="noopener noreferrer">Anduril CEO says AI and autonomous weapons will reshape modern warfare</a>
+      <p>Anduril CEO Brian Schimpf discusses AI integration in defense, autonomous systems with human oversight, and scaling to a $61B defense tech firm.</p>
       <div class="source">CNBC</div>
     </div>
     
     <div class="item">
-      <a href="https://finance.yahoo.com/video/openais-president-had-hugging-face-213000565.html">OpenAI President Comments on Hugging Face Hack and AI Job Worries</a>
-      <p>Greg Brockman addressed the rogue AI hack and dismissed job displacement fears in a media roundtable.</p>
+      <a href="https://finance.yahoo.com/video/openais-president-had-hugging-face-213000565.html" target="_blank" rel="noopener noreferrer">What OpenAI's president had to say about Hugging Face hack</a>
+      <p>Greg Brockman addresses the OpenAI AI model hack of Hugging Face, job concerns, and the value of open vs proprietary models.</p>
       <div class="source">Yahoo Finance</div>
     </div>
     
     <div class="item">
-      <a href="https://www.nbcnews.com/video/viral-video-of-new-robot-released-by-chinese-unitree-freaks-out-social-media-267347013874">Viral Robot Video from Chinese Company Unitree Raises Questions</a>
-      <p>A new robot video from Unitree goes viral, prompting speculation about its capabilities and authenticity.</p>
-      <div class="source">NBC News</div>
+      <a href="https://www.reddit.com/r/hardware/comments/1v8zd3u/hardware_unboxed_gpu_prices_to_rise_by_another_40" target="_blank" rel="noopener noreferrer">GPU Prices To Rise By Another 40%</a>
+      <p>Reddit discussion on how AI demand is driving massive GPU price increases, with the RTX 5090 rising from $2799 to $4699.</p>
+      <div class="source">Reddit</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="trends">Code Worth Adopting <span class="count">6 stories</span></div>
+  <div class="section-title" id="trends">Code Worth Adopting <span class="count">5 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://venturebeat.com/infrastructure/mcp-just-got-its-biggest-update-ever-heres-what-changes-for-ai-agents">MCP 2026-07-28 Spec Release Candidate: Stateless Core, Major Rewrite</a>
-      <p>The Model Context Protocol specification moves to a stateless architecture, removes sessions, and adds server discovery and URL-based client identification.</p>
+      <a href="https://venturebeat.com/infrastructure/mcp-just-got-its-biggest-update-ever-heres-what-changes-for-ai-agents" target="_blank" rel="noopener noreferrer">MCP just got its biggest update ever</a>
+      <p>The Model Context Protocol introduces stateless architecture, interactive server-rendered interfaces, long-running async tasks, and hardened authentication.</p>
       <div class="source">VentureBeat</div>
     </div>
     
     <div class="item">
-      <a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks">Gemini API Managed Agents Now Default to 3.6 Flash with Hooks</a>
-      <p>Google DeepMind updated Managed Agents with Gemini 3.6 Flash as default, environment hooks for tool call control, budget controls, and free tier access.</p>
-      <div class="source">Google AI Blog</div>
+      <a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks" target="_blank" rel="noopener noreferrer">Gemini API Managed Agents: 3.6 Flash, hooks, and more</a>
+      <p>Google adds environment hooks, budget controls, scheduled triggers, and free tier access to managed agents in the Gemini Interactions API.</p>
+      <div class="source">Google Blog</div>
     </div>
     
     <div class="item">
-      <a href="https://buttondown.com/krypteiasec/archive/daily-ai-builder-brief-july-27-2026">Claude Code v2.1.219: Opus 5 Default, Nested Subagents to Depth 3</a>
-      <p>The latest update makes Opus 5 the default model and allows subagents up to three levels deep, increasing autonomous capability.</p>
-      <div class="source">Buttondown (KrypteiaSec)</div>
+      <a href="https://www.truefoundry.com/blog/claude-managed-agents-vs-vercel-eve" target="_blank" rel="noopener noreferrer">Claude Managed Agents vs. Vercel Eve: Which AI Agent Platform Wins?</a>
+      <p>Comparison of Anthropic's managed agents with Vercel's Eve, covering MCP support, skills integration, and enterprise controls.</p>
+      <div class="source">TrueFoundry</div>
     </div>
     
     <div class="item">
-      <a href="https://datatalks.club/blog/ai-dev-tools-zoomcamp.html">AI Dev Tools Zoomcamp 2026: Free Course on AI-Native Software Engineering</a>
-      <p>A free, hands-on course covering specification, building, deployment, MCP integration, skills, and security for AI-assisted development.</p>
-      <div class="source">DataTalks.Club</div>
+      <a href="https://www.alibabacloud.com/blog/stop-feeding-your-model-every-tool-definition_603401" target="_blank" rel="noopener noreferrer">Stop Feeding Your Model Every Tool Definition</a>
+      <p>Alibaba Cloud's Qoder Quest 1.0 optimizes context by loading tool definitions and skills only when needed, reducing token waste by 93.5%.</p>
+      <div class="source">Alibaba Cloud</div>
     </div>
     
     <div class="item">
-      <a href="https://composio.dev/content/best-mcp-gateway-for-developers">10 Best MCP Gateways for Developers in 2026</a>
-      <p>A deep dive into MCP gateways solving the N×M problem of connecting agents to external tools, featuring Composio, Workato, and others.</p>
-      <div class="source">Composio</div>
+      <a href="https://codewithmukesh.com/blog/claude-code-tips-advanced" target="_blank" rel="noopener noreferrer">20 Advanced Claude Code Tips for .NET Developers</a>
+      <p>Practical tips covering context engineering, hooks, subagents, MCP, worktrees, and model selection to ship faster in 2026.</p>
+      <div class="source">Code with Mukesh</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="productivity">AI Productivity Tips <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.tomsguide.com/ai/i-use-the-cupcake-prompt-to-catch-when-ai-is-guessing-heres-how-it-works" target="_blank" rel="noopener noreferrer">I use the ‘cupcake’ prompt to catch when AI is guessing</a>
+      <p>A simple technique that encourages AI to flag uncertainty and stop hallucinating by asking for reasoning and confidence levels.</p>
+      <div class="source">Tom's Guide</div>
     </div>
     
     <div class="item">
-      <a href="https://www.alibabacloud.com/blog/stop-feeding-your-model-every-tool-definition_603401">Alibaba Cloud Qoder Quest 1.0 Optimizes Context: Stop Feeding Every Tool</a>
-      <p>Qoder's autonomous coding agent now loads MCP tools and skills on demand, reducing context waste and improving efficiency by 93.5% in reported cases.</p>
-      <div class="source">Alibaba Cloud Community</div>
+      <a href="http://www.makeuseof.com/ways-to-use-ai-chatbot-beyond-search" target="_blank" rel="noopener noreferrer">AI Chatbots Do Way More Than Just Searching the Web</a>
+      <p>Practical ways to use AI chatbots as brainstorming buddies, research partners, and everyday problem-solvers with double-checking.</p>
+      <div class="source">MakeUseOf</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://cgnet.com/blog/ai-prompt-writing-tips-getting-the-most-out-of-a-chatbot" target="_blank" rel="noopener noreferrer">AI Prompt Writing Tips: Getting the Most Out of a Chatbot</a>
+      <p>Comprehensive guide on prompt writing, including specific phrasing, persona setting, and iterative refinement for better chatbot outputs.</p>
+      <div class="source">CGNET</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://askonoma.com/article/best-ai-chatbot" target="_blank" rel="noopener noreferrer">Best AI Chatbots in 2026: Top 7 Compared</a>
+      <p>Comparison of leading AI chatbots with tips on multi-model use, adaptive routing, and side-by-side comparison for coding, research, and creativity.</p>
+      <div class="source">Onoma</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.linkedin.com/posts/luislozanog_quick-tip-for-ai-use-chatbot-mode-for-activity-7391847852064423936-YWOJ" target="_blank" rel="noopener noreferrer">Quick tip for AI: Use chatbot mode for fast convos</a>
+      <p>Simple prompt setting to constrain responses to 7 lines max, reducing cognitive load and speeding up back-and-forth interactions.</p>
+      <div class="source">LinkedIn</div>
     </div>
     
   </div>
