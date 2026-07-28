@@ -6,7 +6,6 @@ from jinja2 import Environment, FileSystemLoader
 from prefect import task
 
 from daily_ai_digest.process import CATEGORY_LABELS
-from daily_ai_digest.search import fetch_lead_image
 
 _TEMPLATES_DIR = Path(__file__).parent / "templates"
 _env = Environment(loader=FileSystemLoader(_TEMPLATES_DIR))
@@ -70,8 +69,6 @@ def render_page(digest: dict, editions: list[dict]) -> tuple[str, dict]:
     now = datetime.now(ZoneInfo("Asia/Calcutta"))
     iso_date = now.date().isoformat()
     sections, lead = _build_sections_and_lead(digest)
-    if lead is not None:
-        lead["image"] = fetch_lead_image(lead["item"]["url"])
     date_display = now.strftime("%B %d, %Y").replace(" 0", " ")
     updated_at = now.strftime("%I:%M %p IST").lstrip("0")
     volume_num, issue = _volume_and_issue(editions, iso_date)

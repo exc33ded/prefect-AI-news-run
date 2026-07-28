@@ -118,13 +118,6 @@
     font-family: Arial, sans-serif;
     margin-bottom: 4px;
   }
-  .lead .lead-image {
-    width: 100%;
-    max-height: 220px;
-    object-fit: cover;
-    border: 1px solid var(--ink);
-    margin-bottom: 12px;
-  }
   .lead a.headline {
     display: block;
     font-size: 40px;
@@ -378,7 +371,6 @@
   <div class="frontpage">
     <div class="lead">
       <div class="kicker">Top Story &mdash; {{ lead.label }}</div>
-      {% if lead.image %}<img class="lead-image" src="{{ lead.image }}" alt="">{% endif %}
       <a class="headline" href="{{ lead.item.url }}">{{ lead.item.title }}</a>
       <div class="dek">{{ lead.item.summary }}</div>
       <div class="source">{{ lead.item.source_name }}{% if lead.item.published_date %} &nbsp;&bull;&nbsp; {{ lead.item.published_date }}{% endif %}</div>
@@ -396,7 +388,7 @@
   {% if s.category == 'papers' %}
   <div class="side-box" id="{{ s.category }}">
     <h3>{{ s.label }} <span class="count">{{ s.count }} stories</span></h3>
-    <div class="{{ 'columns-3' if s.count >= 3 else '' }}">
+    <div class="columns-3">
       {% for item in s.entries %}
       <div class="side-item">
         <a href="{{ item.url }}">{{ item.title }}</a>
@@ -408,7 +400,7 @@
   </div>
   {% else %}
   <div class="section-title" id="{{ s.category }}">{{ s.label }} <span class="count">{{ s.count }} stories</span></div>
-  <div class="{{ 'columns-3' if s.count >= 3 else '' }}">
+  <div class="columns-3">
     {% for item in s.entries %}
     <div class="item">
       <a href="{{ item.url }}">{{ item.title }}</a>
@@ -423,6 +415,7 @@
   <div class="seal"></div>
   <div class="masthead-footer">Delivered by owl post, automated daily &mdash; every headline links to its original source</div>
   <div class="masthead-footer" style="margin-top: 6px;"><a href="archive.html" style="color: inherit;">Browse past editions &rarr;</a></div>
+  <div class="masthead-footer" style="margin-top: 6px;">The AI Herald by <a href="https://github.com/exc33ded" style="color: inherit;">Sarim</a></div>
 
 </body>
 </html>
