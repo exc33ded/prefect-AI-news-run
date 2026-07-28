@@ -1,5 +1,6 @@
-from datetime import date
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from jinja2 import Environment, FileSystemLoader
 from prefect import task
@@ -32,11 +33,12 @@ def _build_sections_and_lead(digest: dict) -> tuple[list[dict], dict | None]:
 def render_page(digest: dict) -> tuple[str, str]:
     """Returns (html, today's ISO date string)."""
     template = _env.get_template("edition.html")
-    today = date.today()
+    now = datetime.now(ZoneInfo("Asia/Calcutta"))
     sections, lead = _build_sections_and_lead(digest)
     html = template.render(
         sections=sections,
         lead=lead,
-        date=today.strftime("%B %d, %Y").replace(" 0", " "),
+        date=now.strftime("%B %d, %Y").replace(" 0", " "),
+        updated_at=now.strftime("%I:%M %p IST").lstrip("0"),
     )
-    return html, today.isoformat()
+    return html, now.date().isoformat()

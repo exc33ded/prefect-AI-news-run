@@ -2,6 +2,8 @@
 
 A fully serverless Prefect flow: every day it searches for fresh AI content (Tavily), summarizes it with DeepSeek, emails a newspaper-styled digest (Resend), and publishes a "magical newspaper" web page to GitHub Pages. Runs on Prefect Cloud's Managed work pool — no self-hosted worker, no server to maintain.
 
+> For the complete copy-paste CLI walkthrough (login → work pool → secrets → deploy → verify), see [`PREFECT_SETUP.md`](PREFECT_SETUP.md).
+
 ## Project layout
 
 ```
