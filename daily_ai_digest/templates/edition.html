@@ -158,13 +158,15 @@
   .index-rail a {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
     color: var(--ink);
     text-decoration: none;
     font-size: 13px;
     padding: 5px 0;
     border-bottom: 1px dotted #bbb;
   }
-  .index-rail a span.n { color: var(--gray); font-size: 11px; }
+  .index-rail a span:first-child { min-width: 0; flex: 1 1 auto; overflow-wrap: break-word; }
+  .index-rail a span.n { flex: 0 0 auto; color: var(--gray); font-size: 11px; }
   .index-rail a:hover { color: var(--red); }
 
   .section-title {
@@ -371,7 +373,7 @@
   <div class="frontpage">
     <div class="lead">
       <div class="kicker">Top Story &mdash; {{ lead.label }}</div>
-      <a class="headline" href="{{ lead.item.url }}">{{ lead.item.title }}</a>
+      <a class="headline" href="{{ lead.item.url }}" target="_blank" rel="noopener noreferrer">{{ lead.item.title }}</a>
       <div class="dek">{{ lead.item.summary }}</div>
       <div class="source">{{ lead.item.source_name }}{% if lead.item.published_date %} &nbsp;&bull;&nbsp; {{ lead.item.published_date }}{% endif %}</div>
     </div>
@@ -391,7 +393,7 @@
     <div class="columns-3">
       {% for item in s.entries %}
       <div class="side-item">
-        <a href="{{ item.url }}">{{ item.title }}</a>
+        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
         <p>{{ item.summary }}</p>
         <div class="source">{{ item.source_name }}{% if item.published_date %} &nbsp;&bull;&nbsp; {{ item.published_date }}{% endif %}</div>
       </div>
@@ -403,7 +405,7 @@
   <div class="columns-3">
     {% for item in s.entries %}
     <div class="item">
-      <a href="{{ item.url }}">{{ item.title }}</a>
+      <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
       <p>{{ item.summary }}</p>
       <div class="source">{{ item.source_name }}{% if item.published_date %} &nbsp;&bull;&nbsp; {{ item.published_date }}{% endif %}</div>
     </div>
