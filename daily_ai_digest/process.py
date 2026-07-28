@@ -78,6 +78,17 @@ def _attach_published_dates(digest: dict, raw_by_category: dict[str, list[dict]]
     return digest
 
 
+def _drop_hallucinated_urls(digest: dict, raw_by_category: dict[str, list[dict]]) -> dict:
+    """The LLM can mismatch or invent a url that was never in the raw search
+    results (e.g. attaching an unrelated article's link to a different
+    headline). A wrong link is worse than a missing item, so drop anything
+    whose url doesn't match one actually returned by the search stage."""
+    for category, items in digest.items():
+        valid_urls = {r["url"] for r in raw_by_category.get(category, [])}
+        digest[category] = [item for item in items if item.get("url") in valid_urls]
+    return digest
+
+
 @task(retries=2, retry_delay_seconds=[5, 15])
 def process_results(raw_by_category: dict[str, list[dict]]) -> dict:
     user_prompt = _build_user_prompt(raw_by_category)
@@ -92,4 +103,5 @@ def process_results(raw_by_category: dict[str, list[dict]]) -> dict:
         except Exception:
             digest = _empty_digest()
 
+    digest = _drop_hallucinated_urls(digest, raw_by_category)
     return _attach_published_dates(digest, raw_by_category)

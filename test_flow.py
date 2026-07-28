@@ -7,6 +7,7 @@ from daily_ai_digest.categories import CATEGORIES
 from daily_ai_digest.process import (
     CATEGORY_LABELS,
     _attach_published_dates,
+    _drop_hallucinated_urls,
     _empty_digest,
     _parse_digest,
     process_results,
@@ -57,7 +58,7 @@ def test_process_results_falls_back_to_groq_when_deepseek_errors():
     with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
          patch("daily_ai_digest.process.OpenAI") as MockOpenAI:
         MockOpenAI.return_value.chat.completions.create.side_effect = [Exception("deepseek down"), good]
-        digest = process_results.fn({"repos": []})
+        digest = process_results.fn({"repos": [{"url": "u", "title": "t", "snippet": "", "published_date": None}]})
         assert len(digest["repos"]) == 1
         assert digest["repos"][0]["title"] == "t"
 
@@ -87,6 +88,37 @@ def test_attach_published_dates_joins_by_url():
     result = _attach_published_dates(digest, raw)
     assert result["repos"][0]["published_date"] == "2026-07-28"
     assert result["repos"][1]["published_date"] is None
+
+
+def test_drop_hallucinated_urls_removes_unmatched_items():
+    digest = {
+        "repos": [
+            {"title": "real story", "url": "https://real.example/a", "summary": "s"},
+            {"title": "mismatched headline", "url": "https://unrelated.example/other-article", "summary": "s2"},
+        ]
+    }
+    raw = {"repos": [{"url": "https://real.example/a", "published_date": None}]}
+    result = _drop_hallucinated_urls(digest, raw)
+    assert len(result["repos"]) == 1
+    assert result["repos"][0]["title"] == "real story"
+
+
+def test_process_results_drops_item_with_url_not_in_raw_results():
+    good = MagicMock()
+    good.choices = [MagicMock(message=MagicMock(content=(
+        '{"repos": ['
+        '{"title": "matches raw", "summary": "s", "url": "https://real.example/a", "source_name": "n"},'
+        '{"title": "hallucinated link", "summary": "s2", "url": "https://made-up.example/x", "source_name": "n2"}'
+        ']}'
+    )))]
+
+    with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
+         patch("daily_ai_digest.process.OpenAI") as MockOpenAI:
+        MockOpenAI.return_value.chat.completions.create.side_effect = [good]
+        raw_by_category = {"repos": [{"url": "https://real.example/a", "title": "raw title", "snippet": "", "published_date": None}]}
+        digest = process_results.fn(raw_by_category)
+        assert len(digest["repos"]) == 1
+        assert digest["repos"][0]["title"] == "matches raw"
 
 
 def test_category_labels_derived_from_categories_config():
