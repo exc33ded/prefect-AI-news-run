@@ -2,8 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>The AI Prophet — {{ date }}</title>
+<title>The AI Herald — {{ date }}</title>
 <style>
+  :root {
+    --ink: #2b1d0e;
+    --rule: #2b1d0e;
+    --paper: #ecdfc0;
+    --gray: #6b5636;
+    --red: #8a2727;
+  }
+  * { box-sizing: border-box; }
   @keyframes shimmer {
     0%   { background-position: -200% 0; }
     100% { background-position: 200% 0; }
@@ -14,39 +22,49 @@
     50% { opacity: 1; }
     55% { opacity: 0.9; }
   }
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-4px) rotate(2deg); }
+  body, .item a, .side-item a, .index-rail a, .theme-toggle, .seal, .item p, .side-item p {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
   }
-
-  * { box-sizing: border-box; }
   body {
-    background-color: #ecdfc0;
+    background-color: var(--paper);
     background-image:
       radial-gradient(circle at 20% 30%, rgba(120,90,40,0.10), transparent 60%),
       radial-gradient(circle at 80% 70%, rgba(120,90,40,0.10), transparent 60%),
       repeating-linear-gradient(0deg, rgba(120,90,40,0.02) 0px, transparent 2px, transparent 4px);
     font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-    font-size: 18px;
-    color: #2b1d0e;
-    max-width: 900px;
+    color: var(--ink);
+    max-width: 1080px;
     margin: 0 auto;
-    padding: 20px 30px 60px;
+    padding: 24px 28px 70px;
   }
 
-  .masthead { text-align: center; border-bottom: 6px double #2b1d0e; padding-bottom: 12px; margin-bottom: 8px; }
-  .masthead .eyebrow { font-size: 13px; letter-spacing: 4px; animation: flicker 4s ease-in-out infinite; }
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    padding-bottom: 6px;
+  }
+
+  .masthead {
+    text-align: center;
+    border-top: 4px double var(--ink);
+    border-bottom: 4px double var(--ink);
+    padding: 10px 0 8px;
+  }
   .masthead h1 {
-    font-family: 'Old English Text MT', 'Times New Roman', Georgia, serif;
-    font-size: 64px;
-    letter-spacing: 2px;
-    margin: 10px 0;
-    color: #2b1d0e;
+    font-family: 'Old English Text MT', 'UnifrakturMaguntia', Georgia, serif;
+    font-size: 72px;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: normal;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
   }
   @supports ((-webkit-background-clip: text) or (background-clip: text)) {
     .masthead h1 {
-      background: linear-gradient(100deg, #2b1d0e 40%, #8a6a2f 50%, #2b1d0e 60%);
+      background: linear-gradient(100deg, var(--ink) 40%, #8a6a2f 50%, var(--ink) 60%);
       background-size: 250% 100%;
       -webkit-background-clip: text;
       background-clip: text;
@@ -54,149 +72,174 @@
       animation: shimmer 6s linear infinite;
     }
   }
-  .masthead .byline {
-    display: flex;
-    justify-content: space-between;
+  .masthead .tagline {
     font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #6b5636;
-    border-top: 1px solid #2b1d0e;
-    padding-top: 6px;
-    margin-top: 8px;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: var(--gray);
+    margin-top: 2px;
+    animation: flicker 4s ease-in-out infinite;
   }
 
   .dateline {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 4px 12px;
-    font-size: 13px;
-    letter-spacing: 1px;
+    font-size: 11px;
     text-transform: uppercase;
-    border-bottom: 2px solid #2b1d0e;
-    padding: 6px 0 10px;
-    margin-bottom: 14px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--ink);
+    padding: 6px 0;
+    margin-bottom: 4px;
   }
 
   .disclaimer {
-    font-size: 14px;
-    font-style: italic;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #4a3620;
-  }
-
-  .index {
     text-align: center;
     font-size: 12px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 8px 0;
-    margin-bottom: 24px;
-    border-top: 1px solid rgba(43,29,14,0.4);
-    border-bottom: 1px solid rgba(43,29,14,0.4);
+    font-style: italic;
+    color: var(--gray);
+    padding: 6px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 18px;
   }
-  .index a { color: #2b1d0e; text-decoration: none; }
-  .index a:hover { text-decoration: underline; }
-  .index .sep { color: #8a6a2f; margin: 0 6px; }
 
-  .lead { margin-bottom: 36px; }
-  .lead .thumb {
-    display: block;
-    width: 100%;
-    max-height: 320px;
-    object-fit: cover;
-    margin-bottom: 14px;
-    border: 1px solid #2b1d0e;
-    filter: sepia(20%);
+  .frontpage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 22px;
+    margin-bottom: 22px;
   }
   .lead .kicker {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #8a2727;
-    margin-bottom: 6px;
+    color: var(--red);
+    font-family: Arial, sans-serif;
+    margin-bottom: 4px;
   }
-  .lead a {
+  .lead .lead-image {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border: 1px solid var(--ink);
+    margin-bottom: 12px;
+  }
+  .lead a.headline {
     display: block;
-    font-size: 38px;
-    line-height: 1.15;
+    font-size: 40px;
+    line-height: 1.08;
     font-weight: bold;
-    color: #2b1d0e;
+    color: var(--ink);
     text-decoration: none;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
-  .lead a:hover { text-decoration: underline; }
-  .lead p {
-    font-size: 18px;
-    line-height: 1.6;
+  .lead a.headline:hover { text-decoration: underline; }
+  .lead .dek {
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 62ch;
   }
-  .lead p::first-letter {
+  .lead .dek::first-letter {
     float: left;
-    font-family: 'Old English Text MT', 'Times New Roman', serif;
-    font-size: 56px;
-    line-height: 40px;
-    padding: 4px 8px 0 0;
+    font-size: 54px;
+    line-height: 42px;
+    padding: 4px 6px 0 0;
+    font-weight: bold;
   }
-  .lead .source { font-size: 13px; color: #6b5636; margin-top: 4px; }
+  .lead .source { font-size: 11px; color: var(--gray); margin-top: 8px; }
 
-  .divider {
-    text-align: center;
-    margin: 34px 0 16px;
-    position: relative;
-    height: 26px;
+  .index-rail {
+    border-left: 1px solid var(--ink);
+    padding-left: 20px;
   }
-  .divider::before, .divider::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 38%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #2b1d0e);
+  .index-rail h3 {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 0 0 10px;
   }
-  .divider::before { left: 0; }
-  .divider::after { right: 0; background: linear-gradient(90deg, #2b1d0e, transparent); }
-  .divider span { display: inline-block; font-size: 20px; animation: float 3s ease-in-out infinite; }
+  .index-rail a {
+    display: flex;
+    justify-content: space-between;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 0;
+    border-bottom: 1px dotted #bbb;
+  }
+  .index-rail a span.n { color: var(--gray); font-size: 11px; }
+  .index-rail a:hover { color: var(--red); }
 
   .section-title {
     font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 3px solid #2b1d0e;
-    padding-bottom: 6px;
-    margin-bottom: 14px;
-    scroll-margin-top: 16px;
-  }
-  .count { font-size: 13px; text-transform: none; letter-spacing: 0; color: #6b5636; }
-
-  .columns { columns: 2; column-gap: 32px; column-rule: 1px solid rgba(43,29,14,0.35); }
-  .list { columns: 1; }
-  .item { break-inside: avoid; margin-bottom: 18px; }
-  .item a {
-    color: #2b1d0e;
     font-weight: bold;
-    font-size: 18px;
-    text-decoration: none;
-    background-image: linear-gradient(#2b1d0e, #2b1d0e);
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 1px;
-    transition: background-size 0.25s ease;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 34px 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
-  .item a:hover { background-size: 100% 1px; }
-  .item p { font-size: 15px; line-height: 1.5; margin: 6px 0 2px; }
-  .source { font-size: 12px; color: #6b5636; }
+  .section-title .count {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-  .archive-link { text-align: center; font-size: 13px; margin-top: 14px; }
-  .archive-link a { color: #6b5636; }
+  .columns-3 { columns: 3; column-gap: 26px; column-rule: 1px solid #ccc; }
+  .item { break-inside: avoid; margin-bottom: 20px; }
+  .item a {
+    font-weight: bold;
+    font-size: 15.5px;
+    line-height: 1.3;
+    color: var(--ink);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .item a:hover { color: var(--red); }
+  .item p { font-size: 13px; line-height: 1.5; margin: 0 0 4px; color: #333; }
+  .item .source { font-size: 10.5px; color: var(--gray); font-family: Arial, sans-serif; letter-spacing: 0.3px; }
+
+  .side-box {
+    margin: 34px 0;
+    background: rgba(166, 25, 46, 0.04);
+    border: 1px solid var(--ink);
+    border-top: 4px solid var(--red);
+    padding: 18px 22px;
+  }
+  .side-box h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .side-box h3 .count { font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; color: var(--gray); text-transform: none; }
+  .side-box .columns-3 { column-rule-color: #c9a9a9; }
+  .side-item { break-inside: avoid; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px dotted #bbb; }
+  .side-item:last-child { border-bottom: none; }
+  .side-item a { display: block; font-weight: bold; font-size: 14px; line-height: 1.3; color: var(--ink); text-decoration: none; margin-bottom: 4px; }
+  .side-item a:hover { color: var(--red); }
+  .side-item p { font-size: 12px; line-height: 1.45; color: #3a3a3a; margin: 0 0 3px; }
+  .side-item .source { font-size: 10px; color: var(--gray); font-family: Arial, sans-serif; letter-spacing: 0.3px; }
 
   .seal {
     display: block;
-    width: 44px;
-    height: 44px;
-    margin: 36px auto 0;
+    width: 46px;
+    height: 46px;
+    margin: 40px auto 0;
     border-radius: 50%;
     background: radial-gradient(circle at 35% 30%, #7a2727, #4a1414 70%);
     box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 0 6px rgba(255,255,255,0.15);
@@ -213,76 +256,159 @@
     font-size: 16px;
     color: #e8c98a;
   }
-  .footer-note { text-align: center; font-size: 11px; letter-spacing: 1px; color: #6b5636; margin-top: 8px; }
+
+  .masthead-footer {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
 
   @media (prefers-color-scheme: dark) {
-    body { background-color: #1c1509; color: #e8dcc0; }
-    .masthead, .dateline, .section-title, .masthead .byline { border-color: #e8dcc0; }
-    .masthead h1 { color: #f0e6d0; }
-    .lead a, .lead p::first-letter { color: #f0e6d0; }
-    .index, .index a { color: #e8dcc0; }
-    .index { border-color: rgba(232,220,192,0.4); }
-    .columns { column-rule-color: rgba(232,220,192,0.35); }
-    .item a, .item a:hover { background-image: linear-gradient(#f0e6d0, #f0e6d0); }
-    .item a { color: #f0e6d0; }
+    :root { --ink: #e8dcc0; --paper: #1c1509; --gray: #b0a37e; --red: #e0a3a3; }
+    .item p { color: #cfc9ba; }
+    .columns-3 { column-rule-color: #3a352a; }
+    .index-rail a { border-bottom-color: #3a352a; }
+    .disclaimer { border-bottom-color: #3a352a; }
+    .side-box { background: rgba(224, 163, 163, 0.06); }
+    .side-item { border-bottom-color: #3a352a; }
+    .side-item p { color: #cfc9ba; }
   }
   @media (prefers-color-scheme: dark) and ((-webkit-background-clip: text) or (background-clip: text)) {
     .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
   }
 
-  @media (max-width: 640px) {
-    body { font-size: 17px; padding: 14px 16px 40px; }
-    .masthead h1 { font-size: 40px; letter-spacing: 1px; }
-    .masthead .eyebrow { font-size: 11px; letter-spacing: 2px; }
-    .dateline { font-size: 11px; }
-    .lead a { font-size: 26px; }
-    .lead p { font-size: 17px; }
-    .lead .thumb { max-height: 200px; }
-    .section-title { font-size: 20px; }
-    .columns { columns: 1; }
-    .item a { font-size: 17px; }
+  :root[data-theme="dark"] { --ink: #e8dcc0; --paper: #1c1509; --gray: #b0a37e; --red: #e0a3a3; }
+  :root[data-theme="dark"] .item p { color: #cfc9ba; }
+  :root[data-theme="dark"] .columns-3 { column-rule-color: #3a352a; }
+  :root[data-theme="dark"] .index-rail a { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .disclaimer { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .side-box { background: rgba(224, 163, 163, 0.06); }
+  :root[data-theme="dark"] .side-item { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .side-item p { color: #cfc9ba; }
+  :root[data-theme="dark"] .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+  :root[data-theme="light"] { --ink: #2b1d0e; --paper: #ecdfc0; --gray: #6b5636; --red: #8a2727; }
+  :root[data-theme="light"] .item p { color: #333; }
+  :root[data-theme="light"] .side-item p { color: #3a3a3a; }
+  :root[data-theme="light"] .side-box { background: rgba(166, 25, 46, 0.04); }
+  :root[data-theme="light"] .side-item { border-bottom-color: #bbb; }
+  :root[data-theme="light"] .masthead h1 { background: linear-gradient(100deg, var(--ink) 40%, #8a6a2f 50%, var(--ink) 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .theme-toggle:hover { transform: rotate(20deg) scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .theme-toggle svg { width: 20px; height: 20px; stroke: var(--ink); fill: none; stroke-width: 1.8; }
+
+  @media (max-width: 720px) {
+    .frontpage { grid-template-columns: 1fr; }
+    .index-rail { border-left: none; padding-left: 0; border-top: 1px solid var(--ink); padding-top: 16px; }
+    .lead a.headline { font-size: 30px; }
+    .columns-3 { columns: 1; }
+    .side-box .columns-3 { columns: 1; }
   }
 </style>
 </head>
 <body>
 
-  <div class="masthead">
-    <div class="eyebrow">THE MAGICAL PRESS OF ARTIFICIAL MINDS</div>
-    <h1>THE AI PROPHET</h1>
-    <div class="byline">
-      <span>Vol. {{ volume }} &mdash; No. {{ issue }}</span>
-      <span>Price: One Sickle</span>
-    </div>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+    <svg id="themeIcon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"></svg>
+  </button>
+  <script>
+    (function () {
+      var MOON = '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>';
+      var SUN = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>';
+
+      var root = document.documentElement;
+      var icon = document.getElementById('themeIcon');
+
+      function currentTheme() {
+        return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      }
+      function paintIcon(theme) {
+        icon.innerHTML = theme === 'dark' ? SUN : MOON;
+      }
+
+      paintIcon(currentTheme());
+
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        paintIcon(next);
+      });
+    })();
+  </script>
+
+  <div class="topline">
+    <span>Vol. {{ volume }} &mdash; No. {{ issue }}</span>
+    <span>An Automated Daily Digest of Artificial Intelligence</span>
   </div>
+
+  <div class="masthead">
+    <h1>The AI Herald</h1>
+    <div class="tagline">&ldquo;All the Weights That's Fit to Print&rdquo;</div>
+  </div>
+
   <div class="dateline">
     <span>{{ date }}</span>
     <span>Last Updated: {{ updated_at }}</span>
   </div>
 
-  <div class="disclaimer">
-    The text below is an AI-generated summary. Click any headline to read the full original piece.
-  </div>
-
-  {% if sections %}
-  <div class="index">
-    {% for s in sections %}<a href="#{{ s.category }}">{{ s.label }} ({{ s.count }})</a>{% if not loop.last %}<span class="sep">&bull;</span>{% endif %}{% endfor %}
-  </div>
-  {% endif %}
+  <div class="disclaimer">The text below is an AI-generated summary. Click any headline to read the full original piece.</div>
 
   {% if lead %}
-  <div class="lead">
-    <div class="kicker">Top Story &mdash; {{ lead.label }}</div>
-    {% if lead.image %}<img class="thumb" src="{{ lead.image }}" alt="">{% endif %}
-    <a href="{{ lead.item.url }}">{{ lead.item.title }}</a>
-    <p>{{ lead.item.summary }}</p>
-    <div class="source">{{ lead.item.source_name }}{% if lead.item.published_date %} &nbsp;&bull;&nbsp; {{ lead.item.published_date }}{% endif %}</div>
+  <div class="frontpage">
+    <div class="lead">
+      <div class="kicker">Top Story &mdash; {{ lead.label }}</div>
+      {% if lead.image %}<img class="lead-image" src="{{ lead.image }}" alt="">{% endif %}
+      <a class="headline" href="{{ lead.item.url }}">{{ lead.item.title }}</a>
+      <div class="dek">{{ lead.item.summary }}</div>
+      <div class="source">{{ lead.item.source_name }}{% if lead.item.published_date %} &nbsp;&bull;&nbsp; {{ lead.item.published_date }}{% endif %}</div>
+    </div>
+    {% if sections %}
+    <div class="index-rail">
+      <h3>Inside Today</h3>
+      {% for s in sections %}<a href="#{{ s.category }}"><span>{{ s.label }}</span><span class="n">{{ s.count }}</span></a>{% endfor %}
+    </div>
+    {% endif %}
   </div>
   {% endif %}
 
   {% for s in sections %}
-  <div class="divider"><span>&#10024;</span></div>
-  <div class="section-title" id="{{ s.category }}">{{ s.label }} <span class="count">({{ s.count }})</span></div>
-  <div class="{{ 'columns' if s.count >= 3 else 'list' }}">
+  {% if s.category == 'papers' %}
+  <div class="side-box" id="{{ s.category }}">
+    <h3>{{ s.label }} <span class="count">{{ s.count }} stories</span></h3>
+    <div class="{{ 'columns-3' if s.count >= 3 else '' }}">
+      {% for item in s.entries %}
+      <div class="side-item">
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        <p>{{ item.summary }}</p>
+        <div class="source">{{ item.source_name }}{% if item.published_date %} &nbsp;&bull;&nbsp; {{ item.published_date }}{% endif %}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+  <div class="section-title" id="{{ s.category }}">{{ s.label }} <span class="count">{{ s.count }} stories</span></div>
+  <div class="{{ 'columns-3' if s.count >= 3 else '' }}">
     {% for item in s.entries %}
     <div class="item">
       <a href="{{ item.url }}">{{ item.title }}</a>
@@ -291,11 +417,12 @@
     </div>
     {% endfor %}
   </div>
+  {% endif %}
   {% endfor %}
 
   <div class="seal"></div>
-  <div class="footer-note">Delivered by owl post, automated daily</div>
-  <div class="archive-link"><a href="archive.html">Browse past editions &rarr;</a></div>
+  <div class="masthead-footer">Delivered by owl post, automated daily &mdash; every headline links to its original source</div>
+  <div class="masthead-footer" style="margin-top: 6px;"><a href="archive.html" style="color: inherit;">Browse past editions &rarr;</a></div>
 
 </body>
 </html>
