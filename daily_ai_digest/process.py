@@ -14,7 +14,9 @@ JSON list of raw search results, each with an "id" field. For each category, ded
 near-identical items, rank by relevance and novelty, and select the top 4-6 items \
 by "id". Return ONLY valid JSON matching this exact schema, no prose, no markdown \
 fences, and do NOT invent or rewrite any id, title, or url — only choose from the \
-given ids and write a 1-2 sentence summary for each:
+given ids and write a 3-5 sentence summary for each: explain what happened, why it \
+matters, and include at least one concrete detail or number from the source \
+(e.g. a benchmark score, funding amount, version number, or specific claim):
 
 {{"repos": [{{"id": 0, "summary": "1-2 sentence summary"}}], ...}}
 

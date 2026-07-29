@@ -1,5 +1,5 @@
 from prefect import task
-from tavily import InvalidAPIKeyError, TavilyClient, UsageLimitExceededError
+from tavily import TavilyClient
 
 from daily_ai_digest.categories import CATEGORIES
 from daily_ai_digest.config import get_secret
@@ -27,7 +27,7 @@ def _search_with_fallback(query: str, **kwargs) -> dict:
         try:
             client = TavilyClient(api_key=key)
             return client.search(query, **kwargs)
-        except (UsageLimitExceededError, InvalidAPIKeyError) as e:
+        except Exception as e:
             last_error = e
             continue
     raise last_error
