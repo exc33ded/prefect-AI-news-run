@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The AI Herald — August 8, 2026</title>
+<style>
+  :root {
+    --ink: #2b1d0e;
+    --rule: #2b1d0e;
+    --paper: #ecdfc0;
+    --gray: #6b5636;
+    --red: #8a2727;
+  }
+  * { box-sizing: border-box; }
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    45% { opacity: 0.85; }
+    50% { opacity: 1; }
+    55% { opacity: 0.9; }
+  }
+  body, .item a, .side-item a, .index-rail a, .theme-toggle, .seal, .item p, .side-item p {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+  body {
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(120,90,40,0.10), transparent 60%),
+      radial-gradient(circle at 80% 70%, rgba(120,90,40,0.10), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(120,90,40,0.02) 0px, transparent 2px, transparent 4px);
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    color: var(--ink);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 28px 70px;
+  }
+
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    padding-bottom: 6px;
+  }
+
+  .masthead {
+    text-align: center;
+    border-top: 4px double var(--ink);
+    border-bottom: 4px double var(--ink);
+    padding: 10px 0 8px;
+  }
+  .masthead h1 {
+    font-family: 'Old English Text MT', 'UnifrakturMaguntia', Georgia, serif;
+    font-size: 72px;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: normal;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+  }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .masthead h1 {
+      background: linear-gradient(100deg, var(--ink) 40%, #8a6a2f 50%, var(--ink) 60%);
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 6s linear infinite;
+    }
+  }
+  .masthead .tagline {
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: var(--gray);
+    margin-top: 2px;
+    animation: flicker 4s ease-in-out infinite;
+  }
+
+  .dateline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--ink);
+    padding: 6px 0;
+    margin-bottom: 4px;
+  }
+
+  .disclaimer {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--gray);
+    padding: 6px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 18px;
+  }
+
+  .frontpage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+  }
+  .lead .kicker {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: Arial, sans-serif;
+    margin-bottom: 4px;
+  }
+  .lead a.headline {
+    display: block;
+    font-size: 40px;
+    line-height: 1.08;
+    font-weight: bold;
+    color: var(--ink);
+    text-decoration: none;
+    margin-bottom: 12px;
+  }
+  .lead a.headline:hover { text-decoration: underline; }
+  .lead .dek {
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 62ch;
+    text-align: justify;
+  }
+  .lead .dek::first-letter {
+    float: left;
+    font-size: 54px;
+    line-height: 42px;
+    padding: 4px 6px 0 0;
+    font-weight: bold;
+  }
+  .lead .source { font-size: 11px; color: var(--gray); margin-top: 8px; }
+
+  .index-rail {
+    border-left: 1px solid var(--ink);
+    padding-left: 20px;
+  }
+  .index-rail h3 {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 0 0 10px;
+  }
+  .index-rail a {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 0;
+    border-bottom: 1px dotted #bbb;
+  }
+  .index-rail a span:first-child { min-width: 0; flex: 1 1 auto; overflow-wrap: break-word; }
+  .index-rail a span.n { flex: 0 0 auto; color: var(--gray); font-size: 11px; }
+  .index-rail a:hover { color: var(--red); }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 34px 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .section-title .count {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .columns-3 { columns: 3; column-gap: 26px; column-rule: 1px solid #ccc; }
+  .item { break-inside: avoid; margin-bottom: 20px; }
+  .item a {
+    font-weight: bold;
+    font-size: 15.5px;
+    line-height: 1.3;
+    color: var(--ink);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .item a:hover { color: var(--red); }
+  .item p { font-size: 13px; line-height: 1.5; margin: 0 0 4px; color: #333; text-align: justify; }
+  .item .source { font-size: 10.5px; color: var(--gray); font-family: Arial, sans-serif; letter-spacing: 0.3px; }
+
+  .side-box {
+    margin: 34px 0;
+    background: rgba(166, 25, 46, 0.04);
+    border: 1px solid var(--ink);
+    border-top: 4px solid var(--red);
+    padding: 18px 22px;
+  }
+  .side-box h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .side-box h3 .count { font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; color: var(--gray); text-transform: none; }
+  .side-box .columns-3 { column-rule-color: #c9a9a9; }
+  .side-item { break-inside: avoid; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px dotted #bbb; }
+  .side-item:last-child { border-bottom: none; }
+  .side-item a { display: block; font-weight: bold; font-size: 14px; line-height: 1.3; color: var(--ink); text-decoration: none; margin-bottom: 4px; }
+  .side-item a:hover { color: var(--red); }
+  .side-item p { font-size: 12px; line-height: 1.45; color: #3a3a3a; margin: 0 0 3px; text-align: justify; }
+  .side-item .source { font-size: 10px; color: var(--gray); font-family: Arial, sans-serif; letter-spacing: 0.3px; }
+
+  .seal {
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 40px auto 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #7a2727, #4a1414 70%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 0 6px rgba(255,255,255,0.15);
+    position: relative;
+  }
+  .seal::after {
+    content: "AI";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Old English Text MT', serif;
+    font-size: 16px;
+    color: #e8c98a;
+  }
+
+  .masthead-footer {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #e8dcc0; --paper: #1c1509; --gray: #b0a37e; --red: #e0a3a3; }
+    .item p { color: #cfc9ba; }
+    .columns-3 { column-rule-color: #3a352a; }
+    .index-rail a { border-bottom-color: #3a352a; }
+    .disclaimer { border-bottom-color: #3a352a; }
+    .side-box { background: rgba(224, 163, 163, 0.06); }
+    .side-item { border-bottom-color: #3a352a; }
+    .side-item p { color: #cfc9ba; }
+  }
+  @media (prefers-color-scheme: dark) and ((-webkit-background-clip: text) or (background-clip: text)) {
+    .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+  }
+
+  :root[data-theme="dark"] { --ink: #e8dcc0; --paper: #1c1509; --gray: #b0a37e; --red: #e0a3a3; }
+  :root[data-theme="dark"] .item p { color: #cfc9ba; }
+  :root[data-theme="dark"] .columns-3 { column-rule-color: #3a352a; }
+  :root[data-theme="dark"] .index-rail a { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .disclaimer { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .side-box { background: rgba(224, 163, 163, 0.06); }
+  :root[data-theme="dark"] .side-item { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .side-item p { color: #cfc9ba; }
+  :root[data-theme="dark"] .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+  :root[data-theme="light"] { --ink: #2b1d0e; --paper: #ecdfc0; --gray: #6b5636; --red: #8a2727; }
+  :root[data-theme="light"] .item p { color: #333; }
+  :root[data-theme="light"] .side-item p { color: #3a3a3a; }
+  :root[data-theme="light"] .side-box { background: rgba(166, 25, 46, 0.04); }
+  :root[data-theme="light"] .side-item { border-bottom-color: #bbb; }
+  :root[data-theme="light"] .masthead h1 { background: linear-gradient(100deg, var(--ink) 40%, #8a6a2f 50%, var(--ink) 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .theme-toggle:hover { transform: rotate(20deg) scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .theme-toggle svg { width: 20px; height: 20px; stroke: var(--ink); fill: none; stroke-width: 1.8; }
+
+  @media (max-width: 720px) {
+    .frontpage { grid-template-columns: 1fr; }
+    .index-rail { border-left: none; padding-left: 0; border-top: 1px solid var(--ink); padding-top: 16px; }
+    .lead a.headline { font-size: 30px; }
+    .columns-3 { columns: 1; }
+    .side-box .columns-3 { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+    <svg id="themeIcon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"></svg>
+  </button>
+  <script>
+    (function () {
+      var MOON = '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>';
+      var SUN = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>';
+
+      var root = document.documentElement;
+      var icon = document.getElementById('themeIcon');
+
+      function currentTheme() {
+        return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      }
+      function paintIcon(theme) {
+        icon.innerHTML = theme === 'dark' ? SUN : MOON;
+      }
+
+      paintIcon(currentTheme());
+
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        paintIcon(next);
+      });
+    })();
+  </script>
+
+  <div class="topline">
+    <span>Vol. II &mdash; No. 8</span>
+    <span>An Automated Daily Digest of Artificial Intelligence</span>
+  </div>
+
+  <div class="masthead">
+    <h1>The AI Herald</h1>
+    <div class="tagline">&ldquo;All the Weights That's Fit to Print&rdquo;</div>
+  </div>
+
+  <div class="dateline">
+    <span>August 8, 2026</span>
+    <span>Last Updated: 8:03 AM IST</span>
+  </div>
+
+  <div class="disclaimer">The text below is an AI-generated summary. Click any headline to read the full original piece.</div>
+
+  
+  <div class="frontpage">
+    <div class="lead">
+      <div class="kicker">Top Story &mdash; Trending AI GitHub Repos</div>
+      <a class="headline" href="https://libhunt.com/posts/1469537-show-hn-legit-open-source-git-based-version-control-for-ai-agents" target="_blank" rel="noopener noreferrer">Show HN: Legit, Open source Git-based Version control for AI agents | TypeScript LibHunt</a>
+      <div class="dek">Legit is an open-source, Git-based version control system for AI agents, designed to make them safe and reliable collaborators by tracking agent actions as versions. It addresses the growing need for reproducibility and rollback as agents act across environments. The project was showcased on Hacker News and is positioned alongside related tools like local-first SQLite memory stores and Claude Code chat history tools.</div>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+    <div class="index-rail">
+      <h3>Inside Today</h3>
+      <a href="#repos"><span>Trending AI GitHub Repos</span><span class="n">5</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#papers"><span>AI/ML Research Papers</span><span class="n">5</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">4</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">6</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">6</span></a><a href="#productivity"><span>AI Productivity Tips</span><span class="n">4</span></a>
+    </div>
+    
+  </div>
+  
+
+  
+  
+  <div class="section-title" id="repos">Trending AI GitHub Repos <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://libhunt.com/posts/1488963-show-hn-agentarmor-open-source-8-layer-security-framework-for-ai-agents" target="_blank" rel="noopener noreferrer">Show HN: AgentArmor – open-source 8-layer security framework for AI agents | Python LibHunt</a>
+      <p>AgentArmor is an open-source 8-layer defense-in-depth security framework for agentic AI, covering the OWASP ASI Top 10 across ingestion, storage, context, planning, execution, output, inter-agent, and identity layers. The maintainer enabled GitHub Discussions to track fixes and vulnerabilities as they land. It matters because agent security is a growing bottleneck as frameworks ship without built-in guardrails.</p>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://libhunt.com/posts/1452897-show-hn-open-source-gateway-to-stop-tool-abusing-prompt-injections" target="_blank" rel="noopener noreferrer">Show HN: Open-source gateway to stop tool-abusing prompt injections | TypeScript LibHunt</a>
+      <p>Archestra is an open-source, self-hostable gateway for Kubernetes that aims to stop tool-abusing prompt injections. It uses a dual-LLM sanitization approach where an isolated LLM strips malicious instructions from incoming data before they reach the primary agent. It is framework-agnostic, working with LangChain, N8N, and similar tools, with more security features planned.</p>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://libhunt.com/posts/1472326-show-hn-a-cli-tool-that-stores-claude-code-chats-in-your-git-repo" target="_blank" rel="noopener noreferrer">Show HN: A CLI tool that stores Claude Code chats in your Git repo | TypeScript LibHunt</a>
+      <p>A new CLI tool lets developers store Claude Code chats inside their Git repo, turning AI coding sessions into versioned, reviewable artifacts. The Hacker News Show HN post links it to a broader wave of Git-based control for AI agents, including Legit and local-first SQLite memory stores. This matters for auditability and rollback in agentic coding workflows.</p>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://libhunt.com/l/typescript/topic/ai-agents-framework" target="_blank" rel="noopener noreferrer">Top 11 TypeScript ai-agents-framework Projects | LibHunt</a>
+      <p>LibHunt's ranking of top TypeScript AI-agent frameworks shows an increasingly crowded ecosystem, from an AST-based CodeAct execution engine to AgentPayy's open-source payment framework for agents and OAHL's MCP layer for hardware control. The list includes projects like Superexpert.ai, a no-code multi-agent platform, and catalogs roughly 400 MCP servers for AI agents. It is a useful snapshot of where open-source agent infrastructure is consolidating.</p>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://libhunt.com/posts/1392192-ask-hn-ai-tool-for-getting-oneself-across-a-new-repo" target="_blank" rel="noopener noreferrer">Ask HN: AI tool for getting oneself across a new repo? | TypeScript LibHunt</a>
+      <p>This Hacker News thread asks which AI tools best help developers understand an unfamiliar repository. Community recommendations include the Continue IDE extension, which builds an embeddings index of files for codebase Q&A, and Repomix/Repopack, which packs an entire repository into a single AI-friendly file for LLMs. For onboarding and code review, these tools reduce the time needed to get an agent up to speed on a codebase.</p>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="prompting">Prompting & Agentic Workflow Techniques <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://medium.com/ai-software-engineer/graph-engineering-just-changed-how-ai-agents-work-goodbye-loops-80da5cc75301" target="_blank" rel="noopener noreferrer">Graph Engineering Just Changed How AI Agents Work (Goodbye Loops)</a>
+      <p>A Medium article argues graph engineering is replacing loop engineering for AI agents: while loop-based agents concentrate everything in a single context window and lose focus on complex, parallel tasks, graph-structured workflows separate planning, verification, and parallel operations. The author says the agentic coding space is buzzing about graph engineering even though most developers have yet to catch up. The shift matters because it addresses context-window limits that make simple loops fail at scale.</p>
+      <div class="source">MEDIUM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://machinelearningmastery.com/identifying-token-costs-hiding-in-your-agentic-loop" target="_blank" rel="noopener noreferrer">Identifying Token Costs Hiding in Your Agentic Loop - MachineLearningMastery.com</a>
+      <p>MachineLearningMastery identifies five failure modes that drive runaway token costs in agentic loops, including O(N²) context accumulation and static duplication of large system prompts such as a 5,000-token prompt defining 20 tools. It recommends dynamically injecting only needed tool definitions and applying context compaction, circuit breakers, payload filtering, and runtime prompt injection. This is important for production agents where multi-step workflows compound costs non-linearly.</p>
+      <div class="source">MACHINELEARNINGMASTERY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://dzone.com/articles/quarkus-agentic-workflows" target="_blank" rel="noopener noreferrer">Governed Agentic Workflows With Quarkus</a>
+      <p>DZone shows how to govern agentic workflows in Quarkus Flow by putting AGENTS.md in src/main/resources so system instructions can be audited and updated without recompiling, and by consuming tools via stateless MCP endpoints. @LoopAgent runs WriterAgent and CriticAgent up to 3 iterations and compiles to a CNCF Serverless Workflow, with human-in-the-loop pause states for approving sensitive actions. It demonstrates how governance can be built into agent orchestration rather than bolted on.</p>
+      <div class="source">DZONE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.prompt1001.com/2026/08/loop-engineering-coding-agents-guide.html" target="_blank" rel="noopener noreferrer">Loop Engineering for Coding Agents: A Complete Technical ...</a>
+      <p>A guide from Prompt1001 lays out core loop patterns for coding agents, including Reason-Act-Observe, Plan-Execute-Reflect, test-driven verification loops, and self-correction with retry logic. It positions loop design as the core engineering problem for coding agents, moving beyond single prompts. The taxonomy gives developers a shared vocabulary for building robust agent behavior.</p>
+      <div class="source">PROMPT1001</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://x.com/eng_khairallah1/status/2085746886128931279" target="_blank" rel="noopener noreferrer">the 14% you lose to CLAUDE.md before typing a word</a>
+      <p>An X post claims that 14% of an agent's work is lost to CLAUDE.md overhead before a single line of code is written, framing the loop as the atom of agentic work: act, observe, check, repeat. While the number is anecdotal, it points to a real cost of oversized instruction files in agent workflows. The post is part of a wider conversation about minimizing static context in favor of dynamic prompting.</p>
+      <div class="source">X</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="side-box" id="papers">
+    <h3>AI/ML Research Papers <span class="count">5 stories</span></h3>
+    <div class="columns-3">
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2608.06020v1" target="_blank" rel="noopener noreferrer">From Economic Agents to Agentic Economies: A Systems Blueprint for Economic World Models</a>
+        <p>A new arXiv blueprint proposes a systems architecture for agentic economies and economic world models, drawing on a pipeline that went from 7,836 candidate papers to 737 validated EWM papers. It notes frontier labs are institutionalizing economic expertise: OpenAI named its first Chief Economist in 2024 and launched the OpenAI Economic Research Exchange in 2026, while Anthropic created the Economic Index. The work matters as AI agents begin to act as economic participants rather than just tools.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2608.05695v1" target="_blank" rel="noopener noreferrer">Efficient Runtime Guardrail for LLM Agents via Risk-Aware ...</a>
+        <p>This paper introduces DreamGuard, an efficient runtime guardrail for LLM agents that makes step-level decisions about whether a proposed action is safe before execution. The guardrail operates on the trajectory prefix of observations, actions, and history, and is evaluated against trainable and prompt-based baselines using released checkpoints. It addresses the cost problem of running full LLM judges on every agent step.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/pdf/2608.04927" target="_blank" rel="noopener noreferrer">Optimal Training-Time Scaling in Gradual Adaptation</a>
+        <p>Optimal Training-Time Scaling in Gradual Adaptation models the amount of optimization given to intermediate tasks as a variable that changes with path resolution. Tasks are reweighted by calendar year using a Gaussian kernel with sigma equal to 4 years, and the paper proves first-order comparisons in the overtraining regime, such as s_N equal to Theta(N^-1) keeping progress constant. It offers a theoretical basis for deciding how much compute to spend on intermediate training steps.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2608.05103v2" target="_blank" rel="noopener noreferrer">Multimodal spatiotemporal atmospheric data assimilation with latent video flow-matching</a>
+        <p>A paper from Argonne and Penn State researchers applies latent video flow-matching to multimodal spatiotemporal atmospheric data assimilation, using TrigFlow denoiser Jacobians to condition generation on observations. The work ran on DOE leadership-class facilities including NERSC, highlighting the convergence of generative video models and scientific forecasting. It shows how AI4Science is moving beyond language and image tasks into physical simulation.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/pdf/2608.05358" target="_blank" rel="noopener noreferrer">DG-FedReuse: Proxy-Gradient-Gated Cached-Update ...</a>
+        <p>DG-FedReuse is a federated learning method that uses proxy-gradient gating to cache and reuse update data, cutting uplink communication costs. Across six image-classification datasets with 50 virtual clients and Dirichlet label heterogeneity, it achieves 83.36 to 85.42 percent modeled uplink savings at a 90-round budget versus 76.88 percent for Top-K FedAvg, with accuracy differences within -5.29 to -0.14 percentage points. The trade-off is attractive for privacy-preserving, bandwidth-limited federated systems.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  <div class="section-title" id="model_releases">New Model Releases <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://reconn-ai.com/llm-changelog.php" target="_blank" rel="noopener noreferrer">LLM/AI Changelog — ChatGPT, Gemini, Perplexity & Copilot ...</a>
+      <p>The AI changelog aggregator reports that GPT-5.2 Instant, Thinking, and Pro models were retired from ChatGPT on June 12, 2026, with existing conversations automatically continuing on the corresponding GPT-5.5 models. GPT-5.3 Instant had previously marked the beginning of the retirement, and models generally stay available 90 days after a successor ships. The update also shows new model picker changes rolling out to Plus and Pro users globally.</p>
+      <div class="source">RECONN-AI</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://medium.com/data-science-collective/muse-spark-1-2-gained-6-7-points-on-terminal-bench-two-of-them-survive-a-constant-harness-11dea7f461d6" target="_blank" rel="noopener noreferrer">Muse Spark 1.2 gained 6.7 points on Terminal-Bench. Two of them survive a constant harness.</a>
+      <p>Meta's Muse Spark 1.2 scored 82.9 on Terminal-Bench 2.1, a 6.7-point gain, and appeared ahead of GPT-5.6 Terra and Grok 4.5 in Meta's published chart. A Medium analysis notes Meta ran each model inside a different agent harness, so only about two of the six points survive when the harness is held constant. The post also examines cost per task, underscoring how release comparisons are entangled with agent configuration.</p>
+      <div class="source">MEDIUM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://fireworks.ai/blog/best-open-source-llms" target="_blank" rel="noopener noreferrer">Best Open Source LLMs in 2026: We Reviewed 7 Models</a>
+      <p>Fireworks AI's review of seven open-source LLMs highlights Kimi K3 as the top scorer on Intelligence and Coding indices among nine compared models, with GLM 5.2 as the highest-scoring open model available on Fireworks and the first to be quality-evaluated across both indices. Fable 5 is the stronger composite reference while Opus 4.8 provides continuity with earlier frontier comparisons. It is a useful orientation in a fast-moving open-model landscape.</p>
+      <div class="source">FIREWORKS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/Reuters/posts/chinese-technology-giant-alibaba-plans-to-ask-major-users-of-the-next-version-of/1633065508684175" target="_blank" rel="noopener noreferrer">Chinese technology giant Alibaba plans to ask major users ...</a>
+      <p>Reuters reports Alibaba plans to ask major users of the next Qwen release to pay, signaling a shift away from free access to its open-weight models. The post references Qwen 2.5-Max, introduced in January 2025 with claims that it outperforms DeepSeek's models. If Alibaba starts charging for frontier Qwen versions, it could reshape the economics of open-model adoption.</p>
+      <div class="source">FACEBOOK</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">6 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.techtimes.com/articles/323604/20260807/lgs-proprietary-industrial-data-tops-google-alibaba-ai-benchmarks.htm" target="_blank" rel="noopener noreferrer">LG’s Proprietary Industrial Data Tops Google, Alibaba in AI Benchmarks</a>
+      <p>LG's EXAONE Tabular and Forecast models topped Google and Alibaba models on two independently operated leaderboards, TabArena and GIFT-Eval. The TabArena ELO margin was just 11 points, while GIFT-Eval, built by Salesforce AI Research, covers 23 datasets, over 144,000 time series, and 177 million data points across seven industrial domains. The result suggests LG's proprietary industrial data may be a durable advantage over general-LLM compute scale.</p>
+      <div class="source">TECHTIMES</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://benchlm.ai/benchmarks/swe-bench-pro" target="_blank" rel="noopener noreferrer">SWE-bench Pro Leaderboard (August 2026)</a>
+      <p>On BenchLM's August 2026 SWE-bench Pro leaderboard, Claude Mythos 5 leads at 80.3 percent, just ahead of Claude Fable 5 at 80 percent and Claude Opus 5 at 79.2 percent, across 57 tracked models. SWE-bench Pro contains 1,865 problems from 41 repositories and checks whether a patch passes new tests without breaking existing behavior. The tight margins among top models show coding performance is now a differentiator at the decimal level.</p>
+      <div class="source">BENCHLM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://benchlm.ai/benchmarks/reactnativeevals" target="_blank" rel="noopener noreferrer">React Native Evals Leaderboard & Scores — August 2026 | BenchLM.ai</a>
+      <p>React Native Evals, an open benchmark for AI coding agents on real-world mobile engineering tasks, shows Composer 2 leading at 96.1 percent, followed by Composer 2 Fast at 94.9 percent and GPT-5.4 at 85.3 percent. The benchmark focuses on navigation, animation, and async state work that generic coding benchmarks miss, with repeated runs and cost tracking. It matters as framework-specific evaluations become a standard way to compare coding agents.</p>
+      <div class="source">BENCHLM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://llm-stats.com/benchmarks/osworld-verified" target="_blank" rel="noopener noreferrer">OSWorld-Verified Leaderboard</a>
+      <p>OSWorld-Verified now has 22 model results, all self-reported, with an average score of 0.7 and the current leader at 0.9 on a 0-to-1 scale. Among models within 10 percent of the leader, Meta's Muse Spark 1.1 is the cheapest at $1.25 per million input tokens, scoring 0.808. The multimodal, general-agent benchmark is a useful price-performance reference in the agent OS-control space.</p>
+      <div class="source">LLM-STATS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://artificialanalysis.ai/evaluations?knowledge=science" target="_blank" rel="noopener noreferrer">Artificial Analysis</a>
+      <p>Artificial Analysis added or updated several agentic evaluation suites, including Harvey's Legal Agent Benchmark, which uses 120 private legal tasks across 24 practice areas and an LLM rubric judge, plus an independent implementation of ServiceNow's EnterpriseOps-Gym covering eight business domains. It also tracks terminal-agent, telecom, banking, and MMLU-Pro leaderboards. These additions widen the range of real-world tasks used to judge agents beyond generic coding.</p>
+      <div class="source">ARTIFICIALANALYSIS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://arena.ai/blog/category/news" target="_blank" rel="noopener noreferrer">Arena Blog</a>
+      <p>Arena's blog announces Code Arena, a set of live evals for agentic coding in real-world environments, alongside a commercial AI Evaluations product for enterprises and labs that relies on human feedback. The post also highlights BullshitBench for AI nonsense detection and updates to LMArena rankings across text, video, document, and code models. This signals a shift toward continuous, community-grounded evaluation rather than static leaderboards.</p>
+      <div class="source">ARENA</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="industry_news">AI Industry News <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://neuron.expert/news/ai-news-today-the-major-updates-reshaping-the-industry-right-now/17503/en" target="_blank" rel="noopener noreferrer">AI News Today: The Major Updates Reshaping the Industry Right Now</a>
+      <p>Anthropic introduced Claude Mythos Preview, which has identified thousands of zero-day vulnerabilities in major operating systems and browsers; OpenAI said it passed $25 billion in annualized revenue; and Meta launched Muse Spark, its first proprietary AI model integrated across consumer apps with a paid API under consideration. The roundup shows AI's commercial expansion into cybersecurity, enterprise apps, and consumer products. It also highlights the security and ethical responsibilities tied to that growth.</p>
+      <div class="source">NEURON</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://ainewstoday.org/amazon-leadership-announcement-marks-strategic-ai-move" target="_blank" rel="noopener noreferrer">Amazon Leadership Announcement Marks Strategic AI Move - AI News Today</a>
+      <p>Amazon is reorganizing around AI under a new organization focused on advanced models, custom silicon, and quantum computing, combining Nova and AGI efforts, Graviton, Trainium, and Nitro silicon, and quantum investments. Dave DeSantis will oversee the new organization, Pieter Abbeel will lead frontier model research, and Prasad, who built Amazon Nova with 12 foundation models, is moving on. The move ties models, chips, and cloud infrastructure under one leader to keep pace with demand.</p>
+      <div class="source">AINEWSTODAY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://medial.app/news/the-ai-industry-is-at-a-major-crossroads-257bba7540f5e" target="_blank" rel="noopener noreferrer">The AI industry is at a major crossroads | Medial</a>
+      <p>A Medial news roundup describes the AI industry at a crossroads, citing OpenAI's Sora app, Google building an AI agent for software development, and reports that 30 percent of code at major firms is AI-generated. It also covers Sam Altman's efforts to raise billions for AI chip factories and France's 109 billion euro AI investment. The pieces together indicate a shift from model demos to infrastructure and real-world deployment.</p>
+      <div class="source">MEDIAL</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://blockchain.news/ainews/ilya-sutskever-s-major-ai-announcement-key-takeaways-and-industry-implications" target="_blank" rel="noopener noreferrer">Ilya Sutskever's Major AI Announcement: Key Takeaways and Industry Implications | AI News Detail | Blockchain.News</a>
+      <p>Blockchain.news recaps Ilya Sutskever's major AI announcement amid speculation that Safe Superintelligence could unveil a new safe-AI architecture or research milestone. SSI raised $1 billion from investors including Andreessen Horowitz and NFDG in 2024, and the analysis sees verifiable safety metrics and certification services as potential new revenue streams. The story underlines how safety-focused labs are becoming market-moving players.</p>
+      <div class="source">BLOCKCHAIN</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://denebrixai.com/blog/ai-news-today-december-2025" target="_blank" rel="noopener noreferrer">AI News Today December 2025: Major Breakthroughs In Tech Industry</a>
+      <p>The December 2025 AI roundup notes Google made Gemini 3 Flash the default model in Search and the Gemini app worldwide, where it achieved 81.2 percent on MMMU Pro and 78 percent on SWE-bench Verified. OpenAI launched GPT-5.2 on December 11 with 70.9 percent accuracy on professional tasks, and global AI investments reached $202.3 billion in the month. It provides a baseline for comparing how quickly defaults and benchmarks shifted entering 2026.</p>
+      <div class="source">DENEBRIXAI</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="trends">Code Worth Adopting <span class="count">6 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.developersdigest.tech/blog/why-skills-beat-prompts-for-coding-agents-2026" target="_blank" rel="noopener noreferrer">Why Skills Beat Prompts for Coding Agents in 2026 - Developers Digest</a>
+      <p>Developers Digest argues that reusable skills are beating raw prompts for coding agents in 2026: a markdown-based skill can teach an agent how and when to use existing MCP tools without bloating the system prompt. Skills compress repeated context and compose across tasks, so the emerging best practice is to treat coding agents as systems with separation of concerns. The article concludes that prompt maximalism is over even if the prompt era is not.</p>
+      <div class="source">DEVELOPERSDIGEST</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://dev.to/muhammad_rizwan_32ec93eee/mcp-skills-ai-agents-and-new-models-the-new-stack-for-software-development-44ba" target="_blank" rel="noopener noreferrer">MCP, Skills, AI Agents, and New Models: The New Stack for Software Development - DEV Community</a>
+      <p>A DEV.to explainer frames the new stack for software development as MCP plus skills plus agents plus new models, with skills defined as versioned bundles anchored by SKILL.md and AGENTS.md providing local operating rules. It says this combination turns agents from autocomplete into active teammates, and describes the result as a lightweight operational system for software delivery. It is a useful synthesis of the standards consolidating around agent workflows.</p>
+      <div class="source">DEV</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://lobehub.com/zh/mcp/pea3nut-agent-add" target="_blank" rel="noopener noreferrer">agent-add | MCP Servers · LobeHub</a>
+      <p>agent-add is a CLI that installs MCP server configs, SKILL.md skill directories, prompts, commands, sub-agents, and even full agent packs into whatever AI host a developer uses. It automatically merges configs into host-specific files such as .cursor/mcp.json or Codex TOML, so asset developers do not need to know each tool's format. This lowers the friction of sharing prompt and skill assets across the rapidly expanding agent ecosystem.</p>
+      <div class="source">LOBEHUB</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.pulsemcp.com/servers/aktsmm-skill-ninja" target="_blank" rel="noopener noreferrer">Skill Ninja MCP Server by aktsmm | PulseMCP</a>
+      <p>Skill Ninja is an MCP server for discovering, installing, and managing reusable agent skills from GitHub repositories, with a curated skill index and workspace analysis for personalized recommendations. It is one of several new MCP servers commoditizing skill distribution. That centralizes one of the biggest pain points in the skills boom: finding and syncing skills across projects.</p>
+      <div class="source">PULSEMCP</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.pulsemcp.com/servers/mrphu3074-skill-router" target="_blank" rel="noopener noreferrer">Skill Router MCP Server by mrphu3074 | PulseMCP</a>
+      <p>Skill Router is an MCP server that routes AI agents to specialized skills stored as markdown files using semantic search. Instead of loading every skill into context, the router picks relevant skills on demand, which reduces token usage and keeps agents focused. It is another sign that skill management is becoming an infrastructure layer rather than a manual prompt-organization problem.</p>
+      <div class="source">PULSEMCP</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://mcp.directory/servers/ai-agent-template-mcp-server" target="_blank" rel="noopener noreferrer">AI Agent Template MCP Server — MCP.Directory</a>
+      <p>AI Agent Template MCP Server exposes four tools that inject coding constraints, security requirements, naming conventions, and hallucination-prevention rules into AI-assisted development sessions. It uses template resources like ai-constraints and security-requirements to keep rules front of mind, with zero hallucinations and high test coverage as stated goals. The project reflects growing demand for guardrailed, template-driven agent coding environments.</p>
+      <div class="source">MCP</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="productivity">AI Productivity Tips <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.itprotoday.com/ai-machine-learning/hackers-competed-to-uncover-ai-chatbots-weaknesses-here-s-what-they-found-" target="_blank" rel="noopener noreferrer">Hackers Uncovered AI Chatbots’ Weaknesses. Here’s What They Found.</a>
+      <p>Hackers and the public launched 2,702 submissions at eight leading AI chatbots in the first Generative Red Team Challenge, organized by Humane Intelligence, Def Con's AI Village, Google, and Cohere. Faulty math was the easiest target at 76 percent success, geographic misinformation followed at 61 percent, and contestants found more than half of attempts could trick models into revealing hidden credit card numbers or granting admin permissions. The classic ignore-previous-instructions prompt hack failed all 580 times, suggesting the bigger risk is chatbots amplifying user bias rather than being easily jailbroken.</p>
+      <div class="source">ITPROTODAY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://btep.ccr.cancer.gov/btep/classes/best-practices-for-prompt-generation-in-ai-chatbots-1" target="_blank" rel="noopener noreferrer">BTEP: Best Practices for Prompt Generation in AI Chatbots</a>
+      <p>The NIH's BTEP class is a 1.5-hour training on best practices for prompt generation with LLM chatbots, covering prompt patterns, practical applications, and limitations in biomedical research. Attendees learn to define LLMs and prompt engineering, use a selection of prompt patterns to improve output, and identify resources for further learning. It is aimed at researchers with no prior AI experience.</p>
+      <div class="source">BTEP</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.egress.com/blog/phishing/will-hackers-use-ai-chatbots-to-craft-better-phishing-emails" target="_blank" rel="noopener noreferrer">Will hackers use AI chatbots to craft better phishing emails</a>
+      <p>An Egress blog post test shows how ChatGPT can quickly produce convincing phishing emails, including a Christmas-themed giveaway message with a malicious HTML link, and can even help generate malware code. The post argues that while AI removes grammar and spelling giveaways, well-crafted emails still fail against AI-based detection that analyzes text-based attacks and urgency cues. It underscores that chatbots lower the cost of phishing attempts.</p>
+      <div class="source">EGRESS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://zaven.co/blog/use-cases-for-ai-chatbots-in-construction-and-proptech" target="_blank" rel="noopener noreferrer">Use Cases for AI chatbots in Construction and Proptech. - Zaven</a>
+      <p>Zaven outlines practical AI-chatbot use cases in construction and proptech: retrieval-augmented generation converts drawings, specs, and contracts into an AI-friendly project blueprint, enabling semantic search for safety rules and permit requirements, plus instant summarization of lengthy reports. It cites examples like a builder-facing Q&A tool and AI answers backed by precise citation. The article frames chatbots as workflow assistants rather than novelty features.</p>
+      <div class="source">ZAVEN</div>
+    </div>
+    
+  </div>
+  
+  
+
+  <div class="seal"></div>
+  <div class="masthead-footer">Delivered by owl post, automated daily &mdash; every headline links to its original source</div>
+  <div class="masthead-footer" style="margin-top: 6px;"><a href="archive.html" style="color: inherit;">Browse past editions &rarr;</a></div>
+  <div class="masthead-footer" style="margin-top: 6px;">The AI Herald by <a href="https://github.com/exc33ded" style="color: inherit;">Sarim</a></div>
+
+</body>
+</html>
