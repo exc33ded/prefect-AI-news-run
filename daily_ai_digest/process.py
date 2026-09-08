@@ -2,7 +2,7 @@ import json
 from urllib.parse import urlparse
 
 from openai import OpenAI
-from prefect import task
+from prefect import get_run_logger, task
 
 from daily_ai_digest.categories import CATEGORIES
 from daily_ai_digest.config import get_secret
@@ -10,22 +10,37 @@ from daily_ai_digest.config import get_secret
 CATEGORY_LABELS = {c["key"]: c["label"] for c in CATEGORIES}
 
 SYSTEM_PROMPT = f"""You are an editor for an AI news digest. Each category below is a \
-JSON list of raw search results, each with an "id" field. For each category, dedupe \
-near-identical items, rank by relevance and novelty, and select the top 4-6 items \
-by "id". Return ONLY valid JSON matching this exact schema, no prose, no markdown \
-fences, and do NOT invent or rewrite any id, title, or url — only choose from the \
-given ids and write a 3-5 sentence summary for each: explain what happened, why it \
-matters, and include at least one concrete detail or number from the source \
-(e.g. a benchmark score, funding amount, version number, or specific claim):
+JSON list of raw search results, each with an "id" field. Each category has a label \
+describing its topic (given below) — only select items that genuinely match that \
+specific topic; a search can return off-topic noise, and off-topic items must be \
+rejected even if they are good AI news that would fit a different category. For each \
+category, from only the on-topic items, dedupe near-identical ones, rank by relevance \
+and novelty, and select the top 4-6 items by "id". Return ONLY valid JSON matching this \
+exact schema, no prose, no markdown fences, and do NOT invent or rewrite any id, title, \
+or url — only choose from the given ids and write a 3-5 sentence summary for each: \
+explain what happened, why it matters, and include at least one concrete detail or \
+number from the source (e.g. a benchmark score, funding amount, version number, or \
+specific claim):
 
 {{"repos": [{{"id": 0, "summary": "1-2 sentence summary"}}], ...}}
 
-The JSON must have one key per category, exactly these keys: {list(CATEGORY_LABELS.keys())}.
-If a category has no usable items, return an empty list for it."""
+The JSON must have one key per category, exactly these keys and labels:
+{json.dumps(CATEGORY_LABELS, indent=2)}
+If a category has no on-topic items, return an empty list for it — do not fill it with \
+items that belong to another category."""
 
 
 def _empty_digest() -> dict:
     return {category: [] for category in CATEGORY_LABELS}
+
+
+def _warn(msg: str) -> None:
+    """logger.warning when run as a Prefect task, print otherwise (e.g. in tests
+    that call process_results.fn() directly, outside any task run context)."""
+    try:
+        get_run_logger().warning(msg)
+    except Exception:
+        print(msg)
 
 
 def _index_raw(raw_by_category: dict[str, list[dict]]) -> dict[str, list[dict]]:
@@ -126,11 +141,13 @@ def process_results(raw_by_category: dict[str, list[dict]]) -> dict:
     try:
         client = OpenAI(api_key=get_secret("OPENAI_API_KEY"), base_url="https://api.deepseek.com")
         picks = _digest_from_provider(client, "deepseek-v4-flash", user_prompt)
-    except Exception:
+    except Exception as e:
+        _warn(f"DeepSeek failed, falling back to Groq: {e}")
         try:
             groq_client = OpenAI(api_key=get_secret("GROQ_API_KEY"), base_url="https://api.groq.com/openai/v1")
-            picks = _digest_from_provider(groq_client, "llama-3.3-70b-versatile", user_prompt)
-        except Exception:
+            picks = _digest_from_provider(groq_client, "openai/gpt-oss-120b", user_prompt)
+        except Exception as e:
+            _warn(f"Groq fallback also failed, digest will be empty: {e}")
             picks = _empty_digest()
 
     return _resolve_picks(picks, indexed_raw)
