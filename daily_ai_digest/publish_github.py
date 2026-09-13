@@ -73,7 +73,7 @@ def _update_archive(repo: str, token: str, editions: list[dict], meta: dict) -> 
     _put_file(repo, token, "docs/archive.html", archive_html, f"Update archive page {meta['iso_date']}")
 
 
-@task
+@task(retries=3, retry_delay_seconds=10)
 def publish_page(html: str, editions: list[dict], meta: dict) -> None:
     repo = get_secret("GITHUB_REPO")
     token = get_secret("GITHUB_TOKEN")
