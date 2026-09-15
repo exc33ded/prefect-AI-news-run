@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>The AI Herald — September 14, 2026</title>
+<title>The AI Herald — September 15, 2026</title>
 <style>
   :root {
     --ink: #2b1d0e;
@@ -354,7 +354,7 @@
   </script>
 
   <div class="topline">
-    <span>Vol. III &mdash; No. 14</span>
+    <span>Vol. III &mdash; No. 15</span>
     <span>An Automated Daily Digest of Artificial Intelligence</span>
   </div>
 
@@ -364,7 +364,7 @@
   </div>
 
   <div class="dateline">
-    <span>September 14, 2026</span>
+    <span>September 15, 2026</span>
     <span>Last Updated: 8:02 AM IST</span>
   </div>
 
@@ -374,14 +374,14 @@
   <div class="frontpage">
     <div class="lead">
       <div class="kicker">Top Story &mdash; Trending AI GitHub Repos</div>
-      <a class="headline" href="https://www.facebook.com/groups/claudecommunity/posts/1116591934214804" target="_blank" rel="noopener noreferrer">Introducing Autofusion, an open-source AI project for cross-model ...</a>
-      <div class="dek">Autofusion is a newly shared open-source AI project that layers independent cross-model review onto agent workflows, so one model's output is checked by a different model rather than by itself. It also adds executable verification, meaning proposed changes are actually run rather than just read, and traceable decision records that log why a given choice was made. This combination targets a common weakness in agentic coding pipelines, where a single model can propose and approve its own work with no external check. The author distributed it through the Claude community as an early project, so it should be treated as experimental tooling.</div>
-      <div class="source">FACEBOOK</div>
+      <a class="headline" href="https://libhunt.com/posts/1488963-show-hn-agentarmor-open-source-8-layer-security-framework-for-ai-agents" target="_blank" rel="noopener noreferrer">Show HN: AgentArmor – open-source 8-layer security framework for AI agents | Python LibHunt</a>
+      <div class="dek">AgentArmor is a new open-source security framework for agentic AI that layers eight defense-in-depth controls, covering the OWASP ASI Top 10 across ingestion, storage, context, planning, execution, output, inter-agent and identity layers. It was posted as a Show HN, and the maintainer has enabled GitHub Discussions so users can report findings and track fixes as they land. It matters because agent security is becoming its own tooling category, and mapping an implementation to a published risk taxonomy gives teams a concrete checklist rather than ad-hoc guardrails.</div>
+      <div class="source">LIBHUNT</div>
     </div>
     
     <div class="index-rail">
       <h3>Inside Today</h3>
-      <a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">4</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#papers"><span>AI/ML Research Papers</span><span class="n">2</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">5</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">3</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">5</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">5</span></a>
+      <a href="#repos"><span>Trending AI GitHub Repos</span><span class="n">4</span></a><a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">6</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#papers"><span>AI/ML Research Papers</span><span class="n">1</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">6</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">3</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">6</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">4</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">2</span></a><a href="#productivity"><span>AI Productivity Tips</span><span class="n">4</span></a>
     </div>
     
   </div>
@@ -389,31 +389,74 @@
 
   
   
-  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">4 stories</span></div>
+  <div class="section-title" id="repos">Trending AI GitHub Repos <span class="count">4 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://daily.dev/posts/agent-skills-for-coding-agents-gvurmkrvj" target="_blank" rel="noopener noreferrer">Agent Skills for coding agents | daily.dev</a>
-      <p>Inngest released Agent Skills, a set of six pre-built skills for AI coding agents including Claude Code, Cursor, and Windsurf. Each skill packages a repeatable workflow as an installable unit, so agents do not have to be re-taught the same procedure through prompts in every session. This matters because reusable skill bundles are becoming the default way teams configure and share agent capabilities across different coding tools. The release is a concrete example of the shift from one-off prompting toward versioned, distributable agent tooling.</p>
-      <div class="source">DAILY</div>
+      <a href="https://libhunt.com/posts/1469537-show-hn-legit-open-source-git-based-version-control-for-ai-agents" target="_blank" rel="noopener noreferrer">Show HN: Legit, Open source Git-based Version control for AI agents | TypeScript LibHunt</a>
+      <p>Legit is an open-source, Git-based version control system built for AI agents, with the stated goal of making them safer and more reliable collaborators. It appeared in TypeScript LibHunt's Show HN coverage, where it sits alongside adjacent projects such as a CLI that stores Claude Code chats in a Git repo. Versioning agent state and edits in Git matters because it gives teams auditable history and rollback for autonomous changes using tooling developers already understand.</p>
+      <div class="source">LIBHUNT</div>
     </div>
     
     <div class="item">
-      <a href="https://github.com/nousresearch/hermes-agent" target="_blank" rel="noopener noreferrer">NousResearch/hermes-agent: The agent that grows with you - GitHub</a>
-      <p>Nous Research published hermes-agent, an open-source agent built around a built-in learning loop that creates skills from experience and refines them during use. It nudges itself to persist knowledge, searches its own past conversations, and builds a cross-session model of the user, with a documented Skills System covering procedural memory and a Skills Hub. It connects to any MCP server, supports cron scheduling for recurring tasks, and can run on a $5 VPS, a GPU cluster, or serverless infrastructure, with Telegram as a control interface while it works on a cloud VM. The repo explicitly documents its agent loop, memory, and provider layers, making it a useful reference implementation for skill-based agent architecture.</p>
+      <a href="https://libhunt.com/posts/1452897-show-hn-open-source-gateway-to-stop-tool-abusing-prompt-injections" target="_blank" rel="noopener noreferrer">Show HN: Open-source gateway to stop tool-abusing prompt injections | TypeScript LibHunt</a>
+      <p>Archestra is an open-source gateway designed to stop tool-abusing prompt injections before they reach an agent. Its signature technique is dual LLM sanitization: an isolated model strips potentially malicious instructions from incoming data before the primary agent ever sees them. The project is framework-agnostic (it cites LangChain and n8n), self-hostable on Kubernetes, and the team says more security features are planned.</p>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://libhunt.com/posts/1485490-show-hn-turn-cursorrules-repo-guidelines-into-github-pre-merge-checks-oss" target="_blank" rel="noopener noreferrer">Show HN: Turn .cursorrules / repo guidelines into GitHub pre-merge checks (OSS) | LibHunt</a>
+      <p>Watchflow turns .cursorrules and repository guidelines into GitHub pre-merge checks, replacing static protection rules with context-aware enforcement that validates contribution patterns. The Show HN post frames this as 'agentic GitHub guardrails' that catch rule violations before merge instead of relying on developers to remember them. A commenter notes that .cursorrules consistency across repos is the hard part at scale and points to a companion collection covering 16+ frameworks including React, Next.js, FastAPI and Go.</p>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://libhunt.com/posts/1472326-show-hn-a-cli-tool-that-stores-claude-code-chats-in-your-git-repo" target="_blank" rel="noopener noreferrer">Show HN: A CLI tool that stores Claude Code chats in your Git repo | TypeScript LibHunt</a>
+      <p>This TypeScript CLI tool stores Claude Code chat sessions inside your Git repository, so agent conversations live alongside the code they produced. It surfaced in the same LibHunt Show HN coverage as the Git-based agent version control project Legit, part of a small wave of tools treating agent transcripts as first-class repo artifacts. Keeping chats in Git matters for auditability, review and letting teammates see exactly why an agent made a change.</p>
+      <div class="source">LIBHUNT</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">6 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://openai.com/pl-PL/index/introducing-the-agents-api" target="_blank" rel="noopener noreferrer">Introducing the Agents API - OpenAI</a>
+      <p>OpenAI introduced the Agents API, which pairs its Codex harness with managed sandbox infrastructure so agents can run code, work with files and produce artifacts. Developers choose the compute environment: an OpenAI-managed sandbox, their own infrastructure, or a sandbox partner, and the sandboxes can be configured with specific files, packages, skills and plugins. The pitch is that OpenAI hosts and maintains the harness — context management, efficient tool use and subagent coordination — so teams can focus on the tools, knowledge and workflows that make their agent unique.</p>
+      <div class="source">OPENAI</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://github.com/ai-boost/awesome-harness-engineering" target="_blank" rel="noopener noreferrer">GitHub - ai-boost/awesome-harness-engineering: Awesome list for AI agent harness engineering: tools, patterns, evals, memory, MCP, permissions, observability, and orchestration. · GitHub</a>
+      <p>ai-boost/awesome-harness-engineering is an awesome list dedicated to agent harness engineering, covering tools, patterns, evals, memory, MCP, permissions, observability and orchestration. It highlights addyosmani/agent-skills, which packages 24 reusable engineering skills spanning the full development lifecycle from /spec to /ship, and cites Microsoft's April 1, 2026 Dataverse Skills release as an example of skills acting as curated execution strategies rather than prompt snippets. It also links a practitioner guide arguing most agent failures are configuration problems, not model limitations, with the heuristic of minimizing tool exposure because too many MCP servers bloat context.</p>
       <div class="source">GITHUB</div>
     </div>
     
     <div class="item">
-      <a href="https://dsh-plugin.org/plugins/azzygoatcoder/agent-useful-skills" target="_blank" rel="noopener noreferrer">agent-useful-skills: Modular AI Research and Engineering Skills | DSH Plugin</a>
-      <p>A modular plugin called agent-useful-skills ships reusable AI research and engineering skills for DeepSeek Harness and Claude Code, covering paper deep-reading, journal-grade plotting, Office document conversion, and security auditing. It is organized as a monorepo with plugins/, skills/, bin scripts, and LaTeX templates, and is described as verification-loop driven rather than a flat prompt collection. This matters because it shows domain-specific skills being packaged for real research and engineering work, not just generic coding assistance. It is a recent, community-maintained release, so configuration of environment variables and deployment should be reviewed before production use.</p>
-      <div class="source">DSH-PLUGIN</div>
+      <a href="https://dev.to/davekurian/claude-code-plugin-eval-gate-skills-on-delta-before-you-merge-5bh6" target="_blank" rel="noopener noreferrer">Claude Code plugin eval: gate skills on delta before you merge - DEV Community</a>
+      <p>This DEV Community walkthrough describes a builder workflow for Claude Code v2.1.269+ in which you create cases under evals/, grade outcomes, and fail the build when a skill's score drops versus no plugin — the delta (Δ) gate. It positions plugin evaluation as a distinct layer between repo conventions (CLAUDE.md / .cursorrules) and product-level LLM evaluation loops. The core idea is to gate skills on a measurable delta before merging, so agent tooling is held to the same acceptance bar as production code.</p>
+      <div class="source">DEV</div>
     </div>
     
     <div class="item">
-      <a href="https://agentic.ai/best/coding-agents" target="_blank" rel="noopener noreferrer">21 Best AI Coding Agents in 2026</a>
-      <p>An updated agentic.ai roundup catalogues 21 AI coding agents for 2026 and scores them on dimensions such as action capability, safety, observability, and a separate agenticness rating. It draws the distinction between code completion and true agents that understand multi-file context, plan changes, run multi-step tasks, and operate with minimal oversight, a workflow the article calls agentic coding. Concrete examples include Replit's free tier cloud workspace and Bolt.new, which is rated 11/36 on agenticness as a guided assistant. The piece is useful for teams deciding which coding agents to adopt, though its safety and observability notes flag that evidence is still thin for many tools.</p>
-      <div class="source">AGENTIC</div>
+      <a href="https://www.truefoundry.com/pt/blog/best-open-source-agent-harness" target="_blank" rel="noopener noreferrer">Best Open Source Agent Harness: Top 5 Projects Compared for 2026</a>
+      <p>TrueFoundry's comparison of open-source agent harnesses singles out deepagents, LangChain's opinionated harness on top of LangGraph, as the everything-included option: planning tools, a virtual filesystem, subagent delegation, context engineering, persistent memory, skills, sandboxed execution and human-in-the-loop. It argues the practical questions for teams are how extensions are authored (TypeScript modules, MCP servers, YAML or Python classes) and whether there's a documented Docker Compose or Helm path for multi-user auth, session persistence and scaling. For developer coding workflows it recommends opencode; for embedding agents in products it recommends its own MIT-licensed TrueForge.</p>
+      <div class="source">TRUEFOUNDRY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.youtube.com/watch?v=YxwHngTlQs4" target="_blank" rel="noopener noreferrer">Why Your AI Agent Configurations Are Technical Debt (And How to ...</a>
+      <p>A conference talk frames sprawling AI agent configurations as a new form of technical debt: there's no clean way to share or reuse prompts and agent skills across teams, so organizations copy-paste and drift. The proposed fix is APM (Agent Package Manager), pitched as 'NPM for AI agents,' with cross-harness portability across GitHub Copilot, Claude Code, Codex CLI, Cursor and OpenCode plus provenance logging so you can find the exact skills teams installed. The talk also covers audit trails and security scanning via NVIDIA Skill Inspector, motivated by the risk of unvetted agent skills in financial services.</p>
+      <div class="source">YOUTUBE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://supabase.com/docs/guides/ai-tools" target="_blank" rel="noopener noreferrer">AI Tools | Supabase Docs</a>
+      <p>Supabase's AI Tools guide lays out four ways to connect coding agents to a project: a live MCP connection, portable Agent Skills, a plugin bundling both, and copy-paste prompts for tools that support neither. It lists supported agents including Antigravity, Claude Code, Codex, Cursor, Devin Desktop and Factory. The page also points to Supabase Evals, an open-source benchmark for AI coding agents on real Supabase tasks, giving teams a way to compare harnesses on concrete work rather than generic benchmarks.</p>
+      <div class="source">SUPABASE</div>
     </div>
     
   </div>
@@ -424,33 +467,33 @@
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://www.facebook.com/xiappsph/posts/-ai-engineering-is-evolving-faster-than-ever%EF%B8%8F-weve-moved-beyond-just-prompt-engi/1761992315934075" target="_blank" rel="noopener noreferrer">Building production-grade AI systems with five layers of engineering</a>
-      <p>A widely shared engineering breakdown argues that production AI systems now require five layers of engineering rather than prompt engineering alone: prompt, harness, loop, graph, and the surrounding execution environment. Harness engineering covers tools, orchestration, permissions, guardrails, observability, and verification; loop engineering covers iterative plan-execute-reflect-retry workflows that stop only when success criteria are met; and graph engineering covers coordination between multiple specialized agents. The framing matters because it explains why teams that only tune prompts plateau, while those that build the execution and verification scaffolding get reliable agent behavior. It also maps these layers to popular frameworks and platforms, making it a practical checklist for agent architecture.</p>
-      <div class="source">FACEBOOK</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.facebook.com/freecodecamp/posts/ai-agents-need-more-than-a-model-to-plan-use-tools-remember-context-and-work-saf/1133586339254132" target="_blank" rel="noopener noreferrer">AI agents need more than a model to plan, use tools ... - Facebook</a>
-      <p>A freeCodeCamp article by Rudrendu Paul explains what an agent harness actually is and why agents need far more than a model to plan, use tools, remember context, and act safely. It walks through the architecture behind harnesses such as Claude Code, DeepSeek Harness, and Hermes Agent, covering the core agent loop, planning, memory, sandboxing, tool routing, and how to choose a harness. The piece matters because the harness — not just the underlying model — increasingly determines real-world agent performance and safety. It is a useful conceptual reference for teams building or evaluating agentic workflows.</p>
-      <div class="source">FACEBOOK</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.youtube.com/watch?v=Q08HKdLBBdc" target="_blank" rel="noopener noreferrer">Here's How a Senior Google AI PM Builds and Ships ... - YouTube</a>
-      <p>A video featuring a senior Google AI product manager walks through how agentic engineering, AI workflows, and evaluations are used to build and ship AI products. The same channel includes a companion explainer on loop engineering, framing iterative agent loops as the core pattern for building reliable systems. The relevance is that it treats evals and loop design as first-class engineering practices rather than afterthoughts, mirroring how production teams structure agent development. It is a practical, practitioner-oriented walkthrough rather than a formal benchmark study.</p>
-      <div class="source">YOUTUBE</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://github.com/amitshekhariitbhu/ai-engineering-interview-questions" target="_blank" rel="noopener noreferrer">AI Engineering Interview Questions and Answers - GitHub</a>
-      <p>A GitHub repository of AI engineering interview questions, maintained by Outcome School founder Amit Shekhar, has grown into a broad reference that now covers context engineering, context compaction, agent loops, agent skills, guardrails, and human-in-the-loop patterns. It explicitly addresses operational questions such as managing token consumption and cost in long-running agent workflows, implementing guardrails to prevent harmful agent actions, and evaluating and testing AI agents. The collection is useful because it distills the techniques practitioners are expected to know into concrete Q&A form. It doubles as a checklist of agentic workflow concepts that hiring teams now treat as baseline knowledge.</p>
+      <a href="https://github.com/ai-boost/awesome-harness-engineering" target="_blank" rel="noopener noreferrer">GitHub - ai-boost/awesome-harness-engineering: Awesome list for AI agent harness engineering: tools, patterns, evals, memory, MCP, permissions, observability, and orchestration. · GitHub</a>
+      <p>The awesome-harness-engineering list includes a Loop Engineering section — a practical design system for agent loops with seven production patterns, cross-tool starter kits and CLI tools that score readiness, scaffold state, estimate cost, detect drift and isolate worktrees. It catalogs FinOps for Agents, which defines five budget guardrails enforced at the infrastructure gateway: loop/step limits, tool-call caps, per-run token budgets, wall-clock timeouts and per-tenant budgets with anomaly alerts. It also introduces Cost-per-Accepted-Outcome (CAPO) as the right unit economics metric for agent harnesses, shifting measurement from tokens consumed to business value delivered.</p>
       <div class="source">GITHUB</div>
     </div>
     
     <div class="item">
-      <a href="https://www.facebook.com/aniksingalcom/posts/claudes-fable-51-system-prompt-just-leaked-publiclya-hacker-known-as-pliny-the-l/1656162749206449" target="_blank" rel="noopener noreferrer">Claude's fable 5.1 system prompt just leaked publicly A hacker ...</a>
-      <p>A widely circulated post claims that the system prompt for Anthropic's Claude Fable 5.1 was leaked publicly by a hacker known as Pliny, with the prompt subsequently reposted on GitHub. System prompts are detailed instructions that shape a model's behavior, tone, refusals, and tool use, so leaks are studied by developers trying to replicate or understand frontier-model behavior. The episode matters less for the leaked text itself than for what it reveals about how much of an assistant's safety and persona behavior is encoded in prompting layers. It remains a community claim rather than an official Anthropic disclosure, so the contents should be treated with caution.</p>
-      <div class="source">FACEBOOK</div>
+      <a href="https://www.marktechpost.com/2026/09/14/agent-harness-vs-agent-framework-vs-mcp-which-layer-owns-the-loop-state-tools-permissions-and-recovery/amp" target="_blank" rel="noopener noreferrer">Agent Harness vs Agent Framework vs MCP: Which Layer Owns the Loop, State, Tools, Permissions, and Recovery</a>
+      <p>This MarkTechPost piece disentangles three layers teams routinely conflate: the agent harness (system prompt plus loop plus tools), the agent framework, and MCP. It notes the Claude Agent SDK documents its loop as five steps — receive prompt, evaluate and respond, execute tools, repeat, return result — where the loop itself is not yours to rewrite, while OpenAI's Codex harness exposes the loop through a documented app-server client protocol. It also records governance facts: MCP, goose, AGENTS.md and A2A now sit under the Linux Foundation's Agentic AI Foundation, and MCP uses JSON-RPC 2.0 between hosts, clients and servers, owning the tool contract but no loop or agent state.</p>
+      <div class="source">MARKTECHPOST</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://neciudan.dev/takeaways/ai-harness-at-scale-with-maxim-salnikov" target="_blank" rel="noopener noreferrer">AI Harness at Scale with Maxim Salnikov - Takeaways | Señors @ Scale Podcast — Neciu Dan</a>
+      <p>In a Seniors at Scale podcast takeaway, Maxim Salnikov argues a dedicated 'AI superheroes' squad doesn't scale because AI capability without product domain knowledge produces worse instructions. He splits the harness into an internal layer that ships with your vendor (system prompt, agentic loop, built-in tools) and an external layer you build between those generic capabilities and your project — where the differentiation lives. He also notes context engineer and agent ops are emerging as real job titles, and that leading-edge teams orchestrate multiple agents, sometimes implemented as GitHub Actions YAML pipelines with human-in-the-loop intervention designed in.</p>
+      <div class="source">NECIUDAN</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://medium.com/@balajibal/automated-agent-evaluation-and-optimisation-from-clever-prompts-to-controlled-improvement-b3ebed86106d" target="_blank" rel="noopener noreferrer">Automated Agent Evaluation and Optimisation: From Clever Prompts to Controlled Improvement</a>
+      <p>Balaji Bal's Medium post, 'Automated Agent Evaluation and Optimisation: From Clever Prompts to Controlled Improvement,' argues for moving agent tuning from ad-hoc prompt cleverness to controlled, measured improvement loops. It frames this as an enterprise platform concern, explicitly connecting prompt engineering, LLM evaluation and agentic AI practice. The piece is a 14-minute read published within the last day, positioning evaluation as the discipline that makes prompt and workflow changes safe to ship.</p>
+      <div class="source">MEDIUM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://aws.amazon.com/blogs/machine-learning/the-generative-ai-customization-spectrum-from-prompt-engineering-to-custom-models-on-aws" target="_blank" rel="noopener noreferrer">The generative AI customization spectrum: From prompt engineering ...</a>
+      <p>AWS's Machine Learning blog maps the generative AI customization spectrum from prompt engineering up to custom models, with the goal of helping teams pick the right approach 'without over-engineering or under-investing.' It treats prompt engineering as one point on a continuum rather than a default, alongside heavier options such as fine-tuning and custom model training. The practical takeaway is matching investment level to workload requirements instead of reaching for the most expensive customization available.</p>
+      <div class="source">AWS</div>
     </div>
     
   </div>
@@ -458,18 +501,12 @@
   
   
   <div class="side-box" id="papers">
-    <h3>AI/ML Research Papers <span class="count">2 stories</span></h3>
+    <h3>AI/ML Research Papers <span class="count">1 stories</span></h3>
     <div class="columns-3">
       
       <div class="side-item">
-        <a href="https://arxiv.org/abs/2509.06917?context=cs.LG" target="_blank" rel="noopener noreferrer">[2509.06917] Paper2Agent: Reimagining Research Papers As Interactive and Reliable AI Agents</a>
-        <p>Paper2Agent (arXiv:2509.06917, v2) proposes reimagining research papers as interactive and reliable AI agents rather than static PDFs. The work is cross-listed under cs.AI, cs.CL, and cs.LG, and its framing is that a paper's methods and code could be packaged into an agent users can query and run. This matters because it targets reproducibility, a persistent weakness in ML research where published results are often hard to recreate. If the approach generalizes, it would change how papers are consumed, reviewed, and cited.</p>
-        <div class="source">ARXIV</div>
-      </div>
-      
-      <div class="side-item">
-        <a href="https://arxiv.org/html/2312.05688" target="_blank" rel="noopener noreferrer">NLLG Quarterly arXiv Report 09/23: What are the most influential current AI Papers?</a>
-        <p>The NLLG Quarterly arXiv Report 09/23 (arXiv:2312.05688) analyzes the most influential AI papers across cs.CL, cs.LG, cs.AI, and cs.CV over the first nine months of 2023, ranking papers by normalized citation counts with score stabilization. The dataset statistics show cs.CV leading with 14,754 occurrences, followed by cs.LG at 13,480 and cs.CL at 8,525, alongside a breakdown of the top-40 papers. One concrete ranking detail is StarCoder: may the source be with you! appearing at position 36 with a normalized citation score of 8.5. The report's headline finding is the continued dominance of LLM-related papers and shifting subfields within the top-40.</p>
+        <a href="https://arxiv.org/abs/2509.06917" target="_blank" rel="noopener noreferrer">[2509.06917] Paper2Agent: Reimagining Research Papers As Interactive and Reliable AI Agents</a>
+        <p>'Paper2Agent: Reimagining Research Papers As Interactive and Reliable AI Agents' (arXiv:2509.06917, cs.AI) proposes turning static research papers into interactive, reliable agents rather than prose to be manually re-implemented. The record is cross-listed under Computation and Language (cs.CL) and Machine Learning (cs.LG), and the paper has already gone through at least two versions (v1 and v2). The direction matters because it targets a real friction point: connecting a paper's methods, datasets and code so they can be queried and executed instead of reconstructed by hand.</p>
         <div class="source">ARXIV</div>
       </div>
       
@@ -478,37 +515,43 @@
   
   
   
-  <div class="section-title" id="startups">AI Startups & Funding <span class="count">5 stories</span></div>
+  <div class="section-title" id="startups">AI Startups & Funding <span class="count">6 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://www.todaysstartupnews.com/news/startup-news-today-april-29-2026-latest-funding-rounds-ai-deals-tech-updates-roundup" target="_blank" rel="noopener noreferrer">Startup News Today: April 29, 2026 – Daily Funding...</a>
-      <p>In an April 29, 2026 funding roundup, clinical AI company Aidoc raised a $150 million Series E led by Goldman Sachs Alternatives Growth Equity with participation from General Catalyst, SoftBank Investment Advisors, and NVIDIA's NVentures, pushing total funding past $500 million. The capital is earmarked for scaling Aidoc's clinical foundation model and enterprise AI platform to reduce diagnostic harm. The same roundup reports Rogo raising a $160 million Series D, part of a wave of large late-stage AI rounds. Aidoc's size and investor list illustrate how far clinical AI has moved from pilot projects into heavily capitalized platform businesses.</p>
-      <div class="source">TODAYSSTARTUPNEWS</div>
+      <a href="https://www.facebook.com/entrelligence/posts/-zai-has-signed-a-5-billion-financing-deal-as-the-ai-startups-research-costs-con/1544359887492750" target="_blank" rel="noopener noreferrer">Z.ai has signed a $5 billion financing deal as the AI ... - Facebook</a>
+      <p>Z.ai has reportedly signed a $5 billion financing deal as the startup's research costs continue to outpace its revenue. The raise was framed around the widening gap between frontier-lab spending and income, a pattern that has defined 2026 AI financing. The sheer size — larger than many public tech raises — underscores how much capital frontier labs in both China and the U.S. are absorbing in the capability race.</p>
+      <div class="source">FACEBOOK</div>
     </div>
     
     <div class="item">
-      <a href="https://www.aifundingtracker.com/ai-startup-funding-news-today" target="_blank" rel="noopener noreferrer">AI Startup Funding News Today – Latest Deals & Rounds 2026</a>
-      <p>A running AI startup funding tracker lists a dense slate of 2026 rounds with amounts and lead investors. Standouts include Venice's $65 million Series A for privacy-first AI access led by Dragonfly, CuspAI's $450 million Series B for AI materials discovery backed by Kleiner Perkins and NEA, Glow's $180 million Series A for cybersecurity from Sequoia and Cyberstarts, and Natural's $30 million Series A for payments infrastructure built specifically for AI agents. The pattern across the list is that agent infrastructure and vertical AI applications are attracting the largest checks. It is a useful barometer for how much capital is flowing into specific AI subsectors.</p>
-      <div class="source">AIFUNDINGTRACKER</div>
+      <a href="https://fnex.com/sambanova-strongly-considering-u-s-ipo-after-1b-funding-round" target="_blank" rel="noopener noreferrer">SambaNova Strongly Considering U.S. IPO After $1B Funding Round</a>
+      <p>SambaNova, the AI chip startup founded in 2017, is strongly considering a U.S. IPO in 2027 after raising $1 billion at an $11 billion valuation. The company focuses heavily on AI inference — running already-trained models — and says the new capital will expand manufacturing and deployment capacity as demand for inference infrastructure grows. The report presents it as evidence that investor appetite for AI infrastructure remains strong.</p>
+      <div class="source">FNEX</div>
     </div>
     
     <div class="item">
-      <a href="https://www.vccircle.com/slikkfrinks-ai-others-get-funding-expert-dojo-launches-india-startup-cohort" target="_blank" rel="noopener noreferrer">Slikk, Frinks AI, others get funding; Expert DOJO launches India startup cohort</a>
-      <p>VCCircle reports that deeptech startup Frinks AI raised $5.4 million in a pre-Series A round led by Prime Venture Partners, with participation from existing investor Chiratae Ventures, Navam Capital, and Zen Technologies founder Ashok Atluri. Bengaluru-based construction tech startup Contineu separately raised $1.2 million in seed funding led by SenseAI Ventures, with Piper Serica Angel Fund participating, to build an AI-powered vertical data infrastructure stack that automates quality monitoring and compliance checks. Fashion delivery platform Slikk and travel brand EUME also closed early-stage rounds. Silicon Valley VC Expert DOJO additionally launched an India-focused cohort aiming to invest in more than 10 companies.</p>
-      <div class="source">VCCIRCLE</div>
+      <a href="https://www.theinformation.com/newsletters/ai-agenda/chinas-answer-surge-ai-got-1-billion-valuation-just-30-million-orders" target="_blank" rel="noopener noreferrer">Why China's Answer to Surge AI Got a $1 Billion Valuation On Just ...</a>
+      <p>The Information reports that China's answer to Surge AI reached a $1 billion valuation on just $30 million in orders — a striking gap between price and current revenue. The story runs in the outlet's AI Agenda newsletter, which also covers Nvidia, Palantir and Booz Allen restricting Anthropic use over data fears. The valuation illustrates both how hot data-labeling and model-training infrastructure has become and how much investors are willing to price in ahead of realized revenue.</p>
+      <div class="source">THEINFORMATION</div>
     </div>
     
     <div class="item">
-      <a href="https://www.tice.news/tice-trending/top-startup-news-today-funding-ai-innovation-global-partnerships-mark-a-busy-day-11208847" target="_blank" rel="noopener noreferrer">Startup News India: Funding, AI Launches & Global Partnerships | March 12 Roundup</a>
-      <p>A March 12 startup roundup reports that customer service software company Zendesk signed a definitive agreement to acquire AI startup Forethought, strengthening autonomous customer service within its Resolution Platform. Zendesk says its AI agents already resolve over 80% of customer interactions for many clients, which is the kind of metric that makes agentic support vendors attractive acquisition targets. The same roundup covers India-side activity including OneKiraana's $1.6 million raise and new AI infrastructure and product launches. The deal is a concrete example of incumbents buying agent startups rather than building the capability internally.</p>
-      <div class="source">TICE</div>
+      <a href="https://www.instagram.com/reel/DdRCkQBt8N8" target="_blank" rel="noopener noreferrer">At just 25, James Dacombe is the UK's youngest self-made ...</a>
+      <p>At 25, James Dacombe is described as the UK's youngest self-made founder after building Olix, an AI chip startup designing specialized hardware to make large AI models faster and more efficient. An Instagram reel profiles the founder and reports the company has raised $312M. The round is another data point in the wave of capital flowing to inference- and efficiency-focused silicon rather than only training hardware.</p>
+      <div class="source">INSTAGRAM</div>
     </div>
     
     <div class="item">
-      <a href="http://www.technn.com/headlines/ai-tech-startup-funding-rounds" target="_blank" rel="noopener noreferrer">TechNN - AI Startup Funding Rounds</a>
-      <p>A headline feed on AI startup funding rounds leads with Mistral raising €3 billion in what it describes as Europe's largest tech funding round, a significant signal for European AI sovereignty. The same feed lists Anthropic catching Chinese AI labs distilling Claude at scale, Paul Christiano joining the OpenAI Foundation board, Meta debuting its Muse personal AI agent, and OpenAI launching ChatGPT for Financial Services. Each headline carries an engagement count, with the Anthropic researcher resignation and OpenAI math claim items drawing the most attention at 18 and 15 reactions. Together they sketch a week where capital, model distillation disputes, and product verticalization all moved at once.</p>
-      <div class="source">TECHNN</div>
+      <a href="https://siliconangle.com/2026/09/14/procurement-automation-startup-aron-launches-with-8m-in-funding" target="_blank" rel="noopener noreferrer">Procurement automation startup Aron launches with $8M in funding</a>
+      <p>Aron Inc. launched with $8 million in funding for AI aimed at easing procurement teams' work. The capital came in two rounds: an initial deal led by Menlo Ventures and a more recent $6 million seed led by Storm Ventures. It's a small raise in a year of mega-rounds, but it shows investors still funding vertical AI applications with clearly defined enterprise workflows.</p>
+      <div class="source">SILICONANGLE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://dealroom.co/news/150626-ciena-launches-200m-fund-to-back-ai-era-networking-startups" target="_blank" rel="noopener noreferrer">Ciena launches $200M fund to back AI-era networking startups</a>
+      <p>Ciena launched Ciena Ventures, its first company-wide corporate venture fund, with an initial $200 million commitment to early-stage companies and technology-focused VC funds tied to networking and connectivity in the AI era. The program is led by Loai Louis, VP of corporate development, and is positioned as complementary to Ciena's existing R&D and strategic acquisitions. The rationale: AI is reshaping how networks are built and run, driving bandwidth demand and new architectures.</p>
+      <div class="source">DEALROOM</div>
     </div>
     
   </div>
@@ -519,132 +562,145 @@
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener noreferrer">LLM News Today (September 2026) – AI Model Releases - LLM Stats</a>
-      <p>LLM Stats' September 2026 release board lists a burst of new models: OpenAI's GPT-6 Astra, Google's Gemini 3.8 Flash and a Gemini 3.8 Flash Cyber variant, Meta's Muse Spark 1.3, Anthropic's Claude Fable 5.1, Tencent's Hy4 preview, Cohere's Parse, and Zhipu AI's GLM-5.3-Flash. The same page notes an arXiv preprint reporting higher math and code benchmark averages for a reward-aligned trajectory filter with training time close to standard on-policy distillation. The breadth of labs shipping simultaneously — US, Chinese, and enterprise-focused vendors — is the notable pattern. It is a release aggregation rather than a single vendor announcement, so version-specific claims should be verified against primary sources.</p>
-      <div class="source">LLM-STATS</div>
+      <a href="https://www.inceptionlabs.ai/blog/introducing-mercury-2-5" target="_blank" rel="noopener noreferrer">Introducing Mercury 2.5</a>
+      <p>Inception Labs released Mercury 2.5, which it calls the most capable diffusion LLM on the market and, to its knowledge, the largest diffusion language model ever trained. It claims a 40% increase in intelligence over Mercury 2, with quality comparable to cost-optimized frontier models like GPT-5.6 Luna (Low), Gemini 3.5 Flash-Lite and Claude Haiku 4.5. Serving characteristics are notable: 1,107 tokens per second on widely available NVIDIA GPUs, a 260K-token context window, and pricing at $0.20 per million input and $0.75 per million output tokens.</p>
+      <div class="source">INCEPTIONLABS</div>
     </div>
     
     <div class="item">
-      <a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener noreferrer">AI Updates Today (September 2026) – Latest AI Model ...</a>
-      <p>An AI updates tracker highlights an open-weight release, DeepSeek-V4.1-Flash, dated September 10, alongside a broader open source LLM landscape view. The page argues open-weight models such as Llama, Mistral, Qwen, and DeepSeek now rival proprietary alternatives on many benchmarks while offering fine-tuning, self-hosting, and domain customization. It positions this as a shift where open releases increasingly set expectations for cost and deployability. The tracker updates hourly and says major announcements are manually verified against provider blogs and docs.</p>
-      <div class="source">LLM-STATS</div>
+      <a href="https://artificialanalysis.ai/models/releases/gpt-6-astra" target="_blank" rel="noopener noreferrer">GPT-6 Astra Models - Intelligence, Performance & Price Comparison</a>
+      <p>OpenAI's GPT-6 Astra, released September 2026, tops Artificial Analysis's release page with an Intelligence Index of 61 on the max and xhigh reasoning settings, dropping to 57 for the low setting and 55 for the non-reasoning variant. The listing shows a 1M context window and a $7.7 blended price, with weights marked not available. The tiered scores are a concrete illustration of how much reasoning effort settings move measured capability on the same model.</p>
+      <div class="source">ARTIFICIALANALYSIS</div>
     </div>
     
     <div class="item">
-      <a href="https://en.wikipedia.org/wiki/Google_Gemini" target="_blank" rel="noopener noreferrer">Google Gemini - Wikipedia</a>
-      <p>A reference page on Google Gemini traces the model family's release cadence in detail. Gemini 3 Pro launched November 18, 2025 and was made immediately available across the Gemini app, Google Search, Google AI Studio, and Vertex AI on launch day, breaking from Google's earlier staged release pattern; a more capable Deep Think reasoning mode followed for Google AI Ultra subscribers. Gemini 3 Flash, a speed-optimized variant, arrived in December 2025, and Google announced Gemini 3.1 Pro for complex problem-solving on February 19, 2026. The page also notes early 2024 controversy when Google suspended the model's ability to generate images of people after reported historical inaccuracies and bias.</p>
-      <div class="source">EN</div>
-    </div>
-    
-  </div>
-  
-  
-  
-  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">5 stories</span></div>
-  <div class="columns-3">
-    
-    <div class="item">
-      <a href="https://modelgrep.com/leaderboard" target="_blank" rel="noopener noreferrer">LLM Leaderboard (September 2026) - modelgrep</a>
-      <p>modelgrep's September 2026 LLM leaderboard has Claude Fable 5.1 leading with an Artificial Analysis Intelligence Index of 53.4, ahead of GPT-6 Astra at 52.8 and Claude Opus 5 at 50.7. The table ranks 171 benchmarked models and carries coding and agentic scores alongside live speed and price for each row, with pricing and latency refreshed hourly and scores daily. Lower down the list, kimi-k2-thinking sits at 22.0 and costs $0.600, while qwen3.6-27b scores 53.7 on the secondary coding column at $0.300. The takeaway is that frontier reasoning performance and cheap open-weight coding performance are now measured side by side in one ranking.</p>
-      <div class="source">MODELGREP</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://llm-stats.com/benchmarks/mmlu-pro" target="_blank" rel="noopener noreferrer">MMLU-Pro Leaderboard - LLM Stats</a>
-      <p>LLM Stats' MMLU-Pro leaderboard shows Sakana Namazu from Sakana AI leading with a score of 0.903 across 142 evaluated models. Alibaba's Qwen3.7 Max follows at 89.6% and Qwen3.6 Plus at 88.5%, with MiniMax M2.1 the highest-ranked open-weight model at 88.0%. The average score across all evaluated models is 0.722, which contextualizes how far the leaders sit above the field. One caveat the page flags is that the results are self-reported rather than independently verified.</p>
-      <div class="source">LLM-STATS</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://llm-stats.com/benchmarks/legal-agent-benchmark" target="_blank" rel="noopener noreferrer">Legal Agent Benchmark Leaderboard - LLM Stats</a>
-      <p>The Legal Agent Benchmark leaderboard shows frontier models struggling badly on legal agent tasks: Anthropic's Claude Fable 5 leads with just 0.133 on a 0-to-1 scale across 13 evaluated models. Claude Opus 4.6 scores 0.042, OpenAI's GPT-5.5 scores 0.021, Google's Gemini 3.5 Flash scores 0.008, and both Gemini 3.1 Pro and Gemini 3 Flash score 0.000. The benchmark average is effectively 0.0, which makes the headroom for agentic legal work unusually stark. The result matters because it shows that strong general reasoning scores do not transfer automatically to structured professional agent tasks.</p>
-      <div class="source">LLM-STATS</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://medium.com/@toyezyadav/the-best-ai-models-in-the-world-cant-pretend-to-be-human-that-is-a-bigger-problem-than-it-sounds-7142eaa87742" target="_blank" rel="noopener noreferrer">Medium</a>
-      <p>A Medium write-up reports that a startup called humans& ran a conversation-simulation test across every major frontier model and found near-total failure. On the TIDES dataset, which asks a model to generate the next line in real human group conversations, GPT-6 Astra scored 0%, Claude Fable 5 scored 0%, and every frontier assistant tested landed between 0% and 2.7%, including Kimi K3 and GLM 5.3. The company's own model, Persimmon, was the only non-zero outlier, though the article's excerpt truncates its score. The point is that standard benchmark leaderboards miss a capability — simulating how real people actually talk — that matters for any assistant deployed in group or social contexts.</p>
-      <div class="source">MEDIUM</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.facebook.com/twrfuturewisdom/posts/specific-labs-ran-eight-frontier-model-and-harness-setups-across-640-rollouts-on/1045926728447560" target="_blank" rel="noopener noreferrer">The best coding agent finished 38.8% of real enterprise tasks</a>
-      <p>A post describing a Specific Labs evaluation reports that eight frontier model-and-harness setups were run across 640 rollouts on real enterprise tasks. The headline result is that the best coding agent finished only 38.8% of those real enterprise tasks, far below what benchmark leaderboards would suggest. Running model-and-harness combinations rather than models alone is the methodologically important choice, since harness design strongly affects agent outcomes. The low absolute number is a useful counterweight to saturated coding benchmarks.</p>
-      <div class="source">FACEBOOK</div>
+      <a href="https://benchlm.ai/model-updates/providers/shanghai-artificial-intelligence-laboratory" target="_blank" rel="noopener noreferrer">Shanghai Artificial Intelligence Laboratory Model Releases</a>
+      <p>BenchLM's provider page tracks confirmed model releases from the Shanghai Artificial Intelligence Laboratory, showing one confirmed release with data through Sep 14, 2026 and linking each launch to the source used for its date. The archive is newest-first and ties releases to corresponding BenchLM model records when available. It's a small but useful signal of how Chinese lab releases are being dated and catalogued by third-party benchmark trackers.</p>
+      <div class="source">BENCHLM</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="industry_news">AI Industry News <span class="count">5 stories</span></div>
+  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">6 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener noreferrer">AI News Today, September 13: Top Stories | AI Weekly</a>
-      <p>Ant International, Visa, and Mastercard used a São Paulo announcement to unveil the Know-Your-Agent (KYA) interoperability framework, aligning three previously competing protocols — Visa's Trusted Agent Protocol, Mastercard Verifiable Intent, and Ant's Agentic Mobile Protocol — so card networks, wallets, agent platforms, and marketplaces can recognize trusted AI shoppers across ecosystems. The companies cited a McKinsey projection that AI agents will handle $3-5 trillion in consumer commerce. The same roundup covers Universal Music Group and ElevenLabs signing a multi-year agreement anchored by a licensed AI music platform that lets fans generate remixes, mashups, and personalized vocal experiences from participating UMG artists' catalogs, ElevenLabs' first major-label deal. It also reports Meta asking individual contributors in its Applied AI division whether they want to return to manager roles, after reassigning roughly 7,000 employees into AAI in 2026.</p>
-      <div class="source">AIWEEKLY</div>
+      <a href="https://llm-stats.com/benchmarks/internal-research-debugging-evaluation" target="_blank" rel="noopener noreferrer">Internal Research Debugging Evaluation Leaderboard - LLM Stats</a>
+      <p>LLM Stats' Internal Research Debugging Evaluation leaderboard, last updated September 2026, currently covers just 3 evaluated models, with OpenAI's GPT-5.6 Sol leading at 0.683 (68.3%), ahead of GPT-5.6 Terra at 67.8% and GPT-5.6 Luna at 50.8%. The benchmark is new and narrow — only OpenAI models appear so far — but the roughly 17-point gap between Sol and Luna shows how much reasoning-effort tiers matter on debugging tasks. It sits alongside much larger leaderboards such as SWE-Bench Verified (116 models) and Humanity's Last Exam (104 models).</p>
+      <div class="source">LLM-STATS</div>
     </div>
     
     <div class="item">
-      <a href="https://www.wsj.com/tech/ai?eafs_enabled=false" target="_blank" rel="noopener noreferrer">Artificial Intelligence - Latest AI News and Analysis</a>
-      <p>WSJ's AI coverage reports that the US government is taking minority equity stakes in D-Wave Quantum, Rigetti Computing, and Quantinuum as part of a combined $300 million CHIPS Act deal to fund scaled quantum-computing research. The same feed notes OpenAI's $1 billion plan for critical infrastructure and new Pentagon cyber strategy expectations. It also highlights how the AI infrastructure buildout is driving a memory chip shortage that is pushing personal computer prices higher. Separately, the section profiles Yang Zhilin, who chose to build Moonshot AI outside the US and whose open-weight models are now shaking up global markets.</p>
-      <div class="source">WSJ</div>
+      <a href="https://llm-stats.com/benchmarks/swe-bench-verified-(multiple-attempts)" target="_blank" rel="noopener noreferrer">SWE-bench Verified (Multiple Attempts) Leaderboard - LLM Stats</a>
+      <p>On the SWE-bench Verified (Multiple Attempts) leaderboard, Moonshot AI's Kimi K2 Instruct leads at 0.716 (71.6%) — though it is currently the only model tracked, so the reported average equals the leader. LLM Stats describes the benchmark as scoring reasoning on a 0–1 scale, last updated September 2026. The single-model listing is a reminder that 'multiple attempts' variants remain rare in public reporting compared with the 116 models tracked on standard SWE-bench Verified.</p>
+      <div class="source">LLM-STATS</div>
     </div>
     
     <div class="item">
-      <a href="https://www.bbc.co.uk/news/topics/ce1qrvleleqt" target="_blank" rel="noopener noreferrer">Artificial intelligence | Latest News & Updates</a>
-      <p>BBC's AI topic page leads with OpenAI saying it cracked a 90-year-old maths problem in 88 hours, a concrete illustration of AI being applied to open problems rather than just benchmarks. It also reports Google selecting Finland for its largest single investment in Europe, and an ex-Anthropic researcher telling the BBC that AI staff are 'genuinely frightened' for humanity's future, alongside another Anthropic researcher putting the chance AI 'could kill all humans' above 10%. The page includes Anthropic CEO Dario Amodei calling for AI development to slow down, and a case where a man was jailed for creating indecent AI images of girls. Together the items show safety, governance, and infrastructure news running in parallel.</p>
+      <a href="https://me.pcmag.com/en/ai/38040/why-ai-benchmarks-are-total-bs-and-how-openai-and-anthropic-use-them-to-trick-you" target="_blank" rel="noopener noreferrer">Why AI Benchmarks Are Total BS (And How OpenAI and Anthropic ...</a>
+      <p>A PCMag piece argues AI benchmarks are gamed, walking through cases where controlled versus all-run comparisons flip results: on ExploitBench, Mythos Preview leads at 74% in the controlled comparison versus GPT-5.5 at 47%, but across every run those become 78% and 72%. It notes GPT-5.6 Sol doesn't appear on the Terminal-Bench 2.1 leaderboard at all, while Fable 5 tops resolution rate at 83.8% as of September 1, 2026 — a figure OpenAI's graph listed as 84.3% on June 26, 2026. The practical takeaway is that benchmark claims are highly sensitive to run selection, publication lag and whether results are publicly reproducible.</p>
+      <div class="source">ME</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://hyper.ai/en/papers/2609.11115" target="_blank" rel="noopener noreferrer">Benchmark Radar: A Living Database and Search Engine ...</a>
+      <p>Benchmark Radar is a living database and search engine for AI benchmarks, covering LLM evaluation, agentic and tool-use benchmarks, coding, reasoning, safety and domain-specific evals. Its v0.11.0 catalog collects 1,283 records from four sources: 687 from LLM Stats, 461 from OpenCompass Hub, 110 from model reports (some without scores) and 25 from Artificial Analysis for commercial evaluations. It addresses a real gap, since linking a new benchmark to its dataset, code and later usage currently requires manual searching across paper servers, repos, leaderboards and vendor blogs.</p>
+      <div class="source">HYPER</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://forum.effectivealtruism.org/posts/hrJrsgMCwsdBuAqgQ/announcing-fall-2026-futureeval-bot-tournament" target="_blank" rel="noopener noreferrer">Announcing Fall 2026 FutureEval Bot Tournament — EA Forum</a>
+      <p>Metaculus announced a $50k Fall 2026 FutureEval Bot Tournament, continuing a two-year series that pits baseline LLMs, custom forecasting bots and human pros against each other on predicting future events. Alongside it runs MiniBench, a series of $1,000 two-week tournaments of roughly 60 questions each, with question creation and resolution fully automated to give faster feedback loops for bot builders. The tournaments treat forecasting accuracy as a measurable AI capability and provide a rare public comparison against human forecasters.</p>
+      <div class="source">FORUM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://devblogs.microsoft.com/ise/japanese-llm-evaluation-pipeline-hackathon" target="_blank" rel="noopener noreferrer">Building a Japanese LLM Evaluation Pipeline: Lessons from a Two ...</a>
+      <p>Microsoft's ISE dev blog details a two-day hackathon that produced a Japanese LLM evaluation pipeline with multi-turn, facet-based scoring across brevity, fluency, emotional intelligence and roleplaying. The sample aggregated output shows openai:gpt-4o at an overall 8.24, with per-facet scores like 8.4 for fluency and per-persona scores such as 8.5 for customer service. The team also delivered a curated Japanese conversational benchmark dataset, a 3-tier audit system, deterministic caching for reproducible runs, and CI-friendly leaderboard exports tied to price and ROI columns.</p>
+      <div class="source">DEVBLOGS</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="industry_news">AI Industry News <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.cnbc.com/2026/09/14/ai-stocks-slowdown-amodei-altman.html" target="_blank" rel="noopener noreferrer">AI stocks slide after major CEOs unite to urge slowdown</a>
+      <p>AI-related stocks fell globally after Anthropic CEO Dario Amodei published an essay calling for a slowdown in the pace of AI capability development, with OpenAI's Sam Altman and Elon Musk publicly backing him. In Asia, SK Hynix closed down more than 6% and Samsung Electronics more than 4%, while SoftBank, one of OpenAI's biggest investors, fell 10% in Japan. In Europe, ASML dropped more than 4%, Nokia around 5% and Infineon more than 6%, with data-center-tied names like Siemens Energy and Schneider Electric also lower.</p>
+      <div class="source">CNBC</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.nbcnews.com/business/markets/stocks-tumble-ai-leaders-warning-slowdown-ipos-amodei-altman-rcna597643" target="_blank" rel="noopener noreferrer">Stocks tumble after AI leaders warn that the industry should slow down</a>
+      <p>NBC News covered the market fallout from the rare alignment of AI leaders on slowing development, noting Dow component Caterpillar — involved in AI data-center buildout — tumbled 3%. OpenAI CEO Sam Altman told Fortune his company would not go public this year, saying 'right now would be an ill-advised moment to go public' given the safety backdrop. Deutsche Bank's Jim Reid framed the key question as whether this is the first sign the extraordinary AI investment cycle might moderate, while doubting firms would voluntarily step back while rivals push ahead.</p>
+      <div class="source">NBCNEWS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://tech.yahoo.com/ai/article/how-worried-should-we-be-about-ai-killing-us-all-by-the-end-of-the-decade-151500578.html" target="_blank" rel="noopener noreferrer">How worried should we be about AI 'killing us all by the end of the decade'?</a>
+      <p>A Yahoo Tech analysis asks how worried we should be about AI 'killing us all by the end of the decade,' tying the surge in safety commentary to incidents like the recent Hugging Face breach. It notes Anthropic revealed it blocked potentially malicious plots by scientists using its model for research that could have aided biological weapons development. The piece also frames the slowdown calls as partly competitive: Anthropic doesn't trust OpenAI to proceed responsibly, neither trusts China, and the same leaders are pursuing trillion-dollar IPOs while touting superintelligent upside like curing cancer.</p>
+      <div class="source">TECH</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.bbc.co.uk/news/topics/ce1qrvleleqt" target="_blank" rel="noopener noreferrer">Artificial intelligence | Latest News & Updates - BBC</a>
+      <p>The BBC's AI topic hub aggregates the week's industry developments, including OpenAI's claim that it cracked a 90-year-old maths problem in 88 hours and warnings from MPs and Lords that new law is needed to address AI's threat to human rights. It also captures Anthropic saying it blocked a possible attempt to use AI to make biological weapons, Trump downplaying AI risks while citing rivalry with China, and a UK chip chief predicting AI will cure cancer in our lifetime. Read together, the throughline is governance and safety pressure arriving alongside ever-larger capability claims.</p>
       <div class="source">BBC</div>
     </div>
     
+  </div>
+  
+  
+  
+  <div class="section-title" id="trends">Code Worth Adopting <span class="count">2 stories</span></div>
+  <div class="columns-3">
+    
     <div class="item">
-      <a href="https://www.facebook.com/yahoonews/posts/three-of-the-worlds-top-artificial-intelligence-companies-ceos-announced-saturda/1463577442294603" target="_blank" rel="noopener noreferrer">Three of the world's top artificial intelligence companies' CEOs ...</a>
-      <p>Dario Amodei of Anthropic, Sam Altman of OpenAI, and Elon Musk of xAI publicly backed a call to reduce the pace at which AI companies build more powerful models. The joint statement is notable because it comes from the CEOs of three directly competing frontier labs, and because Amodei's argument was endorsed by both Musk and Altman under the framing that 'Dario is right.' The timing is significant: the announcement came just days after Anthropic revealed that its Claude chatbot had been used in attempts to create bioweapons, to spy on Ukraine, and to scam dating app users. Whether the public stance translates into slower release cadences or coordinated regulation remains an open question.</p>
-      <div class="source">FACEBOOK</div>
+      <a href="https://github.com/openclaw" target="_blank" rel="noopener noreferrer">OpenClaw</a>
+      <p>OpenClaw is a GitHub organization shipping a cluster of agent-oriented tools worth adopting: Peekaboo, a macOS CLI and optional MCP server (5,121 stars, MIT) that lets agents screenshot apps or the whole system with optional visual question answering; mcporter (5k stars), which calls MCPs via TypeScript or packages them as a CLI; and acpx, a headless CLI client for stateful Agent Client Protocol sessions. It also includes clownfish, a maintainer Codex harness for resolving clusters of issues identified in bulk at scale, updated Sep 7, 2026. Together they map the emerging agent-plumbing layer — screen access, MCP invocation, protocol sessions and issue triage.</p>
+      <div class="source">GITHUB</div>
     </div>
     
     <div class="item">
-      <a href="https://www.aljazeera.com/news/2026/9/13/what-are-the-five-pros-and-cons-of-artificial-intelligence" target="_blank" rel="noopener noreferrer">What are the five pros and cons of artificial intelligence?</a>
-      <p>An Al Jazeera explainer on AI's pros and cons anchors the discussion in concrete labor data: Amazon cut 16,000 jobs in a second wave of layoffs within three months, while Pinterest announced 780 job cuts as it reallocated resources toward AI investment. It cites the 2026 International AI Safety Report warning that roughly 60% of jobs in advanced economies and 40% in emerging economies could be vulnerable to AI depending on how employers and workers adopt the technology. The article notes AI also creates new opportunities in programming and automation but flags risks around harmful content and early-career workers. The juxtaposition of layoff numbers with the adoption-dependent vulnerability estimate is the piece's central tension.</p>
-      <div class="source">ALJAZEERA</div>
+      <a href="https://www.infoq.com/news/2026/09/java-news-roundup-sep07-2026" target="_blank" rel="noopener noreferrer">Java News Roundup: New OpenJDK JEPs, CDI 5.0, Spring ... - InfoQ</a>
+      <p>Google released version 1.0 of its Agent Development Kit (ADK) for Kotlin, first introduced in May 2026, delivering full feature parity with ADK 1.0 Core to Kotlin, Java and Android developers through an idiomatic Kotlin API plus Android-first on-device extensions. New features include a MultiAgentLoader class that provides a fixed set of agents by name, making JVM and device-side agent builds more practical. The same roundup flags a breaking change elsewhere where an MCP Server feature name moved from mcpServer-1.0 to mcp-1.0 — a reminder to pin versions as agent tooling churns.</p>
+      <div class="source">INFOQ</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="trends">Code Worth Adopting <span class="count">5 stories</span></div>
+  <div class="section-title" id="productivity">AI Productivity Tips <span class="count">4 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://www.developersdigest.tech/blog/why-skills-beat-prompts-for-coding-agents-2026" target="_blank" rel="noopener noreferrer">Why Skills Beat Prompts for Coding Agents in 2026  -  Developers Digest</a>
-      <p>A Developers Digest piece argues that skills, not prompts, are now the right unit of configuration for coding agents because skills compress repeated context and compose better across sessions. The reasoning is that reusable units let prompts stay shorter and easier to reason about, while repeated task variants benefit from a stored preferred approach rather than restated instructions. The site pairs the argument with tooling, including a Skill Builder that turns a one-liner into a working Claude Code skill and an Agent Benchmark Lab that compares coding agents on reproducible, scored tasks. A related guide covers self-improving skills that reflect on sessions, extract corrections, and update themselves with confidence levels.</p>
-      <div class="source">DEVELOPERSDIGEST</div>
+      <a href="https://flipboard.com/topic/artificialintelligence/i-use-the-cheese-prompt-to-instantly-improve-ai-answers-here-s-how-it-works/a-LVUwUqeKQIS9BbD7_wX-cQ:a:1693243021-18371dd53b/tomsguide.com" target="_blank" rel="noopener noreferrer">I use the ‘cheese' prompt to instantly improve AI answers — here’s how it works | Flipboard</a>
+      <p>Tom's Guide's 'cheese prompt' tip argues that better AI answers don't require longer, more complex prompts — a single well-chosen word can shift the model's framing and improve output. The story sits in a broader feed of practical prompt shortcuts, including a ChatGPT 'memory cheat code' for fixing persistent memory problems. The everyday takeaway is to test small prompt variations and keep memory features enabled rather than assuming more instructions automatically means better results.</p>
+      <div class="source">FLIPBOARD</div>
     </div>
     
     <div class="item">
-      <a href="https://dev.to/muhammad_rizwan_32ec93eee/mcp-skills-ai-agents-and-new-models-the-new-stack-for-software-development-44ba" target="_blank" rel="noopener noreferrer">MCP, Skills, AI Agents, and New Models: The New Stack for Software Development - DEV Community</a>
-      <p>A DEV Community post describes how MCP, SKILL.md, and AGENTS.md are combining into a new software delivery stack where the agent is an active teammate rather than autocomplete. MCP acts as the interface layer connecting agents to tools, AGENTS.md holds standing repository instructions, and SKILL.md captures reusable workflows for recurring tasks, together forming what the author calls a lightweight operational system for software delivery. A concrete detail: OpenAI documents that Codex reads AGENTS.md files before starting work, with more specific files overriding broader ones. That precedence rule makes AGENTS.md a practical place to encode test commands, architecture rules, formatting expectations, and safety boundaries.</p>
-      <div class="source">DEV</div>
+      <a href="http://www.makeuseof.com/ways-to-use-ai-chatbot-beyond-search" target="_blank" rel="noopener noreferrer">AI Chatbots Do Way More Than Just Searching the Web—Here's How I Use Mine</a>
+      <p>A MakeUseOf writer describes treating chatbots as a mix of brainstorming buddy, research partner and everyday problem-solver, with the caveat of 'a clever assistant with a great memory but no common sense.' Concrete examples include asking for ingredient substitutions mid-recipe — white sugar with a bit of molasses for brown sugar, or milk with lemon juice for buttermilk — and structuring prompts so output is more creative and practical. Because the model remembers the conversation, it can refine and expand on those ideas iteratively rather than starting over.</p>
+      <div class="source">MAKEUSEOF</div>
     </div>
     
     <div class="item">
-      <a href="https://fastmcp.me/mcp/details/1802/ai-agent-template-mcp-server" target="_blank" rel="noopener noreferrer">AI Agent Template MCP Server — MCP.Directory</a>
-      <p>The AI Agent Template MCP Server is a community-built MCP server that exposes four tools AI clients can invoke to generate and manage AI context files such as AI-CONTEXT.md, AI-PATTERNS.md, and CLAUDE.md. It analyzes an entire codebase to produce project patterns, conventions, dependencies, and structure, configures automatic context loading, and includes a validate_generated_code tool that checks AI output against project conventions. The project claims 53% better code quality and 70-95% token savings, and says it works across Cursor, Claude, and Copilot with automated context persistence via Git hooks. The concrete savings claims make it worth testing, though they are self-reported.</p>
-      <div class="source">FASTMCP</div>
+      <a href="https://www.milwaukeeindependent.com/newswire/tech-tip-get-using-chatgpt-ai-chatbots-better-prompts" target="_blank" rel="noopener noreferrer">Tech Tip: How to get more out of using ChatGPT and other AI chatbots with better prompts | Milwaukee Independent</a>
+      <p>An AP-style tech tip argues mediocre ChatGPT results usually aren't the chatbot's fault — output depends on what you ask and how you ask it. It relays vendor advice: OpenAI says to make prompts clear, specific and context-rich and to adjust wording or simplify as needed, while Google recommends fine-tuning prompts and iterating for Gemini. It shows how specificity changes outcomes, contrasting 'help me plan a weeklong trip to London' with a prompt that yields four hotels near the theater district, a seven-day itinerary with low-cost daytime ideas, nightly show suggestions and affordable family dinners — and notes you can cap length at, say, 300 words or five bullet points.</p>
+      <div class="source">MILWAUKEEINDEPENDENT</div>
     </div>
     
     <div class="item">
-      <a href="https://findskill.ai/skills/claude-code/claude-code-project-config-generator" target="_blank" rel="noopener noreferrer">Claude Code Project Config Generator | FindSkill.ai — Learn AI for Your Job</a>
-      <p>FindSkill.ai publishes a Claude Code Project Config Generator skill that produces a production-ready CLAUDE.md file for a repository. The generated configuration includes auto-detected build and development commands, an architecture overview, file ownership mapping for major features, coding conventions derived from the existing codebase, a common-mistakes table tailored to the tech stack, a quality checklist, and suggested MCP server configurations. It also recommends custom slash commands, positioning the file as the operating contract for a coding agent. Access to the template is gated behind the site's Pro tier, which unlocks 1,236+ skills.</p>
-      <div class="source">FINDSKILL</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.stephenwthomas.com/azure-integration-thoughts/how-to-expose-local-apis-to-ai-agents-with-mcp-and-github-copilot-agent-mode-in-vs-code" target="_blank" rel="noopener noreferrer">How to Expose Local APIs to AI Agents with MCP and GitHub Copilot Agent Mode in VS Code</a>
-      <p>A walkthrough shows how to expose local APIs to AI agents using MCP and GitHub Copilot Agent Mode in VS Code, with a concrete example wrapping a .NET deck-of-cards API as an MCP server. The workflow is deliberately no-code: you write a natural-language prompt describing the server you want, let Copilot's code agent generate the TypeScript server, pick a folder such as deck_of_cards.mcp, then run and test it from inside VS Code using the mcp-inspector tool. The author notes they have never written a line of TypeScript, which is the point — the agent handles generation, error correction, and setup. This pattern matters for teams that want internal APIs reachable by agents without a dedicated integration project.</p>
-      <div class="source">STEPHENWTHOMAS</div>
+      <a href="https://cgnet.com/blog/ai-prompt-writing-tips-getting-the-most-out-of-a-chatbot" target="_blank" rel="noopener noreferrer">AI Prompt Writing Tips: Getting the Most Out of a Chatbot - CGNET</a>
+      <p>CGNET's prompt-writing guide focuses on audience fit: explicitly tell the model who the output is for and how it should sound, e.g., 'write this in a playful manner, for an audience of 8-year-old children' or 'a formal letter to my professor.' It stresses that tone, vocabulary and level of detail are parameters you set, otherwise the result may read like generic AI text. The author also gets meta by asking Microsoft Copilot for advice on prompting itself, alongside related posts on trying Copilot the smart way and building a workable AI policy.</p>
+      <div class="source">CGNET</div>
     </div>
     
   </div>
