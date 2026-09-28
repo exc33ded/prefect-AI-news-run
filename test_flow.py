@@ -17,11 +17,11 @@ from daily_ai_digest.search import _filter_stale_repos, _normalize
 
 
 def test_parse_picks_valid():
-    text = '{"repos": [{"id": 0, "summary": "s"}], "skills": [], "prompting": [], "papers": []}'
+    text = '{"items": [{"id": 0, "summary": "s"}]}'
     picks = _parse_picks(text)
     assert picks is not None
-    assert len(picks["repos"]) == 1
-    assert picks["skills"] == []
+    assert len(picks) == 1
+    assert picks[0]["id"] == 0
 
 
 def test_parse_picks_malformed_returns_none():
@@ -65,12 +65,13 @@ def test_process_results_falls_back_on_bad_then_good_json():
     bad = MagicMock()
     bad.choices = [MagicMock(message=MagicMock(content="not json"))]
     good = MagicMock()
-    good.choices = [MagicMock(message=MagicMock(content='{"repos": []}'))]
+    good.choices = [MagicMock(message=MagicMock(content='{"items": []}'))]
 
     with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
          patch("daily_ai_digest.process.OpenAI") as MockOpenAI:
         MockOpenAI.return_value.chat.completions.create.side_effect = [bad, good]
-        digest = process_results.fn({"repos": []})
+        raw = {"repos": [{"url": "https://real.example/a", "title": "t", "snippet": "", "published_date": None}]}
+        digest = process_results.fn(raw)
         assert digest == _empty_digest()
 
 
@@ -81,13 +82,14 @@ def test_process_results_all_fallbacks_fail_returns_empty_digest():
     with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
          patch("daily_ai_digest.process.OpenAI") as MockOpenAI:
         MockOpenAI.return_value.chat.completions.create.side_effect = [bad, bad]
-        digest = process_results.fn({"repos": []})
+        raw = {"repos": [{"url": "https://real.example/a", "title": "t", "snippet": "", "published_date": None}]}
+        digest = process_results.fn(raw)
         assert digest == _empty_digest()
 
 
 def test_process_results_falls_back_to_groq_when_deepseek_errors():
     good = MagicMock()
-    good.choices = [MagicMock(message=MagicMock(content='{"repos": [{"id": 0, "summary": "s"}]}'))]
+    good.choices = [MagicMock(message=MagicMock(content='{"items": [{"id": 0, "summary": "s"}]}'))]
 
     with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
          patch("daily_ai_digest.process.OpenAI") as MockOpenAI:
@@ -97,12 +99,40 @@ def test_process_results_falls_back_to_groq_when_deepseek_errors():
         assert digest["repos"][0]["title"] == "t"
 
 
+def test_process_results_switches_to_groq_once_and_stays():
+    """Once DeepSeek fails on a category, later categories should go straight
+    to Groq rather than re-trying (and re-failing) DeepSeek every time."""
+    good = MagicMock()
+    good.choices = [MagicMock(message=MagicMock(content='{"items": [{"id": 0, "summary": "s"}]}'))]
+
+    with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
+         patch("daily_ai_digest.process.OpenAI") as MockOpenAI:
+        MockOpenAI.return_value.chat.completions.create.side_effect = [Exception("deepseek down"), good, good]
+        raw = {
+            "repos": [{"url": "https://a.example/1", "title": "a", "snippet": "", "published_date": None}],
+            "skills": [{"url": "https://b.example/2", "title": "b", "snippet": "", "published_date": None}],
+        }
+        digest = process_results.fn(raw)
+        assert len(digest["repos"]) == 1
+        assert len(digest["skills"]) == 1
+        assert MockOpenAI.return_value.chat.completions.create.call_count == 3
+
+
 def test_process_results_empty_digest_when_both_providers_fail():
     with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
          patch("daily_ai_digest.process.OpenAI") as MockOpenAI:
         MockOpenAI.return_value.chat.completions.create.side_effect = Exception("down")
+        raw = {"repos": [{"url": "https://real.example/a", "title": "t", "snippet": "", "published_date": None}]}
+        digest = process_results.fn(raw)
+        assert digest == _empty_digest()
+
+
+def test_process_results_skips_llm_call_for_empty_category():
+    with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
+         patch("daily_ai_digest.process.OpenAI") as MockOpenAI:
         digest = process_results.fn({"repos": []})
         assert digest == _empty_digest()
+        MockOpenAI.return_value.chat.completions.create.assert_not_called()
 
 
 def test_process_results_cannot_mismatch_title_and_url():
@@ -110,7 +140,7 @@ def test_process_results_cannot_mismatch_title_and_url():
     url to a different headline. Since the LLM now only selects by id and
     writes a summary, title/url always come from the same raw record."""
     good = MagicMock()
-    good.choices = [MagicMock(message=MagicMock(content='{"repos": [{"id": 1, "summary": "s"}]}'))]
+    good.choices = [MagicMock(message=MagicMock(content='{"items": [{"id": 1, "summary": "s"}]}'))]
 
     with patch("daily_ai_digest.process.get_secret", return_value="fake-key"), \
          patch("daily_ai_digest.process.OpenAI") as MockOpenAI:

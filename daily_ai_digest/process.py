@@ -9,25 +9,28 @@ from daily_ai_digest.config import get_secret
 
 CATEGORY_LABELS = {c["key"]: c["label"] for c in CATEGORIES}
 
-SYSTEM_PROMPT = f"""You are an editor for an AI news digest. Each category below is a \
-JSON list of raw search results, each with an "id" field. Each category has a label \
-describing its topic (given below) — only select items that genuinely match that \
-specific topic; a search can return off-topic noise, and off-topic items must be \
-rejected even if they are good AI news that would fit a different category. For each \
-category, from only the on-topic items, dedupe near-identical ones, rank by relevance \
-and novelty, and select the top 4-6 items by "id". Return ONLY valid JSON matching this \
-exact schema, no prose, no markdown fences, and do NOT invent or rewrite any id, title, \
-or url — only choose from the given ids and write a 3-5 sentence summary for each: \
-explain what happened, why it matters, and include at least one concrete detail or \
-number from the source (e.g. a benchmark score, funding amount, version number, or \
-specific claim):
 
-{{"repos": [{{"id": 0, "summary": "1-2 sentence summary"}}], ...}}
+def _category_system_prompt(category: str) -> str:
+    """One category per call, not all ten in one prompt — a combined prompt for a
+    full day's results is big enough (~10-30k tokens) to blow past Groq's fallback
+    free-tier 8000 TPM rate limit, which silently emptied the whole digest."""
+    label = CATEGORY_LABELS[category]
+    return f"""You are an editor for an AI news digest, working on the "{label}" category. \
+You will be given a JSON list of raw search results, each with an "id" field — only \
+select items that genuinely match this specific topic; a search can return off-topic \
+noise, and off-topic items must be rejected even if they are good AI news that would fit \
+a different category. From only the on-topic items, dedupe near-identical ones, rank by \
+relevance and novelty, and select the top 4-6 items by "id". Return ONLY valid JSON \
+matching this exact schema, no prose, no markdown fences, and do NOT invent or rewrite \
+any id, title, or url — only choose from the given ids and write a 3-5 sentence summary \
+for each: explain what happened, why it matters, and include at least one concrete \
+detail or number from the source (e.g. a benchmark score, funding amount, version \
+number, or specific claim):
 
-The JSON must have one key per category, exactly these keys and labels:
-{json.dumps(CATEGORY_LABELS, indent=2)}
-If a category has no on-topic items, return an empty list for it — do not fill it with \
-items that belong to another category."""
+{{"items": [{{"id": 0, "summary": "3-5 sentence summary"}}]}}
+
+If no items are on-topic, return {{"items": []}} — do not fill it with items that belong \
+to another category."""
 
 
 def _empty_digest() -> dict:
@@ -43,23 +46,31 @@ def _warn(msg: str) -> None:
         print(msg)
 
 
+SNIPPET_MAX_CHARS = 400  # per-category prompt now, so there's room for real detail
+
+
 def _index_raw(raw_by_category: dict[str, list[dict]]) -> dict[str, list[dict]]:
     """Assigns a stable positional id to each raw result per category, so the LLM
     can select by id instead of retyping title/url (which is how it previously
-    mismatched a headline with an unrelated article's link)."""
+    mismatched a headline with an unrelated article's link). Also truncates the
+    snippet, which is otherwise long enough (~1000+ chars from Tavily) that the
+    full multi-category prompt blows past Groq's fallback rate limit."""
     return {
-        category: [{"id": i, **item} for i, item in enumerate(items)]
+        category: [
+            {**item, "id": i, "snippet": item.get("snippet", "")[:SNIPPET_MAX_CHARS]}
+            for i, item in enumerate(items)
+        ]
         for category, items in raw_by_category.items()
     }
 
 
-def _build_user_prompt(indexed_raw: dict[str, list[dict]]) -> str:
-    return json.dumps(indexed_raw, indent=2)
+def _build_user_prompt(items: list[dict]) -> str:
+    return json.dumps(items, indent=2)
 
 
-def _call_llm(client: OpenAI, model: str, user_prompt: str, strict: bool = False) -> str:
+def _call_llm(client: OpenAI, model: str, system_prompt: str, user_prompt: str, strict: bool = False) -> str:
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt},
     ]
     if strict:
@@ -70,35 +81,33 @@ def _call_llm(client: OpenAI, model: str, user_prompt: str, strict: bool = False
     return response.choices[0].message.content
 
 
-def _digest_from_provider(client: OpenAI, model: str, user_prompt: str) -> dict | None:
-    """Runs the full call-then-JSON-retry sequence against one provider.
-    Returns None only if the provider itself is unreachable/erroring (caller
-    should fall back to the next provider), not on a parse failure (already
+def _category_picks_from_provider(client: OpenAI, model: str, category: str, items: list[dict]) -> list:
+    """Runs the call-then-JSON-retry sequence for one category against one provider.
+    Raises if the provider itself is unreachable/erroring (caller falls back to the
+    next provider); returns [] rather than raising on a parse failure (already
     retried once here)."""
-    text = _call_llm(client, model, user_prompt)
+    system_prompt = _category_system_prompt(category)
+    user_prompt = _build_user_prompt(items)
+    text = _call_llm(client, model, system_prompt, user_prompt)
     picks = _parse_picks(text)
     if picks is None:
-        text = _call_llm(client, model, user_prompt, strict=True)
+        text = _call_llm(client, model, system_prompt, user_prompt, strict=True)
         picks = _parse_picks(text)
-    return picks if picks is not None else _empty_digest()
+    return picks if picks is not None else []
 
 
-def _parse_picks(text: str) -> dict | None:
-    """Parses the LLM's {id, summary} selections. Does not resolve them against
-    raw data yet - that happens in _resolve_picks so a bad/hallucinated id can
-    be dropped without invalidating the whole category."""
+def _parse_picks(text: str) -> list | None:
+    """Parses the LLM's {id, summary} selections for one category. Does not
+    resolve them against raw data yet - that happens in _resolve_picks so a
+    bad/hallucinated id can be dropped without invalidating the category."""
     try:
         data = json.loads(text)
     except (json.JSONDecodeError, TypeError):
         return None
     if not isinstance(data, dict):
         return None
-    picks = _empty_digest()
-    for category in CATEGORY_LABELS:
-        items = data.get(category, [])
-        if isinstance(items, list):
-            picks[category] = items[:6]
-    return picks
+    items = data.get("items")
+    return items[:6] if isinstance(items, list) else None
 
 
 def _source_name(url: str) -> str:
@@ -136,18 +145,27 @@ def _resolve_picks(picks: dict, indexed_raw: dict[str, list[dict]]) -> dict:
 @task(retries=2, retry_delay_seconds=[5, 15])
 def process_results(raw_by_category: dict[str, list[dict]]) -> dict:
     indexed_raw = _index_raw(raw_by_category)
-    user_prompt = _build_user_prompt(indexed_raw)
 
-    try:
-        client = OpenAI(api_key=get_secret("OPENAI_API_KEY"), base_url="https://api.deepseek.com")
-        picks = _digest_from_provider(client, "deepseek-v4-flash", user_prompt)
-    except Exception as e:
-        _warn(f"DeepSeek failed, falling back to Groq: {e}")
+    client = OpenAI(api_key=get_secret("OPENAI_API_KEY"), base_url="https://api.deepseek.com")
+    model, provider_name = "deepseek-v4-flash", "DeepSeek"
+    groq_client = None
+
+    picks = {}
+    for category, items in indexed_raw.items():
+        if not items:
+            picks[category] = []
+            continue
         try:
-            groq_client = OpenAI(api_key=get_secret("GROQ_API_KEY"), base_url="https://api.groq.com/openai/v1")
-            picks = _digest_from_provider(groq_client, "openai/gpt-oss-120b", user_prompt)
+            picks[category] = _category_picks_from_provider(client, model, category, items)
         except Exception as e:
-            _warn(f"Groq fallback also failed, digest will be empty: {e}")
-            picks = _empty_digest()
+            _warn(f"{provider_name} failed on '{category}', switching to Groq: {e}")
+            if groq_client is None:
+                groq_client = OpenAI(api_key=get_secret("GROQ_API_KEY"), base_url="https://api.groq.com/openai/v1")
+            client, model, provider_name = groq_client, "openai/gpt-oss-120b", "Groq"
+            try:
+                picks[category] = _category_picks_from_provider(client, model, category, items)
+            except Exception as e2:
+                _warn(f"Groq also failed on '{category}', leaving it empty: {e2}")
+                picks[category] = []
 
     return _resolve_picks(picks, indexed_raw)
