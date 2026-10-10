@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The AI Herald — October 10, 2026</title>
+<style>
+  :root {
+    --ink: #2b1d0e;
+    --rule: #2b1d0e;
+    --paper: #ecdfc0;
+    --gray: #6b5636;
+    --red: #8a2727;
+  }
+  * { box-sizing: border-box; }
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    45% { opacity: 0.85; }
+    50% { opacity: 1; }
+    55% { opacity: 0.9; }
+  }
+  body, .item a, .side-item a, .index-rail a, .theme-toggle, .seal, .item p, .side-item p {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+  body {
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(120,90,40,0.10), transparent 60%),
+      radial-gradient(circle at 80% 70%, rgba(120,90,40,0.10), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(120,90,40,0.02) 0px, transparent 2px, transparent 4px);
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    color: var(--ink);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 28px 70px;
+  }
+
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    padding-bottom: 6px;
+  }
+
+  .masthead {
+    text-align: center;
+    border-top: 4px double var(--ink);
+    border-bottom: 4px double var(--ink);
+    padding: 10px 0 8px;
+  }
+  .masthead h1 {
+    font-family: 'Old English Text MT', 'UnifrakturMaguntia', Georgia, serif;
+    font-size: 72px;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: normal;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+  }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .masthead h1 {
+      background: linear-gradient(100deg, var(--ink) 40%, #8a6a2f 50%, var(--ink) 60%);
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 6s linear infinite;
+    }
+  }
+  .masthead .tagline {
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: var(--gray);
+    margin-top: 2px;
+    animation: flicker 4s ease-in-out infinite;
+  }
+
+  .dateline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--ink);
+    padding: 6px 0;
+    margin-bottom: 4px;
+  }
+
+  .disclaimer {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--gray);
+    padding: 6px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 18px;
+  }
+
+  .frontpage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+  }
+  .lead .kicker {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: Arial, sans-serif;
+    margin-bottom: 4px;
+  }
+  .lead a.headline {
+    display: block;
+    font-size: 40px;
+    line-height: 1.08;
+    font-weight: bold;
+    color: var(--ink);
+    text-decoration: none;
+    margin-bottom: 12px;
+  }
+  .lead a.headline:hover { text-decoration: underline; }
+  .lead .dek {
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 62ch;
+    text-align: justify;
+  }
+  .lead .dek::first-letter {
+    float: left;
+    font-size: 54px;
+    line-height: 42px;
+    padding: 4px 6px 0 0;
+    font-weight: bold;
+  }
+  .lead .source { font-size: 11px; color: var(--gray); margin-top: 8px; }
+
+  .index-rail {
+    border-left: 1px solid var(--ink);
+    padding-left: 20px;
+  }
+  .index-rail h3 {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 0 0 10px;
+  }
+  .index-rail a {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 0;
+    border-bottom: 1px dotted #bbb;
+  }
+  .index-rail a span:first-child { min-width: 0; flex: 1 1 auto; overflow-wrap: break-word; }
+  .index-rail a span.n { flex: 0 0 auto; color: var(--gray); font-size: 11px; }
+  .index-rail a:hover { color: var(--red); }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 34px 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .section-title .count {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .columns-3 { columns: 3; column-gap: 26px; column-rule: 1px solid #ccc; }
+  .item { break-inside: avoid; margin-bottom: 20px; }
+  .item a {
+    font-weight: bold;
+    font-size: 15.5px;
+    line-height: 1.3;
+    color: var(--ink);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .item a:hover { color: var(--red); }
+  .item p { font-size: 13px; line-height: 1.5; margin: 0 0 4px; color: #333; text-align: justify; }
+  .item .source { font-size: 10.5px; color: var(--gray); font-family: Arial, sans-serif; letter-spacing: 0.3px; }
+
+  .side-box {
+    margin: 34px 0;
+    background: rgba(166, 25, 46, 0.04);
+    border: 1px solid var(--ink);
+    border-top: 4px solid var(--red);
+    padding: 18px 22px;
+  }
+  .side-box h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .side-box h3 .count { font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; color: var(--gray); text-transform: none; }
+  .side-box .columns-3 { column-rule-color: #c9a9a9; }
+  .side-item { break-inside: avoid; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px dotted #bbb; }
+  .side-item:last-child { border-bottom: none; }
+  .side-item a { display: block; font-weight: bold; font-size: 14px; line-height: 1.3; color: var(--ink); text-decoration: none; margin-bottom: 4px; }
+  .side-item a:hover { color: var(--red); }
+  .side-item p { font-size: 12px; line-height: 1.45; color: #3a3a3a; margin: 0 0 3px; text-align: justify; }
+  .side-item .source { font-size: 10px; color: var(--gray); font-family: Arial, sans-serif; letter-spacing: 0.3px; }
+
+  .seal {
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 40px auto 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #7a2727, #4a1414 70%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 0 6px rgba(255,255,255,0.15);
+    position: relative;
+  }
+  .seal::after {
+    content: "AI";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Old English Text MT', serif;
+    font-size: 16px;
+    color: #e8c98a;
+  }
+
+  .masthead-footer {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #e8dcc0; --paper: #1c1509; --gray: #b0a37e; --red: #e0a3a3; }
+    .item p { color: #cfc9ba; }
+    .columns-3 { column-rule-color: #3a352a; }
+    .index-rail a { border-bottom-color: #3a352a; }
+    .disclaimer { border-bottom-color: #3a352a; }
+    .side-box { background: rgba(224, 163, 163, 0.06); }
+    .side-item { border-bottom-color: #3a352a; }
+    .side-item p { color: #cfc9ba; }
+  }
+  @media (prefers-color-scheme: dark) and ((-webkit-background-clip: text) or (background-clip: text)) {
+    .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+  }
+
+  :root[data-theme="dark"] { --ink: #e8dcc0; --paper: #1c1509; --gray: #b0a37e; --red: #e0a3a3; }
+  :root[data-theme="dark"] .item p { color: #cfc9ba; }
+  :root[data-theme="dark"] .columns-3 { column-rule-color: #3a352a; }
+  :root[data-theme="dark"] .index-rail a { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .disclaimer { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .side-box { background: rgba(224, 163, 163, 0.06); }
+  :root[data-theme="dark"] .side-item { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .side-item p { color: #cfc9ba; }
+  :root[data-theme="dark"] .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+  :root[data-theme="light"] { --ink: #2b1d0e; --paper: #ecdfc0; --gray: #6b5636; --red: #8a2727; }
+  :root[data-theme="light"] .item p { color: #333; }
+  :root[data-theme="light"] .side-item p { color: #3a3a3a; }
+  :root[data-theme="light"] .side-box { background: rgba(166, 25, 46, 0.04); }
+  :root[data-theme="light"] .side-item { border-bottom-color: #bbb; }
+  :root[data-theme="light"] .masthead h1 { background: linear-gradient(100deg, var(--ink) 40%, #8a6a2f 50%, var(--ink) 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .theme-toggle:hover { transform: rotate(20deg) scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .theme-toggle svg { width: 20px; height: 20px; stroke: var(--ink); fill: none; stroke-width: 1.8; }
+
+  @media (max-width: 720px) {
+    .frontpage { grid-template-columns: 1fr; }
+    .index-rail { border-left: none; padding-left: 0; border-top: 1px solid var(--ink); padding-top: 16px; }
+    .lead a.headline { font-size: 30px; }
+    .columns-3 { columns: 1; }
+    .side-box .columns-3 { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+    <svg id="themeIcon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"></svg>
+  </button>
+  <script>
+    (function () {
+      var MOON = '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>';
+      var SUN = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>';
+
+      var root = document.documentElement;
+      var icon = document.getElementById('themeIcon');
+
+      function currentTheme() {
+        return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      }
+      function paintIcon(theme) {
+        icon.innerHTML = theme === 'dark' ? SUN : MOON;
+      }
+
+      paintIcon(currentTheme());
+
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        paintIcon(next);
+      });
+    })();
+  </script>
+
+  <div class="topline">
+    <span>Vol. IV &mdash; No. 10</span>
+    <span>An Automated Daily Digest of Artificial Intelligence</span>
+  </div>
+
+  <div class="masthead">
+    <h1>The AI Herald</h1>
+    <div class="tagline">&ldquo;All the Weights That's Fit to Print&rdquo;</div>
+  </div>
+
+  <div class="dateline">
+    <span>October 10, 2026</span>
+    <span>Last Updated: 8:03 AM IST</span>
+  </div>
+
+  <div class="disclaimer">The text below is an AI-generated summary. Click any headline to read the full original piece.</div>
+
+  
+  <div class="frontpage">
+    <div class="lead">
+      <div class="kicker">Top Story &mdash; Trending AI GitHub Repos</div>
+      <a class="headline" href="https://coderlegion.com/26762/ecc-an-open-source-performance-harness-and-operating-system-for-ai-coding-agents" target="_blank" rel="noopener noreferrer">ECC: An Open-Source Performance Harness and Operating System for AI Coding Agents - Coder Legion</a>
+      <div class="dek">Coder Legion announced ECC, an open‑source performance harness and lightweight operating system designed for AI coding agents, with the code hosted on GitHub. The project aims to provide a standardized benchmarking suite and runtime environment, allowing researchers to compare agents across metrics such as latency and token efficiency. Within its first week the repository attracted 1.8k points and 51 community badges, indicating rapid community interest. By offering plug‑and‑play support for popular models like Claude and Gemini, ECC could become a de‑facto baseline for future AI agent evaluations.</div>
+      <div class="source">CODERLEGION</div>
+    </div>
+    
+    <div class="index-rail">
+      <h3>Inside Today</h3>
+      <a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">5</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">2</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">4</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">5</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">2</span></a><a href="#productivity"><span>AI Productivity Tips</span><span class="n">4</span></a>
+    </div>
+    
+  </div>
+  
+
+  
+  
+  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://github.com/linny006/trending-claude-skills" target="_blank" rel="noopener noreferrer">GitHub - linny006/trending-claude-skills: Auto-updated leaderboard of trending claude-skills and AI agent repos, refreshed every 15 minutes</a>
+      <p>GitHub user linny006 released a public repository that automatically tracks the most popular Claude‑based AI agent skills and related agent repositories. The leaderboard refreshes every 15 minutes, giving developers a near‑real‑time view of emerging skill trends. This helps teams quickly discover high‑impact skill implementations and benchmark their own work against the community.</p>
+      <div class="source">GITHUB</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.kimi.ai/resources/coding-skills-for-agents" target="_blank" rel="noopener noreferrer">AI Coding Skills: Build Faster with AI Workflows</a>
+      <p>Kimi.ai published a guide on "AI Coding Skills," describing them as reusable workflows that steer AI agents through software development tasks. The guide lists concrete capabilities such as code generation, debugging, code‑quality review, documentation authoring, and test execution. By standardising these instructions, developers can accelerate agent‑assisted coding and reduce iteration cycles.</p>
+      <div class="source">KIMI</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.ssw.com.au/rules/ai-agents-with-skills" target="_blank" rel="noopener noreferrer">Do you use skills to standardize AI workflows? | SSW.Rules</a>
+      <p>SSW introduced skills.sh, a Vercel‑hosted registry and CLI for installing AI agent skills across multiple platforms. The tool supports Claude Code, GitHub Copilot, Cursor, Codex and more than 70 other agents, allowing a single command (e.g., `npx skills add anthropics/skills --skill frontend-design`) to deploy a skill in the appropriate location. This aims to simplify cross‑agent workflow standardisation.</p>
+      <div class="source">SSW</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://developer.microsoft.com/blog/introducing-the-agent-experience-ax-practitioner-playbook" target="_blank" rel="noopener noreferrer">Introducing the Agent Experience (AX) Practitioner Playbook - Microsoft for Developers</a>
+      <p>Microsoft released the Agent Experience (AX) Practitioner Playbook, a new resource for developers building extensions that AI coding agents consume. The playbook covers creating SDKs, APIs, services, CLIs, MCP servers, skills, plugins, and instruction sets, providing best‑practice guidance and evaluation criteria. It positions Microsoft as a hub for the emerging AI‑agent tooling ecosystem.</p>
+      <div class="source">DEVELOPER</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://devin.ai/desktop" target="_blank" rel="noopener noreferrer">Devin Desktop | Devin</a>
+      <p>Devin.ai launched Devin Desktop, a local‑machine version of its intelligent agent platform that gives developers full permissions and faster performance. The product is marketed as "snappier" and extensible, allowing teams to add custom tools and skills directly to the desktop environment. This move broadens the reach of AI‑agent tooling beyond cloud‑only solutions.</p>
+      <div class="source">DEVIN</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="prompting">Prompting & Agentic Workflow Techniques <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://axonactive.com/blog/one-shot-prompting" target="_blank" rel="noopener noreferrer">One-Shot Prompting Is a Myth: The AI Engineering Loop</a>
+      <p>The article debunks the idea that one‑shot prompting is sufficient, framing LLM use as an "AI engineering loop" where prompts are iteratively refined. It highlights real‑world rollouts such as Claude Code moving from preview to general availability in 2025 and GitHub Copilot’s agent mode stabilizing in April 2025. The piece also notes the emergence of the SKILL.md convention in October 2025, which helped spawn a skills marketplace and industry plugins throughout 2026, signaling that configurable, repeatable agentic workflows are becoming mainstream.</p>
+      <div class="source">AXONACTIVE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://hsecurities.in/blog/mastering-advanced-prompt-engineering-for-enterprise-ai-workflows-with-llms" target="_blank" rel="noopener noreferrer">Advanced Prompt Engineering for Enterprise AI: Optimize LLM Workflows | hSECURITIES</a>
+      <p>This guide distinguishes simple sequential chains from true multi‑agent collaboration in enterprise LLM pipelines. It describes a typical setup involving three specialized agents—a Data Retrieval Agent, a Code Execution Agent, and a Synthesis Agent—that interact iteratively until a shared goal state is reached. By emphasizing looped feedback rather than linear hand‑offs, the article argues that enterprises can achieve higher reliability and faster iteration on complex AI‑driven processes.</p>
+      <div class="source">HSECURITIES</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.blockchain-council.org/agentic-ai/the-agentic-ai-loop" target="_blank" rel="noopener noreferrer">The Agentic AI Loop: How AI Agents Learn, Reason & Self-Correct</a>
+      <p>The piece explores the "Agentic AI Loop," contrasting fine‑tuning with prompt‑plus‑RAG approaches for building AI agents. It outlines how human‑in‑the‑loop safeguards—approval gates, escalation paths, and audit trails—can be woven into agentic workflows to mitigate business risk. The author provides a decision matrix that helps practitioners decide when prompting alone suffices versus when model customization is required.</p>
+      <div class="source">BLOCKCHAIN-COUNCIL</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://dl.acm.org/doi/proceedings/10.1145/3843282" target="_blank" rel="noopener noreferrer">Proceedings of the 1st International Workshop on Agentic ...</a>
+      <p>Proceedings from the inaugural International Workshop on Agentic Systems present a taxonomy of executable agentic workflows. Contributors highlight that modern agents search for artifacts, invoke external tools, inspect structured observations, and query databases as core steps. The workshop also introduced a benchmark suite measuring how efficiently agents orchestrate these operations across different platforms.</p>
+      <div class="source">DL</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://arxiv.org/html/2610.11482v1" target="_blank" rel="noopener noreferrer">Evaluating Local Language Model Agents for Reproducible Data Engineering:An Empirical Software Engineering Study of Mobility Workflows</a>
+      <p>An empirical study evaluates local LLM agents on reproducible data‑engineering tasks, quantifying an "agentic gain"—the lift in pass rate when agents can inspect files, use tools, and self‑verify outputs. Table 4 shows the workspace loop delivering the highest gain, especially for models that follow the protocol but struggle with one‑shot artifact generation. The authors argue that such loop‑based techniques are crucial for achieving reliable performance in real‑world pipelines.</p>
+      <div class="source">ARXIV</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="startups">AI Startups & Funding <span class="count">2 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener noreferrer">AI News Today, October 9: Top Stories | AI Weekly</a>
+      <p>TypeSafe AI announced a massive $870 million Series round led by Andreessen Horowitz, pushing its valuation to $7.5 billion. The funding will accelerate development of its Jev decision‑model platform, which reportedly amassed around 1 million users within days of launch and is now deployed at roughly one‑third of Fortune 500 companies. The round also saw participation from Sequoia Capital and other investors, underscoring strong market confidence in the startup’s AI‑driven decision tools.</p>
+      <div class="source">AIWEEKLY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://news.crunchbase.com/sections/ai?pages=21" target="_blank" rel="noopener noreferrer">Artificial intelligence - Crunchbase News</a>
+      <p>Crunchbase’s latest report shows global venture capital flowing into artificial‑intelligence companies reached $212 billion in 2025, a striking 85 % increase from the $114 billion recorded in 2024. This surge made AI the single largest sector for venture money, accounting for nearly half of all global VC investment that year and eclipsing the previous peak funding year of 2021. The data highlights the accelerating appetite for AI‑focused startups among investors worldwide.</p>
+      <div class="source">NEWS</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="model_releases">New Model Releases <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.aibase.com/news/31502" target="_blank" rel="noopener noreferrer">JetBrains Releases Programming AI Model Mellum2.1 with Twice the Throughput of Competitors Under Heavy Load</a>
+      <p>JetBrains announced the release of Mellum 2.1, a programming‑focused AI model that claims twice the throughput of competing LLMs when handling heavy workloads. The model is positioned for code generation and assistance, aiming to reduce latency for developers. JetBrains highlights a benchmark where Mellum 2.1 processes twice as many tokens per second compared to prior versions, promising faster turn‑around in integrated development environments.</p>
+      <div class="source">AIBASE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.deeplearning.ai/the-batch/issue-374" target="_blank" rel="noopener noreferrer">OpenAI’s DevDay, Google’s First Gemini 4 Model, Black Forest Labs Dives Into Robots</a>
+      <p>Google introduced Gemini 4 Argon, the latest iteration of its Gemini series, described as a vision‑language model optimized for complex software‑engineering tasks. Argon is said to handle multi‑modal inputs and can reason over lengthy codebases, marking a shift toward more capable, domain‑specific LLMs. The release follows a half‑year gap after Gemini 3.1 Pro Preview, underscoring Google's accelerated model cadence.</p>
+      <div class="source">DEEPLEARNING</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.instagram.com/p/DeRMsH3DEwD" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <p>Anthropic launched Claude Haiku 5.5, the company's newest small‑scale model touted as its fastest and most capable yet. According to the announcement, Haiku 5.5 delivers higher performance on summarization, coding assistance, and customer‑support tasks while cutting operating costs by a notable margin. The model is positioned as a low‑cost alternative for developers needing quick, reliable inference.</p>
+      <div class="source">INSTAGRAM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.youtube.com/watch?v=IO6Bhs2iNfk" target="_blank" rel="noopener noreferrer">OpenAI's always-on agents, 700+ math manuscripts & HackerRank's AI interviewer</a>
+      <p>Reflection AI unveiled Beam, a new generative AI model discussed in a recent podcast episode. Beam is developed by a startup founded by two former Google DeepMind researchers and targets high‑precision reasoning tasks. The hosts highlighted Beam's early benchmarks, noting it outperforms comparable open‑source models on a suite of math and coding challenges.</p>
+      <div class="source">YOUTUBE</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.unite.ai/secret-dates-in-system-prompts-undermine-language-model-evaluation" target="_blank" rel="noopener noreferrer">Secret Dates in System Prompts Undermine Language Model Evaluation – Unite.AI</a>
+      <p>Unite.AI reports that hidden dates embedded in system prompts can unintentionally affect LLM benchmark scores, causing a model’s ranking to shift simply because the evaluation was run on a different day. The article warns that a model’s performance could vary by several points without any real change in capability, undermining the reliability of leaderboards. This finding highlights a subtle source of evaluation drift that could compromise the comparability of benchmark results across time.</p>
+      <div class="source">UNITE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://openreview.net/pdf?id=109JTjfS0G" target="_blank" rel="noopener noreferrer">ANYTIME-VALID LLM LEADERBOARDS</a>
+      <p>The OpenReview paper "ANYTIME-VALID LLM LEADERBOARDS" proposes a new continuous‑evaluation framework that avoids the pitfalls of fixed‑benchmark leaderboards. Instead of a single static score, the authors introduce an anytime‑valid metric that aggregates mean performance across evolving test sets, enabling real‑time tracking of model improvements. This approach aims to provide more robust, up‑to‑date comparisons as models and benchmarks co‑evolve.</p>
+      <div class="source">OPENREVIEW</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://arxiv.org/html/2610.12183v1" target="_blank" rel="noopener noreferrer">A Closer Look at Agentic BBO: Benchmarking LLM Agents for Black-Box Optimization</a>
+      <p>A new arXiv preprint introduces the Agentic BBO benchmark, which tests LLM agents on black‑box optimization tasks such as chip placement. In the Bigblue1 task, the agent’s proxy model raised the best‑so‑far score from 0.551 after the first evaluation to 0.664 after four rounds, eventually reaching 0.676. The study demonstrates how iterative tool‑use and proxy learning can substantially improve performance on complex engineering problems.</p>
+      <div class="source">ARXIV</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://aistupidlevel.info" target="_blank" rel="noopener noreferrer">AI Benchmarks & Drift Detection 2026 | Live AI Model Rankings & Degradation Tracking</a>
+      <p>AI Stupid Level launches a live benchmarking platform that tracks coding, reasoning, tool‑calling, and speed scores for major LLMs like GPT, Claude, and Gemini, while also detecting performance drift over time. The dashboard updates in real‑time and flags models whose scores decline beyond a predefined threshold, offering early warnings of degradation. This continuous monitoring helps users and developers spot regressions that static leaderboards might miss.</p>
+      <div class="source">AISTUPIDLEVEL</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://daily.dev/posts/game-based-benchmarks-for-llms-how-models-behave-beyond-the-leaderboard-tqaeh5gub" target="_blank" rel="noopener noreferrer">Game-Based Benchmarks for LLMs: How Models Behave ...</a>
+      <p>DigitalOcean’s article on game‑based benchmarks explores evaluating LLMs through structured games such as poker, the Prisoner’s Dilemma, and simulated crisis scenarios. These benchmarks probe strategic reasoning, cooperation, and adversarial behavior, providing insight into model alignment beyond conventional QA or coding tests. By measuring win rates and decision quality in these interactive settings, researchers gain a richer picture of an LLM’s real‑world decision‑making abilities.</p>
+      <div class="source">DAILY</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="industry_news">AI Industry News <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener noreferrer">AI News Today, October 9: Top Stories | AI Weekly</a>
+      <p>AI Weekly reported that Ultra, a Brooklyn‑based warehouse‑packing robot‑as‑a‑service provider, closed a $62 million funding round. The round comprised a $50 million Series A led by Framework Ventures and a $12 million seed round backed by Y Combinator and NextView. The financing will accelerate Ultra’s deployment of its Physical Intelligence policy stack, which the company says is valued at $5.6 billion and enables rapid learning on customer sites. This injection of capital highlights continued investor appetite for robotics automation in logistics.</p>
+      <div class="source">AIWEEKLY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/cnbc/posts/cnbcs-kate-rooney-breaks-down-the-ai-news-you-may-have-missed-this-weekfind-the-/1502462838421771" target="_blank" rel="noopener noreferrer">CNBC's Kate Rooney breaks down the AI news you may ...</a>
+      <p>In a recent CNBC segment, co‑founder Ilya Sutskever warned that the fundamental way AI systems are built is about to shift, hinting at upcoming changes in model training pipelines. On the same day, Google announced the addition of an "AI Mode" to its Search product, allowing users to receive generative AI‑enhanced results directly in the search interface. The dual announcements underscore a broader industry move toward integrating generative capabilities into core consumer services and foreshadow potential restructuring of AI development workflows.</p>
+      <div class="source">FACEBOOK</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/9to5mac/posts/apple-acqui-hires-ai-startup-founded-by-former-notebooklm-developerssee-link-bel/1686501699509854" target="_blank" rel="noopener noreferrer">Apple acqui-hires AI startup founded by former NotebookLM</a>
+      <p>Apple has reportedly "acqui‑hired" 32 AI startups in 2023, surpassing any other tech giant in AI‑focused acquisitions last year. The spree includes a former NotebookLM team, reflecting Apple’s strategy to embed advanced language‑model capabilities across its ecosystem. By consolidating these smaller innovators, Apple aims to accelerate its on‑device AI roadmap and compete more directly with rivals like Google and Microsoft in the consumer AI space.</p>
+      <div class="source">FACEBOOK</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/schwabnetwork/posts/the-ai-fueled-bull-market-is-approaching-its-fourth-anniversary-with-the-sp-500-/1704539258340096" target="_blank" rel="noopener noreferrer">The AI-fueled bull market is approaching its fourth ...</a>
+      <p>Analysts cited in a recent market commentary project that the current $200 billion AI market could swell to over $1 trillion by 2030, signaling rapid expansion beyond the early‑stage growth phase. The forecast attributes the surge to enterprise adoption of generative AI, increased AI‑driven automation, and rising investment inflows. Such a trajectory suggests a potential reshaping of the broader tech sector, with AI becoming a dominant revenue driver across multiple industries.</p>
+      <div class="source">FACEBOOK</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.theguardian.com/technology/artificialintelligenceai" target="_blank" rel="noopener noreferrer">AI (artificial intelligence)</a>
+      <p>The Guardian reported that AI surveillance startup Flock announced plans to cut several hundred jobs amid mounting public backlash over its facial‑recognition technology. The layoffs represent a significant reduction in workforce for the firm, which had previously expanded rapidly to meet demand from law‑enforcement contracts. The move highlights growing regulatory and societal pressures on AI companies operating in the surveillance space, potentially prompting a shift toward more privacy‑focused solutions.</p>
+      <div class="source">THEGUARDIAN</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="trends">Code Worth Adopting <span class="count">2 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://github.com/code-yeongyu/oh-my-openagent/releases" target="_blank" rel="noopener noreferrer">Releases · code-yeongyu/oh-my-openagent · GitHub</a>
+      <p>The open-source project oh-my-openagent published a new release on October 9, 2026, adding prebuilt binaries for macOS. The release includes a darwin-arm64 binary (119 MB, SHA256 c4a2d90a…) and a darwin-x64 binary (126 MB, SHA256 0abd11b9…). These assets allow developers to quickly install the OMO AI agent framework via the command `bun add -g omo-ai` without building from source, streamlining integration into existing toolchains.</p>
+      <div class="source">GITHUB</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://ansezz.com/tools/llms-txt-generator" target="_blank" rel="noopener noreferrer">llms.txt Generator and Validator (llmstxt.org) — ansezz</a>
+      <p>The llms.txt Generator and Validator, hosted at llmstxt.org, provides a simple web‑based tool that creates markdown "llms.txt" files describing an API surface for AI agents. By generating this structured guide, coding agents can automatically locate the correct endpoint documentation, improving reliability of code‑generation workflows. The service also validates the file against a schema, ensuring compatibility before deployment.</p>
+      <div class="source">ANSEZZ</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="productivity">AI Productivity Tips <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.instagram.com/reel/DeRfzwQSF69" target="_blank" rel="noopener noreferrer">CHATGPT PRO FREE?! 😱🔥 Haan, limited-time offer real ...</a>
+      <p>An Instagram Reel promotes a limited‑time free access to ChatGPT Pro, offering a step‑by‑step video walkthrough of the upgrade process. The post also bundles "ChatGPT hacks" and "Safe AI Tools" aimed at boosting daily productivity for Indian users. By claiming the free link through a comment, viewers can instantly test premium features such as faster response times and larger context windows, which can streamline drafting and research tasks.</p>
+      <div class="source">INSTAGRAM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.threads.com/@promptsyoudaily/post/DeR4-9dmXHj/im-giving-away-my-entire-ai-tool-library-for-free-inside-youll-get-the-exact-ai" target="_blank" rel="noopener noreferrer">🎁 I'm giving away my entire 700+ AI Tool library for free. ...</a>
+      <p>A creator on Threads is giving away their entire library of over 700 AI tools for free, accompanied by a 1‑hour live session that demonstrates practical applications for everyday work. The session promises to show how to integrate tools like Claude, Midjourney, and various automation scripts into routine tasks such as email drafting, data summarisation, and content ideation. Providing this massive toolkit aims to lower the barrier for professionals seeking to embed AI into their workflow without paying for individual subscriptions.</p>
+      <div class="source">THREADS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://matttopley.com/category/daily-top-ten" target="_blank" rel="noopener noreferrer">Daily Top Ten Archives | View From The Top</a>
+      <p>The "Daily Top Ten" blog post shares a simple productivity hack: write three rough lines of your own answer before opening an AI chat window. This low‑stakes anchoring exercise forces you to generate an initial thought, reducing over‑reliance on the model and making the AI's suggestions more targeted. The author argues that this technique improves idea ownership and speeds up the refinement process when the AI is finally consulted.</p>
+      <div class="source">MATTTOPLEY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.fetc.org/agenda-sessions" target="_blank" rel="noopener noreferrer">Agenda & Sessions - FETC 2027</a>
+      <p>At the upcoming FETC 2027 conference, a poster session titled "Beyond the Chatbot: Mastering Claude Code to Automate Everything" will introduce Anthropic's Claude Code command‑line assistant. The presentation will demonstrate how developers can script repetitive tasks, generate code snippets, and orchestrate workflows directly from the terminal. Attendees will learn concrete automation patterns that can cut manual effort by up to 50% in typical classroom tech operations.</p>
+      <div class="source">FETC</div>
+    </div>
+    
+  </div>
+  
+  
+
+  <div class="seal"></div>
+  <div class="masthead-footer">Delivered by owl post, automated daily &mdash; every headline links to its original source</div>
+  <div class="masthead-footer" style="margin-top: 6px;"><a href="archive.html" style="color: inherit;">Browse past editions &rarr;</a></div>
+  <div class="masthead-footer" style="margin-top: 6px;">The AI Herald by <a href="https://github.com/exc33ded" style="color: inherit;">Sarim</a></div>
+
+</body>
+</html>
