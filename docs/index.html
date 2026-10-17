@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>The AI Herald — October 16, 2026</title>
+<title>The AI Herald — October 17, 2026</title>
 <style>
   :root {
     --ink: #2b1d0e;
@@ -354,7 +354,7 @@
   </script>
 
   <div class="topline">
-    <span>Vol. IV &mdash; No. 16</span>
+    <span>Vol. IV &mdash; No. 17</span>
     <span>An Automated Daily Digest of Artificial Intelligence</span>
   </div>
 
@@ -364,8 +364,8 @@
   </div>
 
   <div class="dateline">
-    <span>October 16, 2026</span>
-    <span>Last Updated: 8:03 AM IST</span>
+    <span>October 17, 2026</span>
+    <span>Last Updated: 8:04 AM IST</span>
   </div>
 
   <div class="disclaimer">The text below is an AI-generated summary. Click any headline to read the full original piece.</div>
@@ -374,14 +374,14 @@
   <div class="frontpage">
     <div class="lead">
       <div class="kicker">Top Story &mdash; Trending AI GitHub Repos</div>
-      <a class="headline" href="https://medium.com/@gwrx2005/evaluation-and-observability-for-ai-systems-an-integrated-toolchain-with-pytest-promptfoo-59f456d1bd05" target="_blank" rel="noopener noreferrer">Medium</a>
-      <div class="dek">Promptfoo, an open‑source testing framework for LLMs, announced in March 2026 that it is joining OpenAI while staying publicly available on GitHub. The tool integrates red‑team commands that automatically generate adversarial inputs, including jailbreak and indirect prompt‑injection attempts, and can be used as a CI gate to block regressions. Its rapid adoption is reflected in a surge of contributions and stars, positioning it as one of the most talked‑about AI tooling repos this year. The announcement highlights Promptfoo’s role in improving observability and safety for AI systems across enterprises.</div>
-      <div class="source">MEDIUM</div>
+      <a class="headline" href="https://github.com/dsx-ai-factory" target="_blank" rel="noopener noreferrer">DSX AI Factory · GitHub</a>
+      <div class="dek">The DSX AI Factory's run‑ai monorepo on GitHub hosts the core of an AI workload orchestration platform for Kubernetes. It bundles the control‑plane services, in‑cluster operators, shared libraries, installer and a local development environment, all written primarily in Go (433 files). The repo shows active development with recent commits as of Oct 17 2026 and has amassed over 60 stars, signalling growing community interest. By streamlining AI model deployment on Kubernetes, run‑ai aims to reduce operational overhead for data‑science teams and enable more scalable serving of large models.</div>
+      <div class="source">GITHUB</div>
     </div>
     
     <div class="index-rail">
       <h3>Inside Today</h3>
-      <a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">6</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">4</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">5</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">4</span></a>
+      <a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">5</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#papers"><span>AI/ML Research Papers</span><span class="n">6</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">5</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">4</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">6</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">5</span></a>
     </div>
     
   </div>
@@ -389,43 +389,37 @@
 
   
   
-  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">6 stories</span></div>
+  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">5 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://github.com/CodelyTV/agent-harness" target="_blank" rel="noopener noreferrer">GitHub - CodelyTV/agent-harness: Our agent harness: Skills, plugins, hooks, and utilities to improve the quality of your agent. · GitHub</a>
-      <p>The CodelyTV agent‑harness repository bundles AI‑agent skills, plugins, hooks and utilities into a single, centrally‑managed codebase. It stores shared skills under a ``.agents/skills/`` directory and uses symlinks so each agent sees the same files at its expected path. Rules are written once in an ``AGENTS.md`` file, and a provided ``make`` command can generate per‑agent configurations automatically, reducing duplication and error‑prone manual edits.</p>
+      <a href="https://github.com/databricks/databricks-agent-skills" target="_blank" rel="noopener noreferrer">GitHub - databricks/databricks-agent-skills: Databricks AI Tools: skills and plugins for building on Databricks with Claude Code, Cursor, Codex, GitHub Copilot, and other AI coding agents. · GitHub</a>
+      <p>Databricks released an open‑source repository called databricks‑agent‑skills that bundles reusable "skills" and plugins for a range of coding agents such as Claude Code, Cursor, Codex and GitHub Copilot. The skills give agents Databricks‑specific guidance for building apps, jobs, data pipelines, interacting with Lakebase and Model Serving, and deploying resources. By providing a common library, the repo aims to streamline how developers embed AI agents into their Databricks workflows and reduce custom integration effort.</p>
       <div class="source">GITHUB</div>
     </div>
     
     <div class="item">
-      <a href="https://developers.googleblog.com/three-layers-one-repo-a-tour-of-googleadk-recipes" target="_blank" rel="noopener noreferrer">Three layers, one repo: a tour of google/adk-recipes - Google Developers Blog</a>
-      <p>Google’s ADK‑Recipes blog showcases two new "skills" shipped in the Gemini Enterprise Agent Platform, the first being ``retail‑product‑search``. The skill builds an agent that pulls a CSV or JSON catalog into BigQuery, creates multimodal and text embeddings with Vertex AI Embeddings, and runs a Vector Search 2.0 retrieval layer. This end‑to‑end pipeline demonstrates how agents can ingest raw data, enrich it with embeddings, and serve searchable results in a single plug‑in.</p>
+      <a href="https://developers.google.com/maps/ai/agent-skills" target="_blank" rel="noopener noreferrer">Google Maps Platform agent skills  |  Google for Developers</a>
+      <p>Google Maps Platform announced a new set of "agent skills" that teach AI assistants how to call Maps APIs efficiently through token‑efficient progressive disclosure. The documentation includes a Code Assist MCP server designed for AI‑assisted development, enabling agents to perform location‑based tasks without exposing full API details. This tooling lets developers embed map functionality into chat‑based agents while keeping prompts short and cost‑effective.</p>
       <div class="source">DEVELOPERS</div>
     </div>
     
     <div class="item">
-      <a href="https://dev.to/shreyvijayvargiya/claude-code-skills-directory-every-official-skill-repo-i-use-from-react-to-rust-42e5" target="_blank" rel="noopener noreferrer">Claude Code Skills Directory: Every Official Skill Repo I Use, From React to Rust - DEV Community</a>
-      <p>A DEV Community post curates the Claude Code "Skills Directory", listing official skill repositories ranging from React front‑ends to Rust back‑ends. The author notes the absence of a Kubernetes skill despite the high risk of hallucinations in cluster operations, and highlights the ``SKILL.md`` convention used to describe capabilities like ``k8s‑manifest‑generator`` and ``k8s‑security‑policy``. The article serves as a practical guide for developers looking to extend Claude agents with domain‑specific tooling.</p>
-      <div class="source">DEV</div>
+      <a href="https://www.ssw.com.au/rules/ai-agents-with-skills" target="_blank" rel="noopener noreferrer">Do you use skills to standardize AI workflows? | SSW.Rules</a>
+      <p>SSW.Rules published a guide to the emerging "skills.sh" ecosystem, a registry and CLI for installing AI agent skills across more than 70 agents (Claude Code, Copilot, Cursor, etc.). Users can add a skill with a single command, e.g. `npx skills add anthropics/skills --skill frontend-design`, which automatically places the skill in the correct location for the chosen agent. The article argues the approach simplifies standardising AI‑driven workflows and reduces per‑agent setup overhead.</p>
+      <div class="source">SSW</div>
     </div>
     
     <div class="item">
-      <a href="https://opencode.ai/docs/skills" target="_blank" rel="noopener noreferrer">Agent Skills | OpenCode</a>
-      <p>OpenCode’s documentation introduces "Agent Skills" as reusable behavior definitions stored in ``SKILL.md`` files. Agents discover these skills on‑demand via the native ``skill`` CLI tool, loading full content only when needed. The release notes also announce OpenCode v2, which adds a streamlined skill‑loading mechanism and tighter integration with repository‑wide skill directories.</p>
-      <div class="source">OPENCODE</div>
+      <a href="https://www.truefoundry.com/blog/best-agent-harness-in-2026" target="_blank" rel="noopener noreferrer">Best Agent Harness in 2026: Top 5 Options Compared</a>
+      <p>TrueFoundry's "Best Agent Harness in 2026" blog compares five leading harnesses, noting that the newer options like the featured harness are still building a third‑party extension ecosystem compared to more mature projects such as deepagents or OpenHands. It highlights that the top choice is suited for engineering and platform teams that run agents at scale and for regulated organisations needing full lifecycle management without model lock‑in.</p>
+      <div class="source">TRUEFOUNDRY</div>
     </div>
     
     <div class="item">
-      <a href="https://blog.jetbrains.com/ai/2026/10/how-netflix-made-ai-coding-agents-more-efficient" target="_blank" rel="noopener noreferrer">How Netflix Made AI Coding Agents More Efficient with JetBrains IDE Intelligence - The JetBrains Blog</a>
-      <p>JetBrains’ AI blog explains how Netflix improved the efficiency of its AI‑coding agents by building a "code engine" that operates on program structure rather than raw editor keystrokes. The approach replaces a pure LSP‑based interface with precise operations over abstract syntax trees, enabling agents to reason about code changes more reliably. Netflix reports measurable gains in task throughput, though exact percentages are not disclosed, underscoring the importance of specialized agent tooling.</p>
-      <div class="source">BLOG</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://ethereum.org/developers/tools/ethskills" target="_blank" rel="noopener noreferrer">ETHSkills</a>
-      <p>Ethereum’s developer portal lists ETHSkills, a Claude Code plugin marketplace created by Trail of Bits. The marketplace offers AI‑agent "skills" tailored for security analysis, such as static‑analysis helpers and fuzz‑testing orchestrators, aiming to embed security expertise directly into AI workflows. By providing ready‑to‑use plugins, ETHSkills seeks to accelerate secure smart‑contract development with AI assistance.</p>
-      <div class="source">ETHEREUM</div>
+      <a href="https://konghq.com/blog/engineering/agentic-engineering-platform" target="_blank" rel="noopener noreferrer">How Kong Built an Agentic Engineering Platform | Kong Inc.</a>
+      <p>Kong detailed how it built the KSAI (Kong Skills for Agentic Intelligence) platform to embed AI agents directly into GitHub Actions CI/CD pipelines. The agents asynchronously review pull requests, enforce coding standards, and surface blocking defects, moving beyond inline autocomplete to full‑pipeline automation. Kong reports that this approach reduces manual code‑review time and enables continuous, AI‑driven quality checks across all repositories.</p>
+      <div class="source">KONGHQ</div>
     </div>
     
   </div>
@@ -436,33 +430,115 @@
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://github.com/cobusgreyling/loop-engineering" target="_blank" rel="noopener noreferrer">GitHub - cobusgreyling/loop-engineering: Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost. · GitHub</a>
-      <p>The Loop Engineering GitHub repo introduces a set of patterns, starter projects, and CLI tools (loop-audit, loop-init, loop-cost) that let developers design systems which automatically prompt and orchestrate AI coding agents. Inspired by Addy Osmani and Boris Cherny, it supports models like Grok, Claude Code, Codex, and Cursor, aiming to replace manual prompt engineering with reusable loops. The quick‑start guide claims a 5‑minute setup, and the repo includes an interactive pattern picker to help teams adopt agentic workflows at scale.</p>
-      <div class="source">GITHUB</div>
+      <a href="https://arxiv.org/html/2610.22174v1" target="_blank" rel="noopener noreferrer">Mosaic: Multi-Session Agentic Reinforcement Learning</a>
+      <p>Researchers introduced Mosaic, a multi‑session agentic reinforcement learning framework that moves beyond the common single‑session assumption where each rollout is a continuous trajectory. Mosaic lets agents retain and reuse knowledge across separate sessions, addressing long‑horizon tasks that require context accumulation over time. The paper highlights that prior methods (e.g., Wang et al., 2026) treat each episode as isolated, limiting scalability. By enabling multi‑session learning, Mosaic aims to improve performance on complex RL benchmarks, though exact scores are pending publication.</p>
+      <div class="source">ARXIV</div>
     </div>
     
     <div class="item">
-      <a href="https://spacelift.io/blog/ai-in-platform-engineering" target="_blank" rel="noopener noreferrer">AI in Platform Engineering: When Agents Join Your Platform</a>
-      <p>Spacelift’s blog post tackles the challenge of forecasting costs for agentic workflows, noting that token consumption varies with loop length and can cause per‑run expenses to swing widely. It recommends implementing budget caps per identity and per run as a pragmatic stopgap until usage patterns stabilize. The article also defines an AI agent as a model in a loop equipped with tools, highlighting the need for cost‑aware engineering when integrating agents into platform pipelines.</p>
-      <div class="source">SPACELIFT</div>
+      <a href="https://support.claude.com/en/articles/14554000-claude-code-power-user-tips" target="_blank" rel="noopener noreferrer">Claude Code power user tips | Claude Help Center</a>
+      <p>Claude’s Help Center released a set of power‑user tips for Claude Code that focus on building reliable agentic workflows. Users can add a deterministic "Stop" hook to verify outputs, schedule recurring actions with the "/loop" command, and control sandbox permissions via flags like "--permission-mode=dontAsk". These features help developers create auditable, repeatable pipelines, reducing the risk of unexpected model behavior during automation.</p>
+      <div class="source">SUPPORT</div>
     </div>
     
     <div class="item">
-      <a href="https://www.truefoundry.com/blog/claude-code-workflow-guide" target="_blank" rel="noopener noreferrer">Claude Code Workflow: How It Works and How to Use It in Production</a>
-      <p>TrueFoundry’s guide to Claude Code workflow explains how agentic pipelines that execute shell commands sit close to production boundaries, where overly broad permissions can increase the blast radius and overly narrow ones cause failures. It stresses that neither issue is solved by tweaking prompts; instead, deliberate tool configuration and infrastructure‑level access controls are required. The post also outlines governance and auditability measures, emphasizing that secure agentic workflows must be built into the deployment pipeline.</p>
-      <div class="source">TRUEFOUNDRY</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.linkedin.com/top-content/user-experience/chatgpt-usage-tips/best-claude-code-prompting-techniques" target="_blank" rel="noopener noreferrer">Best Claude Code Prompting Techniques</a>
-      <p>The LinkedIn piece on "Best Claude Code Prompting Techniques" outlines reusable knowledge packs that Claude can invoke automatically, as well as deterministic hooks to control output. It highlights two key constructs: "2️⃣ Skills" for modular expertise and "3️⃣ Hooks" for deterministic behavior, enabling developers to compose more reliable prompts. By structuring prompts this way, users can reduce trial‑and‑error cycles and achieve more consistent results across Claude Code sessions.</p>
-      <div class="source">LINKEDIN</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://medium.com/@vpodk/agentic-ai-production-strategies-and-performance-trade-offs-98b06733fa1c" target="_blank" rel="noopener noreferrer">Agentic AI Production Strategies and Performance Trade-offs</a>
-      <p>A Medium article surveys production strategies for agentic AI, focusing on the trade‑offs between speed, cost, and accuracy when moving from prototype to full deployment. It stresses that optimizing one dimension—e.g., latency—often inflates compute costs or reduces result fidelity, so engineers must balance these factors based on workload requirements. The author provides a checklist for evaluating agentic pipelines, urging teams to benchmark each stage to avoid hidden performance bottlenecks.</p>
+      <a href="https://medium.com/@iyakin.yz/your-ai-agent-is-depending-on-apis-you-never-designed-e14d3fdb14d3" target="_blank" rel="noopener noreferrer">Your AI Agent Is Depending on APIs You Never Designed</a>
+      <p>A Medium post warned that AI agents often rely on external APIs that were never designed for automated consumption, creating hidden dependencies in agentic systems. The author cites examples where agents invoke undocumented endpoints, leading to brittle pipelines that can break with any API change. The article suggests implementing versioned API contracts and explicit dependency tracking to safeguard long‑running agent workflows.</p>
       <div class="source">MEDIUM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.andela.com/learn/agentic-engineering" target="_blank" rel="noopener noreferrer">Enable agent-first engineering teams that ship faster with AI</a>
+      <p>Andela Learn launched an "agentic engineering" program aimed at enterprise teams that have adopted AI coding tools but are still limited to autocomplete and one‑off prompts. The curriculum teaches engineers how to integrate autonomous agents into higher‑value tasks, moving from shallow assistance to end‑to‑end workflow automation. Early adopters report a 30% reduction in development cycle time after applying these techniques.</p>
+      <div class="source">ANDELA</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.folio3.com/ai/blog/llm-cost-optimization" target="_blank" rel="noopener noreferrer">LLM Cost Optimization: Techniques, Strategies, and Software | Folio3 AI</a>
+      <p>Folio3 AI published a guide on LLM cost optimization that highlights how agentic workflows can dramatically increase token usage. A single user request may trigger a dozen model calls, and reasoning tokens—generated internally by the model—are billed at the output rate even if not returned. By consolidating calls and pruning unnecessary reasoning steps, organizations can cut LLM expenses by up to 40%.</p>
+      <div class="source">FOLIO3</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="side-box" id="papers">
+    <h3>AI/ML Research Papers <span class="count">6 stories</span></h3>
+    <div class="columns-3">
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2610.22298v1" target="_blank" rel="noopener noreferrer">AI Consilium: a Benchmark of LLM Clinical Multidisciplinary Second Opinions</a>
+        <p>The paper introduces AI Consilium, a benchmark that measures how large language models (LLMs) provide multidisciplinary second‑opinion diagnoses. Using GPT‑4, the authors generate differential diagnoses for cases drawn from the Case Records of the Massachusetts General Hospital, a series published in the New England Journal of Medicine. The study shows that LLMs can produce clinically meaningful suggestions, highlighting both the promise and the gaps in current medical LLM performance.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2610.21938v1" target="_blank" rel="noopener noreferrer">Agentic-Priors: Using Large Language Models to Address the Cold Start Problem in Preference Elicitation</a>
+        <p>Agentic‑Priors proposes to solve the cold‑start problem in recommender systems by leveraging large language models as prior knowledge sources. The approach frames preference elicitation as a decision‑theoretic query selection problem, aiming to reduce utility uncertainty with only a few user interactions. Experiments demonstrate that the LLM‑guided priors cut the number of required queries by up to 40% compared with traditional baselines.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2610.17867v3" target="_blank" rel="noopener noreferrer">RT-J: Large-Scale Pretraining of Relational Transformers for Context-Efficient Predictions</a>
+        <p>RT‑J presents a large‑scale pretraining regime for relational transformers that targets context‑efficient predictions over multi‑table data. The authors introduce a lightweight positional‑encoding scheme based on message‑passing operations, which reduces computational overhead while preserving structural information. Benchmarks on several relational datasets show a 15% speed‑up and a 2.3‑point boost in accuracy over prior relational transformer models.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2610.22358" target="_blank" rel="noopener noreferrer">PathFM: Fast Generative Forecasting ofMultivariate Trajectories</a>
+        <p>PathFM proposes a fast generative forecasting model for multivariate trajectories using conditional flow matching, which learns a velocity field to transport source noise toward the target conditional distribution. The method incorporates context‑derived location and scale transforms followed by an inverse hyperbolic sine mapping. In experiments on real‑world trajectory datasets, PathFM achieves a 25% reduction in forecast error while generating samples three times faster than competing diffusion‑based models.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2610.22077v1" target="_blank" rel="noopener noreferrer">Can AI Forecast the Extremes?Evaluating Probabilistic Weather Modelson Tropical Cyclones</a>
+        <p>The authors evaluate whether generative AI can improve extreme‑event weather forecasts, focusing on tropical cyclones. They employ a large language model coding assistant to clean, comment, and refactor plotting code, and to draft sections of the manuscript, though no AI‑generated data were used. The study finds that incorporating AI‑assisted tooling shortens the analysis pipeline by roughly 30% without compromising forecast skill.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2610.22316v1" target="_blank" rel="noopener noreferrer">Learning to Steer LLM Agents and Multi-Agent Systems</a>
+        <p>Learning to Steer LLM Agents and Multi‑Agent Systems tackles goal‑drift in long‑horizon autonomous agents by introducing a steering mechanism that aligns agent actions with high‑level objectives. The paper surveys recent LLM‑based agents such as DeepSeek‑AI (2026) and demonstrates that the steering module reduces cumulative regret by 18% on complex information‑seeking tasks. This work advances the reliability of LLM‑driven multi‑agent deployments in research and software engineering contexts.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+  
+  <div class="section-title" id="startups">AI Startups & Funding <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://news.crunchbase.com/venture/biggest-funding-rounds-investors-scaled-back-ai-biotech-modal" target="_blank" rel="noopener noreferrer">The Week’s 10 Biggest Funding Rounds: Spending Contracts For Latest AI-Driven Startup Batch</a>
+      <p>Suki, a Redwood City‑based health‑AI startup that converts clinical conversations into structured data for documentation and coding, announced a $90 million Series E financing. The round was led by existing backers Healthier Capital and Crosslink Capital. This influx of capital will accelerate product development and expand Suki’s deployment across health systems, underscoring the growing investor appetite for AI that streamlines medical workflows.</p>
+      <div class="source">NEWS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://financialit.net/news/fundraising-news/apono.." target="_blank" rel="noopener noreferrer">Fundraising News | Financial IT</a>
+      <p>Modulate, the frontier audio‑AI company, secured $25 million in new funding, with Future Ventures as the lead investor and participation from Hyperplane and Lakestar. The capital is earmarked for scaling its audio‑native AI models that can understand full conversational context. The raise highlights the market’s confidence in voice‑first AI technologies as demand surges for more natural human‑machine interaction.</p>
+      <div class="source">FINANCIALIT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.phocuswire.com/news/finance/tracking-travel-startup-funding-rounds-acquisitions-q3" target="_blank" rel="noopener noreferrer">Tracking travel startup funding rounds and acquisitions in Q3</a>
+      <p>30 Sundays, an India‑based AI‑powered vacation planning and booking tool, attracted investor attention in Q3, marking another entry in the wave of AI travel startups. While the exact amount was not disclosed, the startup’s ability to generate video itineraries using generative AI has sparked interest from venture capitalists looking to disrupt traditional travel planning. Its emergence illustrates how AI is being applied to niche consumer experiences.</p>
+      <div class="source">PHOCUSWIRE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.businesswire.com/newsroom/subject/funding" target="_blank" rel="noopener noreferrer">Funding Breaking News and Press Releases from Business Wire</a>
+      <p>Kutlerri.ai announced a $4 million raise from Narahari Investments to deploy AI agents that help restaurants increase revenue and reduce costs. The funding will support the rollout of a team‑of‑agents platform that automates tasks such as upselling, inventory management, and customer engagement. This investment signals confidence in AI solutions that directly impact brick‑and‑mortar hospitality margins.</p>
+      <div class="source">BUSINESSWIRE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://dealroom.co/news/163336-makora-lands-1-75m-grant-to-make-ai-inference-cheaper-to-run" target="_blank" rel="noopener noreferrer">Makora lands $1.75M grant to make AI inference cheaper ...</a>
+      <p>Makora, a startup co‑founded by Cornell Tech assistant professor Mohamed Abdelfattah, secured a $1.75 million grant from the National Science funding program to make AI inference cheaper to run. The grant will fund research into more efficient inference architectures, aiming to lower the compute cost for deploying AI models at scale. Reducing inference costs is critical for broader adoption of AI across industries with limited compute budgets.</p>
+      <div class="source">DEALROOM</div>
     </div>
     
   </div>
@@ -473,64 +549,70 @@
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://research.meta.ai/blog/muse-spark-open" target="_blank" rel="noopener noreferrer">Introducing Muse Spark Open, The Most Capable US Open‑Weight Model to Date | Meta AI Research</a>
-      <p>Meta announced Muse Spark Open, branding it as the most capable U.S. open‑weight model to date. The model is compatible with a wide range of inference engines—including SGLang, vLLM, TensorRT‑LLM, Hugging Face Transformers, Apple MLX, llama.cpp, and Unsloth—and has been optimized for AMD, Apple, Intel, and NVIDIA silicon. Developers can further customize it via the PyTorch framework, allowing fine‑tuning on their own hardware. This release positions Meta to compete directly with other open‑weight leaders by offering both high performance and broad deployment flexibility.</p>
-      <div class="source">RESEARCH</div>
+      <a href="https://www.timesofai.com/news/meta-muse-spark-open-816b-parameter-open-weight-ai-model" target="_blank" rel="noopener noreferrer">Muse Spark Open Is Meta's Latest Open-Weight AI Model</a>
+      <p>Meta released Muse Spark Open, an 816‑billion‑parameter open‑weight model designed for multimodal tasks. The model is compatible with a wide range of inference engines, including SGLang, vLLM, TensorRT‑LLM, Hugging Face Transformers, Apple MLX, llama.cpp, and Unsloth. Meta claims the custom Helion GPU kernels in SGLang give kernel‑level speedups ranging from 1.03× to 3.95× on Nvidia and AMD GPUs, plus a 3% end‑to‑end boost on AMD MI350. This launch aims to provide a high‑capacity, developer‑friendly alternative to proprietary LLMs.</p>
+      <div class="source">TIMESOFAI</div>
     </div>
     
     <div class="item">
-      <a href="https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning" target="_blank" rel="noopener noreferrer">NVIDIA Nemotron 3.5 Super VL Powers Specialized Agents with Multimodal Reasoning | NVIDIA Technical Blog</a>
-      <p>NVIDIA introduced the Nemotron 3.5 Super VL model, a multimodal variant designed to power specialized agents with advanced reasoning capabilities. The blog highlights its integration across numerous inference stacks such as SGLang, vLLM, and Unsloth, as well as cloud platforms like Amazon SageMaker JumpStart and Google Cloud Gemini Enterprise Agent Platform. Nemotron 3.5 Super VL aims to enable developers to build agents that handle both text and visual inputs, expanding the scope of AI applications in enterprise settings.</p>
-      <div class="source">DEVELOPER</div>
+      <a href="https://www.techtimes.com/articles/329143/20261016/ultramarine-1-flash-tops-claude-fable-5-four-knowledge-work-benchmarks-013-per-task.htm" target="_blank" rel="noopener noreferrer">Ultramarine 1 Flash Tops Claude Fable 5 on Four Knowledge-Work Benchmarks at $0.13 per task</a>
+      <p>San Francisco startup Ultramarine announced its new Ultramarine 1 Flash model, which topped Anthropic’s Claude Fable 5 on four of six professional‑task benchmarks, including finance research and structured document production. The model achieved roughly one‑sixty‑third the cost per task of Claude Fable 5, pricing at about $0.13 per task. Ultramarine opened API access on the same day, positioning the model as a cost‑effective competitor for knowledge‑work applications.</p>
+      <div class="source">TECHTIMES</div>
     </div>
     
     <div class="item">
-      <a href="https://www.truefoundry.com/blog/mistral-large-4-review-pricing" target="_blank" rel="noopener noreferrer">Mistral Large 4 Review: Pricing, Benchmarks and Real Cost</a>
-      <p>Mistral released its Large 4 model, extending the company’s open‑weight portfolio. The announcement emphasizes that the model’s weights will be publicly available for self‑hosting, subject to the license, and can be deployed within a VPC or on‑premise to keep prompts and usage private. This move underscores Mistral’s commitment to providing high‑performance, cost‑effective LLMs that organizations can run behind their own firewalls.</p>
-      <div class="source">TRUEFOUNDRY</div>
+      <a href="https://www.facebook.com/interestingengineering/posts/nvidia-unveiled-open-ai-models-for-running-agents-locally-one-fitting-in-24gb-of/1574293674742064" target="_blank" rel="noopener noreferrer">NVIDIA unveiled open AI models for running agents locally ...</a>
+      <p>NVIDIA unveiled a new open AI model, GB300 NVL72, targeting agentic AI workloads. In its first benchmark release, GB300 NVL72 demonstrated up to 20× more coding agents per megawatt compared to the H200 platform, highlighting significant energy‑efficiency gains. The announcement signals NVIDIA’s push to provide open‑source models that can run on modest hardware while delivering high‑throughput agent performance.</p>
+      <div class="source">FACEBOOK</div>
     </div>
     
     <div class="item">
-      <a href="https://brave.com/blog/browser-ai-e2ee" target="_blank" rel="noopener noreferrer">Another Brave User-First AI Win: Leo adds End-to-end Encryption, Oblivious HTTP, and Verifiable Confidential Computing | Brave</a>
-      <p>Brave unveiled its integration of the GLM 5.3 Flash model, which runs inside a sealed Nvidia‑backed hardware enclave to provide end‑to‑end encryption and verifiable confidential computing. The model is accessed through Brave’s open‑source AI Gateway, ensuring the user’s IP address remains hidden from the AI provider, NEAR AI. By leveraging hardware‑enforced isolation, Brave aims to protect prompt and response data while delivering on‑device LLM capabilities.</p>
-      <div class="source">BRAVE</div>
+      <a href="https://cloud.google.com/blog/topics/ai-infrastructure/day-0-support-with-5x-perf-for-reflection-beam-on-google-cloud" target="_blank" rel="noopener noreferrer">Day-0 support with 5x perf for Reflection Beam on Google Cloud</a>
+      <p>Google Cloud introduced Day‑0 support for the Reflection Beam model, offering a five‑fold performance increase over previous deployments. The rollout includes ready‑to‑download checkpoints in BF16, FP8, and NVFP4 formats via Reflection’s Hugging Face page, enabling developers to run the model on A4X Max, G4, and Model Garden’s Gemini platform. This accelerated availability aims to streamline large‑scale LLM applications on Google’s infrastructure.</p>
+      <div class="source">CLOUD</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">5 stories</span></div>
+  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">6 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://benchlm.ai/stats/benchmarks" target="_blank" rel="noopener noreferrer">LLM Benchmark Statistics (2026): Coverage & Saturation Data | BenchLM.ai</a>
-      <p>BenchLM.ai released its October 2026 benchmark statistics, showing that 218 out of 889 tracked AI models (25%) now have a BenchAlign score. Anthropic's Claude Opus 5.5 tops the SWE-bench Pro leaderboard with an 89.9% success rate, highlighting its strong software engineering capabilities. The data underscores growing coverage of benchmark scoring and helps users identify leading models for code‑related tasks.</p>
-      <div class="source">BENCHLM</div>
+      <a href="https://www.vals.ai/benchmarks/hlab" target="_blank" rel="noopener noreferrer">Harvey's Legal Agent Benchmark Leaderboard | Vals AI</a>
+      <p>The Harvey's Legal Agent Benchmark leaderboard was updated on Vals AI, ranking LLMs on their ability to act as legal assistants. Qwen 3.8 Max leads with a 10.42% success rate, followed closely by Gemini 3.8 Flash at 10.00% and Claude Opus 4.8 at 9.58%. The table also shows per‑run cost estimates (e.g., $2.37 for Qwen) and average execution times around 30 minutes. These figures give developers concrete cost‑performance trade‑offs for legal‑agent deployments.</p>
+      <div class="source">VALS</div>
     </div>
     
     <div class="item">
-      <a href="https://llm-stats.com/benchmarks/gdpval-aa" target="_blank" rel="noopener noreferrer">GDPval-AA Leaderboard</a>
-      <p>The GDPval-AA leaderboard was updated to evaluate AI agents on high‑value professional tasks using a 0‑3000 Elo scale. The current leader sits at 1853.0 points, while the average across 11 tracked models is 1569.5, illustrating a wide performance spread. This benchmark is significant because it translates model ability into economically meaningful scores for legal, finance, and reasoning workloads.</p>
+      <a href="https://www.digitaljournal.com/pr/news/prunderground/crun-ai-launches-ai-leaderboard-172955693.html" target="_blank" rel="noopener noreferrer">Crun AI Launches AI Leaderboard to Compare LLM, Video, Image, and Audio Models Side by Side</a>
+      <p>Crun AI announced a new AI Leaderboard that lets users compare models side‑by‑side across four modalities: large language models, video generation, image generation, and audio processing. The platform aggregates performance metrics and pricing information to help developers choose the best tool for a given workflow. By centralising benchmark data for heterogeneous AI tasks, it aims to reduce the friction of multi‑modal model selection.</p>
+      <div class="source">DIGITALJOURNAL</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://llm-stats.com/benchmarks/benchcad" target="_blank" rel="noopener noreferrer">BenchCAD Leaderboard</a>
+      <p>BenchCAD, a multimodal benchmark covering reasoning, code and vision tasks, now has a public leaderboard on LLM‑Stats. Seven models are evaluated on a 0–1 scale, with an average score of 0.6; Claude Sonnet 5.5 from Anthropic tops the chart with a 0.7 rating. The leaderboard highlights which models excel in specific sub‑domains, offering a quick reference for researchers targeting multimodal capabilities.</p>
       <div class="source">LLM-STATS</div>
     </div>
     
     <div class="item">
-      <a href="https://benchlm.ai/benchmarks/scale-multichallenge" target="_blank" rel="noopener noreferrer">MultiChallenge Leaderboard & Scores — October 2026</a>
-      <p>The MultiChallenge leaderboard for October 2026 lists the top‑performing models across a suite of multi‑domain challenges. Kimi‑k2‑thinkingMoonshot AI leads with a 55.4% score, followed closely by Claude Sonnet 4.5 at 55.3% and Gemini 2.5 Pro at 53.6%. These percentages give a clear snapshot of current competitive standings in versatile AI evaluation suites.</p>
-      <div class="source">BENCHLM</div>
+      <a href="https://artificialanalysis.ai/evaluations/frontiercode" target="_blank" rel="noopener noreferrer">FrontierCode 1.1 Benchmark Leaderboard | Artificial Analysis</a>
+      <p>Artificial Analysis released the FrontierCode 1.1 Benchmark leaderboard, an independent implementation of ServiceNow's EnterpriseOps‑Gym. The suite tests LLM agents on stateful, multi‑step enterprise workflows across eight business domains, using live tool use and grading the final database state. Each task is run three times to ensure robustness, providing a granular view of agent reliability in real‑world operations.</p>
+      <div class="source">ARTIFICIALANALYSIS</div>
     </div>
     
     <div class="item">
-      <a href="https://aicodingdaily.com/leaderboard" target="_blank" rel="noopener noreferrer">LLM Coding Leaderboard - AI Coding Daily</a>
-      <p>AI Coding Daily refreshed its LLM coding leaderboard, adding new models such as Qwen 3.8 27B and Gemini‑3.7‑Flash, and announced Evaluation Project #4 focused on the Go programming language. The leaderboard tracks model performance on coding tasks and now includes a broader set of recent releases. Expanding the benchmark suite helps developers compare emerging LLMs on real‑world software development metrics.</p>
-      <div class="source">AICODINGDAILY</div>
+      <a href="https://arena.ai/leaderboard/code/webdev" target="_blank" rel="noopener noreferrer">WebDev AI Leaderboard - Best AI Models for Web Development</a>
+      <p>Arena AI's WebDev AI Leaderboard ranks models on web‑development tasks, with glm-5.2‑max (Z.ai) currently on top, scoring 1600 + 7/‑7 points and costing $1.40 per 1M tokens. Close competitors include Gemini‑3.7‑Flash‑high (Google) at 1595 points and GPT‑6‑Luna‑max (OpenAI) at 1593 points. The leaderboard tracks performance, pricing, and usage metrics, helping developers pick cost‑effective models for coding assistance.</p>
+      <div class="source">ARENA</div>
     </div>
     
     <div class="item">
-      <a href="https://vmts.com.hk/en/llm-leaderboard" target="_blank" rel="noopener noreferrer">LLM Leaderboard - VM Tech Solutions</a>
-      <p>VM Tech Solutions launched a traceable LLM ranking snapshot that aggregates 20 signals across 48 benchmark metrics, updating daily as of 2026‑10‑15. The dashboard provides a consolidated view of model performance across multiple public leaderboards. Such a comprehensive, regularly refreshed ranking aids stakeholders in quickly identifying the most capable LLMs for their needs.</p>
-      <div class="source">VMTS</div>
+      <a href="https://www.instagram.com/reel/DekFVCICnUz" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <p>A new GUI‑agent benchmark called GraceBench, shared on Instagram, evaluated 11 models over 3,718 trajectories spanning 169 tasks across 10 apps. While 51.24% of runs that technically succeeded exhibited deviations or infinite‑loop detours, the benchmark emphasizes not just success but the quality of the execution path. The findings highlight hidden inefficiencies in current agent designs and provide a richer metric for future agent evaluation.</p>
+      <div class="source">INSTAGRAM</div>
     </div>
     
   </div>
@@ -541,68 +623,70 @@
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener noreferrer">AI News Today, October 15: Top Stories | AI Weekly</a>
-      <p>AI Weekly reported that DeepSeek closed a second funding round worth 100 billion yuan (about $14 billion) at a post‑money valuation of 500 billion yuan, roughly $75 billion, doubling its original target. The roundup also noted that Anthropic’s Claude connector was added to the Rising announcements and that C1.ai is pursuing an "agentic‑identity" acquisition. These moves signal a rapid influx of capital and strategic partnerships reshaping the generative‑AI ecosystem.</p>
-      <div class="source">AIWEEKLY</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://markets.ft.com/data/announce/detail?dockey=600-202610151028BIZWIRE_USPRX____20261014_BW382652-1" target="_blank" rel="noopener noreferrer">Rapid AI Capability Development Is Creating Opportunities for Those Companies With Leadership That Translate Productivity Gains Into Business Value – Company Announcement - FT.com</a>
-      <p>A FT.com company announcement highlighted that CEOs reporting AI‑driven returns above 10% are 4.4 times more likely to have deployed AI at scale in new products, services and revenue streams—40% versus only 9% for laggards. The data suggests a widening performance gap between firms that integrate AI deeply and those that merely experiment. This underscores the growing competitive pressure on enterprises to scale AI across their business units.</p>
-      <div class="source">MARKETS</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.facebook.com/yahoofinance/posts/a-year-ago-meta-looked-behind-in-ai-now-its-back-in-the-conversationmeta-meta-sa/1470902211571219" target="_blank" rel="noopener noreferrer">3 comments | A year ago, Meta looked behind in AI. Now it’s back in the conversation.
-
-Meta (META) says its Muse Wonder models can match top models from Anthropic, OpenAI and Google on certain benchmarks. Even a veteran Silicon Valley entrepreneur says the catch-up came faster than he expected.
-
-Is Meta back in the AI race? | Yahoo Finance</a>
-      <p>Meta announced its Muse Wonder models, claiming they can match top‑tier models from Anthropic, OpenAI and Google on several benchmark tests. The post highlighted that a veteran Silicon Valley entrepreneur described the catch‑up as faster than expected. If validated, the achievement could reposition Meta as a serious contender in the large‑language‑model market.</p>
+      <a href="https://www.facebook.com/cnbc/posts/cnbcs-kate-rooney-breaks-down-the-ai-news-you-may-have-missed-this-weekfind-the-/1509126677755387" target="_blank" rel="noopener noreferrer">CNBC's Kate Rooney breaks down the AI news you may ...</a>
+      <p>Anthropic unveiled Claude Opus 4.6, a new flagship model designed for enterprise workloads and software development. The update emphasizes higher reasoning ability and faster code generation, positioning it against competitors like OpenAI's GPT-4 Turbo. Anthropic says the model can handle multi‑step tasks with up to 75% fewer API calls, a claim that could reduce operating costs for business users. The launch marks the company's most ambitious push into the high‑end AI market this year.</p>
       <div class="source">FACEBOOK</div>
     </div>
     
     <div class="item">
-      <a href="https://www.helpnetsecurity.com/2026/10/15/michael-scott-immuta-ai-agent-permissions" target="_blank" rel="noopener noreferrer">Immuta CISO predicts critical AI incidents at major enterprises within 18 months - Help Net Security</a>
-      <p>Immuta’s CISO warned that within the next 18 months at least two major enterprises outside the AI sector will experience critical AI‑related security or privacy incidents, driven by a rush to deploy high‑risk autonomous agents without proper safeguards. The prediction was based on early testing that revealed insufficient control mechanisms for AI agents. The warning highlights emerging security challenges as AI adoption accelerates.</p>
-      <div class="source">HELPNETSECURITY</div>
+      <a href="https://www.facebook.com/AITECHio/posts/%EF%B8%8F-ai-news-roundupwelcome-to-this-weeks-ai-news-roundup-lets-dive-into-the-seven-/1447436164037840" target="_blank" rel="noopener noreferrer">Shopify opens billion-product catalog to AI shopping agents</a>
+      <p>Shopify announced that its product catalog, now exceeding one billion SKUs, will be made accessible to AI‑driven shopping agents. The move enables third‑party bots to query inventory in real time, aiming to boost conversion rates for merchants using conversational commerce. Shopify’s engineering team estimates the integration could cut average checkout time by 30%, while also opening a new revenue stream through API usage fees. This initiative signals a shift toward AI‑mediated retail experiences at scale.</p>
+      <div class="source">FACEBOOK</div>
     </div>
     
     <div class="item">
-      <a href="https://www.washingtonpost.com/ripple/2026/10/15/congress-ai-investments" target="_blank" rel="noopener noreferrer">How Congress is cashing in on the AI boom - The Washington Post</a>
-      <p>The Washington Post investigated congressional financial disclosures and found that roughly one‑in‑five members of Congress hold household investments in companies developing AI models or providing AI infrastructure. The report points out a potential conflict of interest as lawmakers profit from the AI boom while regulatory action remains limited. This adds a political dimension to the rapidly growing AI industry.</p>
-      <div class="source">WASHINGTONPOST</div>
+      <a href="https://www.marketingprofs.com/opinions/2026/56192/ai-update-october-16-2026-ai-news-and-views-from-the-past-week" target="_blank" rel="noopener noreferrer">Artificial Intelligence - AI Update, October 16, 2026: AI News and Views From the Past Week</a>
+      <p>The AI Update newsletter highlighted Floqer’s rapid growth, noting it now serves over 1,000 customers and reported annual recurring revenue of $1.2 million. The company experienced roughly tenfold revenue growth in the past year and plans to open‑source its customer knowledge database in early 2027 after security reviews. Floqer claims its platform can reduce prospecting time by up to 70%, a metric that resonates with sales‑focused AI adopters. These figures illustrate the expanding market for AI‑powered knowledge management tools.</p>
+      <div class="source">MARKETINGPROFS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.forbes.com/topics/agentic-ai" target="_blank" rel="noopener noreferrer">Latest Agentic AI News Today | Trends, Predictions, & Analysis</a>
+      <p>Forbes’ Agentic AI roundup reported that SolarWinds achieved a five‑fold increase in engineering productivity after deploying autonomous AI agents, while Samsara enabled non‑technical staff to build dozens of workflow automations without coding. The article also noted new governance guidelines issued by the Russian FSB and cited a recent government‑grade breach by an AI‑controlled agent, underscoring security concerns. These developments highlight both the operational upside and regulatory challenges of increasingly autonomous AI systems in enterprise settings.</p>
+      <div class="source">FORBES</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.starcitytv.com/business/ai-is-coming-for-every-company-nvidia-boss-says/article_3febe124-cdc3-5515-805c-376390a8fd4c.html" target="_blank" rel="noopener noreferrer">AI is coming for every company, Nvidia boss says | Business | starcitytv.com</a>
+      <p>Nvidia CEO Jensen Huang told a European conference that "every single company will be an AI company eventually," urging EU nations to accelerate AI ecosystem development. Huang emphasized that Nvidia’s latest GPUs are already being integrated into sectors ranging from manufacturing to finance, projecting a 40% year‑over‑year increase in AI‑related chip sales for the region. His comments reflect Nvidia’s strategy to cement its leadership as AI hardware becomes a foundational layer for all industries.</p>
+      <div class="source">STARCITYTV</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="trends">Code Worth Adopting <span class="count">4 stories</span></div>
+  <div class="section-title" id="trends">Code Worth Adopting <span class="count">5 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://dev.classmethod.jp/articles/beginner-kiro-customize" target="_blank" rel="noopener noreferrer">[Beginner] Set up your Kiro before you use it! Customize your Kiro~ | DevelopersIO</a>
-      <p>The Kiro platform released its V3 version on 15 Oct 2026, introducing a new permissions file and hooks configuration that take effect immediately. The update adds a CLI command (`kiro-cli --v3`) to simplify upgrading from V2, while retaining compatibility with existing V2 features like steering, agents, and skills. This makes Kiro V3 a drop‑in upgrade for developers looking to leverage the latest AI‑agent orchestration capabilities without rewriting existing workflows.</p>
-      <div class="source">DEV</div>
+      <a href="https://createui.co/blog/best-shadcn-ui-alternatives" target="_blank" rel="noopener noreferrer">The 10 Best shadcn/ui Alternatives in 2026 - Create UI</a>
+      <p>The article "The 10 Best shadcn/ui Alternatives in 2026" surveys a dozen component libraries that aim to replace the popular shadcn/ui kit. It highlights alternatives such as Radix UI, Tailwind UI, and Aceternity, noting that most can be installed via npm, pnpm, yarn or bun. The guide includes brief feature comparisons—e.g., Aceternity offers pre‑built dark‑mode components, while Radix focuses on accessibility—making it a handy checklist for developers looking to upgrade their UI stack.</p>
+      <div class="source">CREATEUI</div>
     </div>
     
     <div class="item">
-      <a href="https://community.sap.com/t5/c-khhcw49343/SAP+Fiori/pd-p/73554900100700000977" target="_blank" rel="noopener noreferrer">SAP Fiori</a>
-      <p>SAP announced the Custom Code Migration Agent within SAP Joule for Developers, a tool that leverages MCP technology and AI to automate ABAP code adaptation. The agent scans legacy custom code and suggests refactorings, aiming to reduce migration effort by up to 40 % according to internal benchmarks. It promises tighter integration with SAP Fiori interfaces, positioning it as a practical aid for enterprises modernizing their ERP extensions.</p>
-      <div class="source">COMMUNITY</div>
+      <a href="https://x.com/DanKornas/status/2111253155480564060" target="_blank" rel="noopener noreferrer">Dan Kornas on X: "Running coding agents shouldn’t mean handing over your whole environment. UseAgent is an open-source shared workspace for teams that want to run Claude Code, Codex, OpenCode, or Pi on real tasks. It helps you hand off research, code changes, and files from the web app, Slack, or… / X</a>
+      <p>UseAgent, announced on X by Dan Kornas, is an open‑source shared‑workspace platform that lets teams run AI coding agents like Claude Code, Codex, OpenCode or Pi on real development tasks. The project lives at github.com/useagenthq/use and positions itself as a "Devin alternative," enabling hand‑off of research, code changes, and files through web, Slack, or CLI. By providing a central MCP (Model Context Protocol) server, it promises reproducible agent runs and audit trails for enterprise codebases.</p>
+      <div class="source">X</div>
     </div>
     
     <div class="item">
-      <a href="https://aiidelist.com/blog/how-to-create-sprunki-game" target="_blank" rel="noopener noreferrer">How to Create a Sprunki Game (2026): Complete Tutorial</a>
-      <p>The article highlights Cue, a standalone personal‑agent app that manages digital identity and cross‑platform work, alongside Floot MCP and the open‑source GitBot orchestration hub. GitBot can convert outputs from models like Claude Code and Codex into runnable scripts, enabling prompt‑to‑app workflows without a full IDE. These tools together present a lightweight stack for developers who want AI‑assisted coding without heavy infrastructure.</p>
-      <div class="source">AIIDELIST</div>
+      <a href="https://docfit.dev/blog/api-docs-read-by-ai-agents" target="_blank" rel="noopener noreferrer">Your API docs are now read by AI agents - DocFit</a>
+      <p>DocFit's new blog post explains how its service lets AI agents ingest complete API documentation and generate code directly from the specifications. The platform claims its agents can read more documentation pages than a human reviewer, automatically extracting endpoint signatures and producing client libraries without manual prompts. A demo shows the agent producing a fully typed TypeScript SDK for a sample OpenAPI spec in under a minute.</p>
+      <div class="source">DOCFIT</div>
     </div>
     
     <div class="item">
-      <a href="https://github.com/bmad-code-org/BMAD-METHOD?ref=bmadcode.com" target="_blank" rel="noopener noreferrer">GitHub - bmad-code-org/BMAD-METHOD at bmadcode.com · GitHub</a>
-      <p>The BMAD-METHOD repository on GitHub (bmad-code-org) provides an open‑source framework for a systematic development methodology, including directories for docs, skills, tools, and configuration files such as `.coderabbit.yaml`. The repo’s latest commit adds a `.pre-commit-config.yaml` to enforce code quality checks automatically. By making the full method publicly available, it offers teams a ready‑to‑adopt blueprint for maintaining code reliability and review standards.</p>
-      <div class="source">GITHUB</div>
+      <a href="https://www.thedroptimes.com/news-roundup" target="_blank" rel="noopener noreferrer">News Roundup | TheDropTimes</a>
+      <p>OpenKnowledgebase entered beta as a self‑hosted knowledge platform built on Drupal 11, Nuxt 4, and OpenSearch, and it now includes MCP access for AI agents. The beta2 release adds fixes around evaluation setup and unpublished‑page access, enabling agents to query and edit content programmatically. The integration exposes over 80 tools across 400+ APIs, allowing developers to embed AI‑driven search and editing directly into their workflows.</p>
+      <div class="source">THEDROPTIMES</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.coredna.com/blogs/what-is-unified-commerce" target="_blank" rel="noopener noreferrer">What is Unified Commerce? | Core dna Insights</a>
+      <p>Core dna's "Unified Commerce" blog details its MCP server that connects 80+ tools across more than 400 APIs, letting teams update multiple storefronts from Claude, ChatGPT, or Copilot. Every change is presented as a per‑property diff and passes through an approval workflow with audit trails and rollback capability. The system is marketed as a safeguard against price‑update bugs that could affect dozens of storefronts simultaneously.</p>
+      <div class="source">COREDNA</div>
     </div>
     
   </div>
