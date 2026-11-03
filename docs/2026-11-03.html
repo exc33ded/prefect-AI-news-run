@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The AI Herald — November 3, 2026</title>
+<style>
+  :root {
+    --ink: #2b1d0e;
+    --rule: #2b1d0e;
+    --paper: #ecdfc0;
+    --gray: #6b5636;
+    --red: #8a2727;
+  }
+  * { box-sizing: border-box; }
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    45% { opacity: 0.85; }
+    50% { opacity: 1; }
+    55% { opacity: 0.9; }
+  }
+  body, .item a, .side-item a, .index-rail a, .theme-toggle, .seal, .item p, .side-item p {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  }
+  body {
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(120,90,40,0.10), transparent 60%),
+      radial-gradient(circle at 80% 70%, rgba(120,90,40,0.10), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(120,90,40,0.02) 0px, transparent 2px, transparent 4px);
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    color: var(--ink);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 28px 70px;
+  }
+
+  .topline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    padding-bottom: 6px;
+  }
+
+  .masthead {
+    text-align: center;
+    border-top: 4px double var(--ink);
+    border-bottom: 4px double var(--ink);
+    padding: 10px 0 8px;
+  }
+  .masthead h1 {
+    font-family: 'Old English Text MT', 'UnifrakturMaguntia', Georgia, serif;
+    font-size: 72px;
+    margin: 0;
+    letter-spacing: 1px;
+    font-weight: normal;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+  }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .masthead h1 {
+      background: linear-gradient(100deg, var(--ink) 40%, #8a6a2f 50%, var(--ink) 60%);
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 6s linear infinite;
+    }
+  }
+  .masthead .tagline {
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: var(--gray);
+    margin-top: 2px;
+    animation: flicker 4s ease-in-out infinite;
+  }
+
+  .dateline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid var(--ink);
+    padding: 6px 0;
+    margin-bottom: 4px;
+  }
+
+  .disclaimer {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--gray);
+    padding: 6px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 18px;
+  }
+
+  .frontpage {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+  }
+  .lead .kicker {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    font-family: Arial, sans-serif;
+    margin-bottom: 4px;
+  }
+  .lead a.headline {
+    display: block;
+    font-size: 40px;
+    line-height: 1.08;
+    font-weight: bold;
+    color: var(--ink);
+    text-decoration: none;
+    margin-bottom: 12px;
+  }
+  .lead a.headline:hover { text-decoration: underline; }
+  .lead .dek {
+    font-size: 16px;
+    line-height: 1.55;
+    max-width: 62ch;
+    text-align: justify;
+  }
+  .lead .dek::first-letter {
+    float: left;
+    font-size: 54px;
+    line-height: 42px;
+    padding: 4px 6px 0 0;
+    font-weight: bold;
+  }
+  .lead .source { font-size: 11px; color: var(--gray); margin-top: 8px; }
+
+  .index-rail {
+    border-left: 1px solid var(--ink);
+    padding-left: 20px;
+  }
+  .index-rail h3 {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 0 0 10px;
+  }
+  .index-rail a {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 0;
+    border-bottom: 1px dotted #bbb;
+  }
+  .index-rail a span:first-child { min-width: 0; flex: 1 1 auto; overflow-wrap: break-word; }
+  .index-rail a span.n { flex: 0 0 auto; color: var(--gray); font-size: 11px; }
+  .index-rail a:hover { color: var(--red); }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 6px;
+    margin: 34px 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .section-title .count {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .columns-3 { columns: 3; column-gap: 26px; column-rule: 1px solid #ccc; }
+  .item { break-inside: avoid; margin-bottom: 20px; }
+  .item a {
+    font-weight: bold;
+    font-size: 15.5px;
+    line-height: 1.3;
+    color: var(--ink);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .item a:hover { color: var(--red); }
+  .item p { font-size: 13px; line-height: 1.5; margin: 0 0 4px; color: #333; text-align: justify; }
+  .item .source { font-size: 10.5px; color: var(--gray); font-family: Arial, sans-serif; letter-spacing: 0.3px; }
+
+  .side-box {
+    margin: 34px 0;
+    background: rgba(166, 25, 46, 0.04);
+    border: 1px solid var(--ink);
+    border-top: 4px solid var(--red);
+    padding: 18px 22px;
+  }
+  .side-box h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .side-box h3 .count { font-family: Arial, sans-serif; font-size: 12px; font-weight: normal; color: var(--gray); text-transform: none; }
+  .side-box .columns-3 { column-rule-color: #c9a9a9; }
+  .side-item { break-inside: avoid; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px dotted #bbb; }
+  .side-item:last-child { border-bottom: none; }
+  .side-item a { display: block; font-weight: bold; font-size: 14px; line-height: 1.3; color: var(--ink); text-decoration: none; margin-bottom: 4px; }
+  .side-item a:hover { color: var(--red); }
+  .side-item p { font-size: 12px; line-height: 1.45; color: #3a3a3a; margin: 0 0 3px; text-align: justify; }
+  .side-item .source { font-size: 10px; color: var(--gray); font-family: Arial, sans-serif; letter-spacing: 0.3px; }
+
+  .seal {
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 40px auto 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #7a2727, #4a1414 70%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 0 6px rgba(255,255,255,0.15);
+    position: relative;
+  }
+  .seal::after {
+    content: "AI";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Old English Text MT', serif;
+    font-size: 16px;
+    color: #e8c98a;
+  }
+
+  .masthead-footer {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--gray);
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #e8dcc0; --paper: #1c1509; --gray: #b0a37e; --red: #e0a3a3; }
+    .item p { color: #cfc9ba; }
+    .columns-3 { column-rule-color: #3a352a; }
+    .index-rail a { border-bottom-color: #3a352a; }
+    .disclaimer { border-bottom-color: #3a352a; }
+    .side-box { background: rgba(224, 163, 163, 0.06); }
+    .side-item { border-bottom-color: #3a352a; }
+    .side-item p { color: #cfc9ba; }
+  }
+  @media (prefers-color-scheme: dark) and ((-webkit-background-clip: text) or (background-clip: text)) {
+    .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+  }
+
+  :root[data-theme="dark"] { --ink: #e8dcc0; --paper: #1c1509; --gray: #b0a37e; --red: #e0a3a3; }
+  :root[data-theme="dark"] .item p { color: #cfc9ba; }
+  :root[data-theme="dark"] .columns-3 { column-rule-color: #3a352a; }
+  :root[data-theme="dark"] .index-rail a { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .disclaimer { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .side-box { background: rgba(224, 163, 163, 0.06); }
+  :root[data-theme="dark"] .side-item { border-bottom-color: #3a352a; }
+  :root[data-theme="dark"] .side-item p { color: #cfc9ba; }
+  :root[data-theme="dark"] .masthead h1 { background: linear-gradient(100deg, #f0e6d0 40%, #ffd77a 50%, #f0e6d0 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+  :root[data-theme="light"] { --ink: #2b1d0e; --paper: #ecdfc0; --gray: #6b5636; --red: #8a2727; }
+  :root[data-theme="light"] .item p { color: #333; }
+  :root[data-theme="light"] .side-item p { color: #3a3a3a; }
+  :root[data-theme="light"] .side-box { background: rgba(166, 25, 46, 0.04); }
+  :root[data-theme="light"] .side-item { border-bottom-color: #bbb; }
+  :root[data-theme="light"] .masthead h1 { background: linear-gradient(100deg, var(--ink) 40%, #8a6a2f 50%, var(--ink) 60%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .theme-toggle:hover { transform: rotate(20deg) scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .theme-toggle svg { width: 20px; height: 20px; stroke: var(--ink); fill: none; stroke-width: 1.8; }
+
+  @media (max-width: 720px) {
+    .frontpage { grid-template-columns: 1fr; }
+    .index-rail { border-left: none; padding-left: 0; border-top: 1px solid var(--ink); padding-top: 16px; }
+    .lead a.headline { font-size: 30px; }
+    .columns-3 { columns: 1; }
+    .side-box .columns-3 { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+    <svg id="themeIcon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"></svg>
+  </button>
+  <script>
+    (function () {
+      var MOON = '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>';
+      var SUN = '<circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>';
+
+      var root = document.documentElement;
+      var icon = document.getElementById('themeIcon');
+
+      function currentTheme() {
+        return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      }
+      function paintIcon(theme) {
+        icon.innerHTML = theme === 'dark' ? SUN : MOON;
+      }
+
+      paintIcon(currentTheme());
+
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        var next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        paintIcon(next);
+      });
+    })();
+  </script>
+
+  <div class="topline">
+    <span>Vol. V &mdash; No. 3</span>
+    <span>An Automated Daily Digest of Artificial Intelligence</span>
+  </div>
+
+  <div class="masthead">
+    <h1>The AI Herald</h1>
+    <div class="tagline">&ldquo;All the Weights That's Fit to Print&rdquo;</div>
+  </div>
+
+  <div class="dateline">
+    <span>November 3, 2026</span>
+    <span>Last Updated: 8:04 AM IST</span>
+  </div>
+
+  <div class="disclaimer">The text below is an AI-generated summary. Click any headline to read the full original piece.</div>
+
+  
+  <div class="frontpage">
+    <div class="lead">
+      <div class="kicker">Top Story &mdash; Trending AI GitHub Repos</div>
+      <a class="headline" href="https://aiagentstore.ai/ai-agent-news/this-week" target="_blank" rel="noopener noreferrer">AI Agents News — Week of November 2, 2026 (Daily Updates)</a>
+      <div class="dek">An open‑source tool called **Agent Tree** was announced on October 27 and is now available on GitHub. It provides a terminal‑based live monitor for Claude Code agent workflows, visualising task trees, decision branches and real‑time updates so developers can watch agents act as they run. The project targets AI‑agent debugging and transparency, filling a gap in existing Claude tooling. By exposing the internal state of agents, it aims to speed up iteration on complex autonomous workflows.</div>
+      <div class="source">AIAGENTSTORE</div>
+    </div>
+    
+    <div class="index-rail">
+      <h3>Inside Today</h3>
+      <a href="#repos"><span>Trending AI GitHub Repos</span><span class="n">3</span></a><a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">4</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">5</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">4</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">5</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">4</span></a><a href="#productivity"><span>AI Productivity Tips</span><span class="n">4</span></a>
+    </div>
+    
+  </div>
+  
+
+  
+  
+  <div class="section-title" id="repos">Trending AI GitHub Repos <span class="count">3 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.activepieces.com/blog/triggerdev-open-source-workflow-orchestration-guide" target="_blank" rel="noopener noreferrer">Trigger.dev: Open-Source Workflow Orchestration Guide</a>
+      <p>Trigger.dev released version 4.5.0 of its open‑source, code‑first workflow orchestration framework on 2 July 2026, marking the first GA (general‑availability) of its AI‑agent capabilities. The update lets long‑running AI jobs execute as background tasks, bypassing typical request‑timeout limits. Documentation highlights that the new release supports seamless integration with large‑language‑model agents, enabling developers to build durable pipelines without custom infrastructure. The repo’s star count jumped by roughly 15 % in the week after the release, indicating strong community interest.</p>
+      <div class="source">ACTIVEPIECES</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://superpowerdaily.com/research/release-velocity" target="_blank" rel="noopener noreferrer">Model Release Velocity | Superpower Daily</a>
+      <p>The **Model Release Velocity** roundup (published 27‑28 August 2026) highlighted several fresh open‑source AI model releases, most notably Zhipu AI’s **GLM‑5.3‑Flash**. This model is optimised for domestically produced AI chips and was made publicly available on 27 August, under an MIT licence. The list also mentioned **Sahara v2.5** and **ABot‑Recon**, each accompanied by code, checkpoints and evaluation scripts on GitHub, expanding the pool of research‑grade models for the community.</p>
+      <div class="source">SUPERPOWERDAILY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://fpaupier.fr/library" target="_blank" rel="noopener noreferrer">Professional Library · François Paupier</a>
+      <p>A curated library page by François Paupier lists several prominent AI GitHub repositories, including **huggingface/text‑generation‑inference** and **huggingface/trl**. The latter is a toolkit for training language models with reinforcement learning and preference‑based methods, and its latest commit (as of the page snapshot) upgraded support to PyTorch 2.2. These repositories are frequently forked and serve as foundational blocks for developers building RL‑HF pipelines, making them notable entries in the current AI‑repo landscape.</p>
+      <div class="source">FPAUPIER</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://github.com/NVIDIA/skills" target="_blank" rel="noopener noreferrer">GitHub - NVIDIA/skills: Agent Skills for NVIDIA products — install into Claude Code, Codex, and other coding agents to run Physical AI, robotics, simulation, CUDA, and RAG workflows end to end. · GitHub</a>
+      <p>NVIDIA released a public catalog of "Agent Skills" that can be installed into Claude Code, Codex, and other coding agents. The repo bundles portable instruction sets for using NVIDIA software, covering Physical AI, robotics, simulation, CUDA‑X libraries, Retrieval‑Augmented Generation and AI Blueprints. Each skill lives in its native product repository and is mirrored here daily via an automated sync pipeline, ensuring the catalog stays up‑to‑date. This effort aims to streamline the integration of high‑performance GPU tools into AI agents, reducing the engineering overhead of hand‑crafting tool wrappers.</p>
+      <div class="source">GITHUB</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://github.com/magnus919/agent-skills" target="_blank" rel="noopener noreferrer">GitHub - magnus919/agent-skills: Curated collection of AI agent skills for Hermes and other agent frameworks · GitHub</a>
+      <p>The "agent-skills" GitHub repository curates a collection of reusable AI agent skills for frameworks like Hermes. It organizes skills across design, execution, verification, and recovery, providing ready‑made scaffolding such as a Haystack skill for building production search and NLP pipelines. The repo emphasizes explicit check execution and evidence‑based improvement patterns, allowing developers to plug in validated DAGs without writing boilerplate code. By offering a modular skill library, it helps teams accelerate agent development while maintaining safety and auditability.</p>
+      <div class="source">GITHUB</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://github.com/hashgraph-online/awesome-codex-plugins" target="_blank" rel="noopener noreferrer">GitHub - hashgraph-online/awesome-codex-plugins: A curated list of awesome OpenAI Codex / ChatGPT plugins, skills, and resources. The #1 Codex Marketplace. See live plugins at: https://hol.org/plugins/best-codex-plugins · GitHub</a>
+      <p>The "awesome-codex-plugins" repo aggregates a broad set of Codex and ChatGPT plugins, including a dedicated "Agent Harness Skills" section that defines entry points, validation surfaces, and runtime evidence for agents. Its Chinese‑language "Agent Workflow System" lists seven collaboration techniques, behavior rule enforcement, and session‑recovery mechanisms, enabling agents to execute tasks and maintain lifecycle guidance. Additional tools like Agentizer and AgentOps provide website‑to‑agent front‑ends and a DevOps layer for coding agents. This collection serves as a one‑stop resource for developers looking to extend language models with robust, production‑ready tooling.</p>
+      <div class="source">GITHUB</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://readmultiplex.com/grokbot-rocks" target="_blank" rel="noopener noreferrer">Every Grok Bot: The Complete Directory – @ReadMultiplex</a>
+      <p>The "Every Grok Bot" directory compiles a growing list of agent plugins and bots that wrap APIs into Cursor/Agent plugins, emphasizing a "data shape first" approach. Highlights include Lingxi's Engineer Bot, which automatically launches cloud agents on a named repository and monitors pull requests on a 30‑minute cadence, and a QA bot that runs an acceptance checklist on live deployments. By cataloguing these hands‑off supervisory agents, the directory showcases practical examples of how lightweight scaffolds can turn arbitrary APIs into reusable AI tools. It provides developers concrete templates for building and deploying agent‑powered automation at scale.</p>
+      <div class="source">READMULTIPLEX</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="prompting">Prompting & Agentic Workflow Techniques <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://github.com/cobusgreyling/loop-engineering" target="_blank" rel="noopener noreferrer">GitHub - cobusgreyling/loop-engineering: Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost. · GitHub</a>
+      <p>The Loop Engineering GitHub repo introduces a set of CLI tools—loop-audit, loop-init, and loop-cost—to help developers design systems that prompt and orchestrate AI coding agents. It supports agents such as Grok, Claude Code, Codex, and Cursor, and offers an interactive pattern picker with a five‑minute quickstart. By shifting the prompt‑engineering role to a reusable framework, it aims to reduce manual prompt work and improve cost transparency for AI‑driven development pipelines.</p>
+      <div class="source">GITHUB</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://aws.amazon.com/blogs/machine-learning/agentic-engineering-intelligence-with-amazon-nova-multimodal-embeddings-and-amazon-bedrock-agentcore" target="_blank" rel="noopener noreferrer">Agentic engineering intelligence with Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore | Artificial Intelligence</a>
+      <p>Amazon’s blog post details the launch of Nova multimodal embeddings paired with Bedrock AgentCore, a new stack for building agentic applications. In internal benchmarks the system achieved a Goal Success Rate of 0.892, with lower scores on safety‑category prompts where the agent correctly refused to approve a substitution. The post emphasizes that in human‑in‑the‑loop scenarios the agent must refuse unsafe actions, highlighting the importance of robust evaluation metrics for agentic workflows.</p>
+      <div class="source">AWS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://medium.com/@michielh/ai-agent-harness-engineering-building-reliable-agents-e448e79dd983" target="_blank" rel="noopener noreferrer">AI Agent Harness Engineering: Building Reliable Agents</a>
+      <p>A Medium article on AI Agent Harness Engineering explains how to build reliable agents by separating self‑evolution (changing the harness) from self‑improvement (demonstrable performance gains). It defines a "revision" as a new prompt or tool added to the harness and stresses that only measurable gains qualify as true improvement. The author illustrates a self‑evolving harness that analyzes prior agent runs to automatically suggest prompt refinements, aiming to close the gap between experimentation and proven benefit.</p>
+      <div class="source">MEDIUM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/theaiempire/posts/a-senior-google-engineer-just-dropped-a-421-page-doc-called-agentic-design-patte/122178977942733053" target="_blank" rel="noopener noreferrer">A senior Google engineer just dropped a 421-page doc ...</a>
+      <p>A senior Google engineer released a 421‑page document titled "Agentic Design Patterns," which catalogs 21 concrete patterns for constructing production‑ready AI systems. The patterns cover prompt chaining, multi‑agent orchestration, and retrieval‑augmented generation (RAG), among others. A companion video walks viewers through each pattern, positioning the guide as a reference for engineers seeking systematic approaches to agentic workflow design.</p>
+      <div class="source">FACEBOOK</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://developer.android.com/events/dev-summit/talks/agentic-coding-workflows-with-small-models" target="_blank" rel="noopener noreferrer">Agentic coding workflows with small models</a>
+      <p>At the Android Dev Summit, a talk titled "Agentic Coding Workflows with Small Models" showcased how developers can embed compact models like Gemma 4 into Android projects. The presenter demonstrated smart task routing and cost‑optimisation techniques that cut token usage by roughly 30% and lowered inference latency by 15 ms on typical device hardware. These patterns illustrate practical ways to achieve agentic automation without relying on large, expensive models.</p>
+      <div class="source">DEVELOPER</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="startups">AI Startups & Funding <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://finance.yahoo.com/technology/ai/articles/intel-intc-joined-700-million-001701528.html" target="_blank" rel="noopener noreferrer">Intel (INTC) Joined A $700 Million AI Startup Funding Round</a>
+      <p>Intel Capital joined a $700 million funding round for AI hardware startup Hark, alongside Nvidia and AMD Ventures. Hark is developing AI‑native chips and digital‑assistant foundation models that demand massive compute. Intel's participation signals its strategy to secure a foothold in the emerging AI infrastructure market and to drive data‑center demand for its processors.</p>
+      <div class="source">FINANCE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/techcrunch/posts/trajectory-raises-45m-to-make-ai-model-training-accessible-to-nontechnical-exper/1472190521441477" target="_blank" rel="noopener noreferrer">Trajectory raises $45M to make AI model training ...</a>
+      <p>Trajectory, founded by former DeepMind and Apple researchers, announced a $45 million financing round to democratise AI model training for non‑technical users. The round combines a $15 million seed infusion with an additional $30 million from strategic investors. The funding will enable the startup to scale its cloud‑based platform and expand its library of pre‑built AI pipelines.</p>
+      <div class="source">FACEBOOK</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.instagram.com/p/DfO69LuCsDR" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <p>Stockholm‑based Pixel Systems secured a $3.1 million seed round led by Unconventional Ventures, valuing the company at roughly $21 million pre‑money. The startup’s forensics platform detects AI‑generated and manipulated digital content by blending proprietary analysis with external verification tools. The capital will fund product development and help the firm enter enterprise markets concerned with deep‑fake detection.</p>
+      <div class="source">INSTAGRAM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/etnow/posts/startup-centralthe-anthropic-bet-how-menlo-ventures-spotted-the-ai-opportunity-e/1556996466459252" target="_blank" rel="noopener noreferrer">Startup Central
+
+THE ANTHROPIC BET | How Menlo Ventures Spotted The AI Opportunity Early
+
+From recognising AI’s potential in 2022 to backing Anthropic with a $750 million funding round, Menlo Ventures made an early bet on foundation models. 
+
+Venky Ganesan, Partner, Menlo Ventures, explains why the firm chose Anthropic over other players and what convinced it to back Dario Amodei’s vision.
+
+#Anthropic #MenloVentures #AI #ArtificialIntelligence #VentureCapital #Startups #ETNOW | ET NOW</a>
+      <p>Menlo Ventures highlighted its early bet on Anthropic, recalling the $750 million Series C that the firm helped close to back Dario Amodei’s foundation‑model company. The sizable round positioned Anthropic as a direct competitor to OpenAI and reinforced Menlo’s focus on large‑scale AI research. The investment underscores the growing appetite for backing AI startups that can develop proprietary LLMs.</p>
+      <div class="source">FACEBOOK</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://toflow.ai/spotlight/rendezvous-robotics" target="_blank" rel="noopener noreferrer">What Funding Has Rendezvous Robotics Raised? Round History | toflow.ai | toflow.ai</a>
+      <p>Rendezvous Robotics announced a $20 million seed round in October 2026, co‑led by MaC Venture Capital and Toyota Ventures. The funding targets the development of autonomous robotics solutions for logistics and manufacturing. Partnering with a corporate VC like Toyota provides both capital and industry expertise to accelerate commercialization.</p>
+      <div class="source">TOFLOW</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="model_releases">New Model Releases <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://mistral.ai/news/mistral-large-4-oss" target="_blank" rel="noopener noreferrer">Mistral Large 4 (Le Chonk) is now open weight | Mistral</a>
+      <p>Mistral announced the release of Mistral Large 4, nicknamed "Le Chonk," as an open‑weight model. The model is accessible through NVIDIA‑hosted endpoints and can be deployed via an optimized NVIDIA NIM container for vLLM. Developers can fine‑tune it using the open‑source NeMo AutoModel library or serve it at high throughput with the TensorRT LLM library. This open‑weight release enables the community to customize and integrate a large‑scale LLM without licensing barriers.</p>
+      <div class="source">MISTRAL</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://af.net/realtime/openai-unveils-lifeval-benchmark-as-gpt-6-astra-scores-80-6" target="_blank" rel="noopener noreferrer">OpenAI Unveils LifeVal Benchmark as GPT-6 Astra Scores 80.6%</a>
+      <p>OpenAI introduced the LifeVal benchmark, designed to evaluate AI on everyday real‑world tasks, and used it to showcase GPT‑6 Astra, which scored 80.6% on the new metric. The benchmark aims to move beyond synthetic tests toward practical usefulness, and the high score positions GPT‑6 Astra as the most capable model on LifeVal to date. By coupling a new model release with a dedicated benchmark, OpenAI signals its focus on tangible task performance. The result highlights a significant leap over previous GPT generations in real‑life applicability.</p>
+      <div class="source">AF</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.reddit.com/r/LocalLLaMA/comments/1xm28e6/official_statement_qwen_models_will_stick_to_open" target="_blank" rel="noopener noreferrer">Qwen Models Will Stick to Open Source to the End!</a>
+      <p>During a Reddit discussion, Qwen’s head Liu Dayi Heng confirmed that future Qwen 4.0 and Qwen 5.0 models will remain fully open source. This pledge ensures that the next generations of Qwen LLMs will be freely available for community development and deployment. The commitment is presented as a strategic move to keep AI technology accessible and to foster collaborative innovation across the ecosystem. By keeping the models open, Qwen aims to build trust and encourage widespread adoption.</p>
+      <div class="source">REDDIT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://pricepertoken.com/news/model-releases" target="_blank" rel="noopener noreferrer">New Models Today — AI & LLM Releases Last 24 Hours | Price Per Token</a>
+      <p>Price Per Token maintains a "New Models Today" page that catalogs every LLM released in the last 24 hours, covering providers such as OpenAI, Anthropic, Google, Meta, and Mistral. The list, last updated on October 26, 2026, includes model names, version numbers, and pricing information, offering a single source for developers to track fresh releases. It also provides quick links to benchmarks and pricing details for each model. This aggregation helps practitioners stay current with the rapidly evolving AI model landscape.</p>
+      <div class="source">PRICEPERTOKEN</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="benchmarks">Benchmarks & Evals <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://llm-stats.com/benchmarks/legal-agent-benchmark" target="_blank" rel="noopener noreferrer">Legal Agent Benchmark Leaderboard</a>
+      <p>The Legal Agent Benchmark leaderboard was updated on LLM Stats, now listing 15 different models that have been evaluated on the legal‑agent tasks. The page provides an interactive timeline that shows how each model’s score has progressed over time, highlighting the current state‑of‑the‑art frontier. This benchmark is useful for enterprises seeking LLMs that can handle contract analysis, compliance checks, and other legal workflows, and the new data helps pinpoint which models are closing the gap with proprietary solutions.</p>
+      <div class="source">LLM-STATS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://llm-stats.com/benchmarks/claw-eval" target="_blank" rel="noopener noreferrer">Claw-Eval Leaderboard</a>
+      <p>LLM Stats added a Claw‑Eval leaderboard, which measures model performance on coding‑and‑logic challenges. Among the top‑performing models, the MiniMax M3 stands out not only for its score but also for cost efficiency, priced at just $0.28 per 1,000 tokens, making it the cheapest option within 10% of the leader. The leaderboard gives developers a quick way to balance raw accuracy against operational expense when choosing a model for tool‑use or code generation.</p>
+      <div class="source">LLM-STATS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://agentguides.dev/leaderboard" target="_blank" rel="noopener noreferrer">AI Models Leaderboard — Benchmarks, Pricing, and Comparison (2026-09-20)</a>
+      <p>AgentGuides.dev released an AI Models Leaderboard on 2026‑09‑20 that aggregates results for 84 models across 78 sourced benchmark figures. The curated table ranks models by a blend of accuracy, speed, and cost, and links to the underlying papers and datasets for deeper analysis. By consolidating these metrics, the leaderboard helps practitioners compare the latest LLM releases without having to hunt across disparate sources.</p>
+      <div class="source">AGENTGUIDES</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://parallel.ai" target="_blank" rel="noopener noreferrer">Parallel - Web Infrastructure for AI Agents</a>
+      <p>Parallel.ai published its latest evaluation suite, running a set of agent‑centric benchmarks on September 9, 2026. The suite includes BrowseComp, which plots accuracy percentages against cost per million tokens, and WideSearch, which measures retrieval performance. These results let developers see trade‑offs between raw answer quality and operational cost for agents that rely heavily on web browsing and information retrieval.</p>
+      <div class="source">PARALLEL</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://developer.android.com/events/dev-summit/talks/insights-into-agent-code-generation-from-android-bench" target="_blank" rel="noopener noreferrer">Insights into agent code generation from Android Bench</a>
+      <p>Google’s Android team unveiled Android Bench, a new AI evaluation benchmark aimed at measuring how well models can generate correct Android code. The talk highlighted that agents can now produce entire feature implementations in minutes, but the benchmark will assess correctness, performance, and integration fidelity across real‑world Android projects. Android Bench is positioned as a reference test for developers who need to gauge the reliability of code‑generation models before deploying them in production apps.</p>
+      <div class="source">DEVELOPER</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="industry_news">AI Industry News <span class="count">5 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener noreferrer">AI News Today, November 2: Top Stories | AI Weekly</a>
+      <p>OpenAI unveiled its Grid Protectors Program, a demand‑response system designed to reduce data‑center electricity use when the grid is under stress. The pilot is based on the 3.2 GW Project Camellia campus in Effingham County, Georgia, and is backed by a 25‑year contract with Georgia Power that can shed up to 1 GW of flexible demand—enough for roughly 700,000 homes. The deal also includes an $80 million community fund, and OpenAI will cover 100% of the infrastructure costs, signalling a major move into energy‑aware AI operations.</p>
+      <div class="source">AIWEEKLY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.instagram.com/p/DfPW8fmgCnt" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <p>A recent Instagram roundup highlighted several notable industry moves: Anthropic acquired a one‑person biotech startup whose founder used Claude to help design an experimental treatment, marking the first AI‑driven biotech acquisition. NVIDIA open‑sourced a new speech model capable of handling 40 languages and overlapping voices, expanding its open‑source portfolio. Anthropic also launched a set of ready‑made Claude agents aimed at accelerating enterprise adoption of conversational AI.</p>
+      <div class="source">INSTAGRAM</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.brookings.edu/articles/how-an-ai-bust-can-make-big-ai-bigger" target="_blank" rel="noopener noreferrer">How an AI bust can make Big AI bigger | Brookings</a>
+      <p>CoreWeave, a cloud provider focused on GPU‑intensive AI workloads, went public with an initial offering priced at $40 per share. The IPO positions the company as a key competitor in the AI compute market, offering customers on‑demand access to Nvidia graphics hardware for training large models. Analysts note the listing underscores the rapid capitalisation of AI infrastructure firms as demand for specialized compute continues to surge.</p>
+      <div class="source">BROOKINGS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://finance.yahoo.com/video/ai-is-breaking-the-search-business-model-140831683.html" target="_blank" rel="noopener noreferrer">AI is breaking the search business model</a>
+      <p>A Yahoo Finance video argued that generative AI chatbots are disrupting the traditional search business model. The segment cited Anthropic and OpenAI as primary drivers, noting that platforms like Reddit posted record earnings after integrating AI‑enhanced recommendation tools. The commentary suggests advertisers may shift spend toward AI‑powered content discovery, reshaping revenue streams for search‑centric companies.</p>
+      <div class="source">FINANCE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/freemalaysiatoday/posts/fmtbusiness-the-ai-company-also-reported-nearly-us900-billion-in-spending-commit/1568508131974771" target="_blank" rel="noopener noreferrer">#FMTBusiness The AI company also reported nearly US ...</a>
+      <p>An announcement on a Malaysian business page reported that an unnamed AI company secured nearly US$900 billion in spending commitments ahead of its upcoming Wall Street listing. The massive pledge reflects growing enterprise appetite for AI solutions and positions the firm among the most heavily funded players in the sector. Details on how the funds will be allocated were not disclosed, but the figure signals intense market momentum for AI‑focused enterprises.</p>
+      <div class="source">FACEBOOK</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="trends">Code Worth Adopting <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://coderlegion.com/12779/the-rise-reusable-agent-skills-how-skills-and-anthropic-are-changing-claude-development" target="_blank" rel="noopener noreferrer">The Rise of Reusable AI Agent Skills: How skills.sh and Anthropic Are Changing Claude Development - Coder Legion</a>
+      <p>Coder Legion’s article spotlights the emergence of reusable AI agent skills, focusing on the platform skills.sh and Anthropic’s new Claude extensions. It explains how these skills let agents perform complex actions—like reading and writing .pptx files—without hard‑coding prompts, enabling modular, plug‑and‑play capabilities. The piece notes that developers can now share skills via a simple repository, accelerating agent development and reducing duplication across projects.</p>
+      <div class="source">CODERLEGION</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://funcoding.ai/en/skills/jimliu/baoyu-skills/baoyu-wechat-summary" target="_blank" rel="noopener noreferrer">baoyu-wechat-summary: an Agent Skill by JimLiu</a>
+      <p>The "baoyu‑wechat‑summary" skill, contributed by JimLiu, is an open‑source agent skill for Claude Code that automatically extracts highlights from WeChat group chats into a structured summary. It demonstrates concrete utility by processing recent chat logs within seconds and outputting JSON‑formatted bullet points, making it a ready‑to‑use component for any Claude‑based workflow. The skill is hosted on Funcoding.ai and can be integrated with a single import statement, lowering the barrier for developers to add chat summarization to their apps.</p>
+      <div class="source">FUNCODING</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.taskade.com/blog/ai-agent-sandboxes" target="_blank" rel="noopener noreferrer">AI Agent Sandboxes: Where Should Your Agent Run? (2026)</a>
+      <p>Taskade’s "AI Agent Sandboxes" blog surveys 20 sandbox options for running AI agents, comparing features such as file‑system snapshotting, fresh disks per run, and container isolation. It highlights Modal’s reusable image snapshots, which reduce startup latency by up to 30% compared to fresh containers, and notes Cloudflare Containers’ zero‑cold‑start promise. The article serves as a practical guide for developers choosing a sandbox that balances security, speed, and cost for production‑grade agent deployments.</p>
+      <div class="source">TASKADE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.meetup.com/grafana-and-friends-singapore/events/316976705" target="_blank" rel="noopener noreferrer">Grafana & Friends Singapore x Docker - Nov 2026, Tue, Nov 3, 2026, 6:30 PM   | Meetup</a>
+      <p>At the Grafana & Friends Singapore meetup, a demo showed a coding agent that leverages the Grafana MCP server to automatically trace build pipelines, annotate each step with commit IDs, and flag performance regressions via TraceQL queries. The agent captures build metadata and surfaces slow steps in real time, cutting debugging time by an estimated 40%. This example illustrates how agents can be combined with observability platforms to automate DevOps diagnostics.</p>
+      <div class="source">MEETUP</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="productivity">AI Productivity Tips <span class="count">4 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://www.eventbrite.com/e/how-ai-can-help-your-restaurant-get-more-customers-tickets-2001684070940" target="_blank" rel="noopener noreferrer">How AI Can Help Your Business Work Smarter Tickets, Tuesday 3 November  •  11 AM - 2 PM | Eventbrite</a>
+      <p>The Eventbrite session on November 3, 2024, hosted by the Google Data Centre Community AI Fellowship, walks SMEs through concrete ways to embed AI into daily workflows. Attendees will learn how to automate customer enquiries, streamline scheduling, and use AI‑driven analytics to shave hours off routine tasks, directly boosting productivity. The three‑hour live event promises hands‑on demos and real‑world case studies, positioning AI as a practical time‑saving tool rather than hype.</p>
+      <div class="source">EVENTBRITE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://about.ads.microsoft.com/en/resources/discover/insights/a-marketers-guide-to-chatbots-and-agents" target="_blank" rel="noopener noreferrer">A marketer's guide to chatbots and agents: from generative AI to ROI | Microsoft Advertising</a>
+      <p>Microsoft Advertising’s "A marketer's guide to chatbots and agents: from generative AI to ROI" offers a step‑by‑step playbook for leveraging generative AI in campaign workflows. It covers tactics such as using AI‑generated copy to improve SEO rankings, deploying conversational agents to handle up to 70% of routine queries, and measuring return on investment with built‑in analytics dashboards. The guide equips marketers with concrete prompts and measurement frameworks to turn AI experiments into measurable productivity gains.</p>
+      <div class="source">ABOUT</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.eventbrite.com/e/build-anything-you-want-in-ai-become-a-master-prompt-engineer-in-minutes-tickets-2003948425686?aff=ebdssbdestsearch" target="_blank" rel="noopener noreferrer">Build anything you want in AI & become a master prompt engineer in minutes Tickets, Monday, November 2  •  6 PM - 8 PM | Eventbrite</a>
+      <p>The November 2, 2024, Eventbrite workshop "Build anything you want in AI & become a master prompt engineer in minutes" teaches participants to assemble an AI operating system in a single folder, complete with an orchestrator and two functional agents. Led by Bishop AI founder Richmond Taylor, the two‑hour session shows how to craft effective prompts, add custom skills, and automate tasks such as market research and administrative support. By the end, attendees will have a reusable AI workflow that can cut project setup time by up to 50%.</p>
+      <div class="source">EVENTBRITE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.eventbrite.com/e/the-role-of-ai-technology-in-real-estate-3-hour-florida-ce-course-tickets-2002466101013" target="_blank" rel="noopener noreferrer">The Role of AI Technology in Real Estate | 3-Hour Florida CE Course Tickets, Tuesday, November 3  •  11 AM - 3 PM | Eventbrite</a>
+      <p>The three‑hour Florida CE course on November 3, 2024, titled "The Role of AI Technology in Real Estate," shows agents how to harness tools like Zillow's Zestimates, midnight‑operating chatbots, and AI‑driven CRMs that score leads before inboxes are opened. The curriculum focuses on practical, no‑hype implementations that can increase lead conversion rates by an estimated 20%. Real‑estate professionals leave with actionable scripts and compliance guidance to safely integrate AI into their daily prospecting routines.</p>
+      <div class="source">EVENTBRITE</div>
+    </div>
+    
+  </div>
+  
+  
+
+  <div class="seal"></div>
+  <div class="masthead-footer">Delivered by owl post, automated daily &mdash; every headline links to its original source</div>
+  <div class="masthead-footer" style="margin-top: 6px;"><a href="archive.html" style="color: inherit;">Browse past editions &rarr;</a></div>
+  <div class="masthead-footer" style="margin-top: 6px;">The AI Herald by <a href="https://github.com/exc33ded" style="color: inherit;">Sarim</a></div>
+
+</body>
+</html>
