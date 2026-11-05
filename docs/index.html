@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>The AI Herald — November 4, 2026</title>
+<title>The AI Herald — November 5, 2026</title>
 <style>
   :root {
     --ink: #2b1d0e;
@@ -354,7 +354,7 @@
   </script>
 
   <div class="topline">
-    <span>Vol. V &mdash; No. 4</span>
+    <span>Vol. V &mdash; No. 5</span>
     <span>An Automated Daily Digest of Artificial Intelligence</span>
   </div>
 
@@ -364,7 +364,7 @@
   </div>
 
   <div class="dateline">
-    <span>November 4, 2026</span>
+    <span>November 5, 2026</span>
     <span>Last Updated: 8:04 AM IST</span>
   </div>
 
@@ -374,14 +374,14 @@
   <div class="frontpage">
     <div class="lead">
       <div class="kicker">Top Story &mdash; Trending AI GitHub Repos</div>
-      <a class="headline" href="https://aiagentstore.ai/ai-agent-news/this-week" target="_blank" rel="noopener noreferrer">AI Agents News — Week of November 3, 2026 (Daily Updates)</a>
-      <div class="dek">AWS released a hands‑on Machine Learning blog post that includes a full recipe for a multi‑agent engineering assistant, complete with five Jupyter notebooks and a publicly available GitHub repository. The system combines Amazon Nova Multimodal Embeddings with Amazon Bedrock AgentCore and features a planner plus three specialist agents for cataloging, evaluation, and knowledge retrieval. This matters because it provides developers with a turnkey example of how to orchestrate multiple AI agents in a deterministic workflow, potentially accelerating the adoption of agentic AI in enterprise tooling. The repo also showcases deterministic Python checks for specification and tolerance rules, highlighting a focus on safety and reliability in agent interactions.</div>
+      <a class="headline" href="https://aiagentstore.ai/ai-agent-news/this-week" target="_blank" rel="noopener noreferrer">AI Agents News — Week of November 4, 2026 (Daily Updates)</a>
+      <div class="dek">AWS released a hands‑on Machine Learning blog that ships a complete multi‑agent engineering assistant, complete with five Jupyter notebooks and a publicly available GitHub repository. The assistant leverages Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore, structuring the system as a planner plus three specialist agents (Catalog, Evaluation, Knowledge) with deterministic Python checks for spec compliance. This matters because it lowers the barrier for developers to experiment with multi‑agent AI workflows by providing a ready‑to‑run, open‑source codebase. The inclusion of a full repo and detailed notebooks makes it a prime candidate for trending AI GitHub repos this week.</div>
       <div class="source">AIAGENTSTORE</div>
     </div>
     
     <div class="index-rail">
       <h3>Inside Today</h3>
-      <a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">5</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">5</span></a><a href="#papers"><span>AI/ML Research Papers</span><span class="n">5</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">4</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">4</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">5</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#trends"><span>Code Worth Adopting</span><span class="n">4</span></a><a href="#productivity"><span>AI Productivity Tips</span><span class="n">1</span></a>
+      <a href="#repos"><span>Trending AI GitHub Repos</span><span class="n">1</span></a><a href="#skills"><span>AI Agent Skills & Tooling</span><span class="n">5</span></a><a href="#prompting"><span>Prompting & Agentic Workflow Techniques</span><span class="n">6</span></a><a href="#papers"><span>AI/ML Research Papers</span><span class="n">6</span></a><a href="#startups"><span>AI Startups & Funding</span><span class="n">5</span></a><a href="#model_releases"><span>New Model Releases</span><span class="n">2</span></a><a href="#benchmarks"><span>Benchmarks & Evals</span><span class="n">5</span></a><a href="#industry_news"><span>AI Industry News</span><span class="n">5</span></a><a href="#productivity"><span>AI Productivity Tips</span><span class="n">4</span></a>
     </div>
     
   </div>
@@ -389,74 +389,93 @@
 
   
   
-  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">5 stories</span></div>
+  <div class="section-title" id="repos">Trending AI GitHub Repos <span class="count">1 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://github.com/NVIDIA/skills" target="_blank" rel="noopener noreferrer">GitHub - NVIDIA/skills: Agent Skills for NVIDIA products — install into Claude Code, Codex, and other coding agents to run Physical AI, robotics, simulation, CUDA, and RAG workflows end to end. · GitHub</a>
-      <p>NVIDIA released the open‑source skills repository, a catalog of portable instruction sets that teach AI agents how to use NVIDIA software such as Physical AI, robotics, simulation, CUDA‑X libraries, and RAG pipelines. The repo mirrors skill definitions from product repos daily via an automated sync pipeline, ensuring that agents always have the latest tool definitions. By centralising these skills, developers can install them into Claude Code, Codex, and other coding agents to run end‑to‑end workflows without writing custom wrappers.</p>
-      <div class="source">GITHUB</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.promptfoo.dev/docs/integrations/agent-skill" target="_blank" rel="noopener noreferrer">Agent Skills for Evals and Red Teaming | Promptfoo</a>
-      <p>Promptfoo added native support for Agent Skills through a new integration that lets developers expose Promptfoo’s evaluation framework to AI agents via its MCP server. The integration bundles coding‑agent plugins for repository access, sandbox execution, secret handling, and verifier‑boundary checks, enabling red‑team and eval scenarios that automatically verify environment‑variable syntax and source evidence. This makes it easier to automate rigorous testing of agents that manipulate code or call external APIs.</p>
-      <div class="source">PROMPTFOO</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://surgehq.ai/blog/coding-agent-harnesses-comparison" target="_blank" rel="noopener noreferrer">Are Coding Agent Harnesses Worth the Tokens? | Surge AI</a>
-      <p>Surge AI published a comparative study of coding‑agent harnesses, measuring whether sophisticated setups actually produce better software than a vanilla Claude Code baseline. The authors ran eight different harness configurations—including specialized reviewers, planners, and supervisors—across a suite of programming tasks and reported that the top‑performing harness improved test‑pass rates by 12% while adding an average of 350 extra tokens per request. The findings suggest that more complex toolchains can yield marginal gains but also increase context overhead.</p>
-      <div class="source">SURGEHQ</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.facebook.com/quartznews/posts/deepseek-now-lets-you-build-custom-ai-plugins-just-by-chattingdeepseeks-new-crea/1484324786896668" target="_blank" rel="noopener noreferrer">DeepSeek now lets you build custom AI plugins just by ...</a>
-      <p>DeepSeek announced DeepSeek Harness, a low‑code platform that lets users create custom AI plugins simply by chatting with the system. Users can snap together "pieces"—each representing a tool or capability—into a composable agent, and the resulting plugins can be exported as a zip or imported from GitHub. The launch highlights a move toward democratising agent tooling, enabling non‑developers to assemble functional agents without writing code.</p>
-      <div class="source">FACEBOOK</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://cloud.google.com/blog/topics/developers-practitioners/evaluate-agent-skills-before-they-bloat-your-context-window" target="_blank" rel="noopener noreferrer">Evaluate agent skills before they bloat your context window | Google Cloud Blog</a>
-      <p>Google Cloud’s blog introduced a CI‑driven workflow for evaluating and pruning agent skills to prevent context‑window bloat. The pipeline runs a WITH‑vs‑WITHOUT matrix for each skill against the target model, and automatically deletes any skill whose performance delta drops to zero after a model upgrade. This systematic approach helps teams keep their agent toolkits lean while ensuring that only beneficial skills are retained.</p>
-      <div class="source">CLOUD</div>
+      <a href="https://zed.dev/ai" target="_blank" rel="noopener noreferrer">Zed — The AI Code Editor Built for Speed</a>
+      <p>Zed, an open‑source AI‑powered code editor built for speed, announced new AI capabilities built on the ACP (AI Code Protocol) and released the corresponding source code on GitHub. The project highlights its commitment to rapid development, noting that there were zero merges in the past week and month, signaling an early but actively maintained codebase. By offering a lightweight alternative to heavier IDEs with real‑time AI assistance, Zed aims to attract developers seeking fast, AI‑enhanced editing. Its public repo and recent feature rollout place it among the notable AI‑focused repositories gaining attention.</p>
+      <div class="source">ZED</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="prompting">Prompting & Agentic Workflow Techniques <span class="count">5 stories</span></div>
+  <div class="section-title" id="skills">AI Agent Skills & Tooling <span class="count">5 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://arxiv.org/html/2611.03231v1" target="_blank" rel="noopener noreferrer">Specification-Driven Governance for Fairness-by-Design in Agentic Software Engineering: How Far Can We Go?</a>
-      <p>Researchers released an arXiv pre‑print (v1) titled "Specification‑Driven Governance for Fairness‑by‑Design in Agentic Software Engineering" that explores how fairness specifications can be embedded in prompting strategies for AI agents. The paper introduces an "intent engineering" process to define what fairness information a specification should convey, and evaluates its impact across multiple experimental conditions. By preserving a consistent prompting approach while varying fairness intents, the study provides early evidence on how specification‑driven workflows can shape agent behavior.</p>
+      <a href="https://www.spke.com/en/ai/daily" target="_blank" rel="noopener noreferrer">AI Daily — 哲见 · WISE AI</a>
+      <p>DeepSeek announced its Super-agent architecture on October 31, 2026, a new open‑source framework designed to overcome the single‑session bottleneck in autonomous agents. The team released the full code on GitHub, inviting developers to build multi‑session, memory‑rich agents. By exposing classic system‑level concepts such as scheduling and resource management, the architecture aims to improve scalability and reliability for complex AI workflows.</p>
+      <div class="source">SPKE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://opensource.googleblog.com" target="_blank" rel="noopener noreferrer">Google Open Source Blog</a>
+      <p>Google’s Open Source Blog introduced the Agent Development Kit (ADK), an open‑source SDK that helps developers compose both conversational and non‑conversational AI agents. The post highlighted that in 2025 the ADK ecosystem collaborated with over 50 partners to define interoperability standards. ADK provides modular plug‑in support, enabling agents to integrate tools, memory, and external APIs more easily.</p>
+      <div class="source">OPENSOURCE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://github.com/sickn33/antigravity-awesome-skills?ref=devaisemanal.com" target="_blank" rel="noopener noreferrer">GitHub - sickn33/agentic-awesome-skills at devaisemanal.com · GitHub</a>
+      <p>The "agentic‑awesome‑skills" repository now lists more than 2,884 reusable AI agent skills covering Claude Code, Codex, Cursor, and Gemini CLI. The AAS Core layer adds local catalog discovery, agent‑owned selection, and plan preview, streamlining skill discovery for developers. The project is promoted at aaskills.tech and positions itself as a central hub for plug‑and‑play agent capabilities.</p>
+      <div class="source">GITHUB</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://marketplace.visualstudio.com/items?itemName=nedonatelli.sidecar-ai" target="_blank" rel="noopener noreferrer">SideCar - Visual Studio Marketplace</a>
+      <p>SideCar, an open‑source AI coding assistant for VS Code, offers a full agent loop with tool use, inline completions, and chat, not just a chat panel. It can run locally on Ollama models without an API key, ensuring no data leaves the machine, while also supporting connections to Anthropic, OpenAI, OpenRouter, Groq, Fireworks, and Google Gemini. The marketplace entry emphasizes privacy‑first deployment and extensible tool integration.</p>
+      <div class="source">MARKETPLACE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://github.com/intersystems-community/iris-agentic-dev" target="_blank" rel="noopener noreferrer">GitHub - intersystems-community/iris-agentic-dev: AI coding tools for InterSystems IRIS — single binary MCP server for VS Code Copilot and Claude Code · GitHub</a>
+      <p>The "iris-agentic-dev" project provides AI coding tools for InterSystems IRIS, featuring a "Mode 3 — Skills only" operation that installs ObjectScript instruction files into an agent's skill directory without requiring a server connection. Users can install skills via the command `iris-agentic-dev skill install`. This separation of binary and skill packages simplifies deployment for developers building IRIS‑based agents.</p>
+      <div class="source">GITHUB</div>
+    </div>
+    
+  </div>
+  
+  
+  
+  <div class="section-title" id="prompting">Prompting & Agentic Workflow Techniques <span class="count">6 stories</span></div>
+  <div class="columns-3">
+    
+    <div class="item">
+      <a href="https://arxiv.org/html/2611.04466v1" target="_blank" rel="noopener noreferrer">From Watching to Steering: Enabling Human–Coding Agent Collaboration through Execution Traces</a>
+      <p>A new arXiv paper titled "From Watching to Steering: Enabling Human–Coding Agent Collaboration through Execution Traces" examines the latest generation of agentic coding systems such as Claude Code, OpenAI Codex, and OpenCode. It shows how integrating LLMs with tools, terminals, and execution environments enables autonomous planning, code generation, execution, debugging, and iterative refinement. The authors propose using execution traces to let humans steer agents, improving transparency and control over the coding process.</p>
       <div class="source">ARXIV</div>
     </div>
     
     <div class="item">
-      <a href="https://www.jetbrains.com/pages/ai-agents/building/testing-ai-agents" target="_blank" rel="noopener noreferrer">AI Agent Testing Strategies for Production</a>
-      <p>JetBrains published a guide on "AI Agent Testing Strategies for Production" that outlines concrete metrics and benchmarks for evaluating autonomous agents in real‑world settings. The resource details practical testing patterns, including performance measurement, reliability checks, and the concept of an "AI Agent Loop" that coordinates planning and execution. It also links to an "Agentic Workflows Explained" section, offering developers a reference for building scalable, multi‑step agent pipelines.</p>
-      <div class="source">JETBRAINS</div>
+      <a href="https://www.mdpi.com/2079-9292/15/21/5121/pdf" target="_blank" rel="noopener noreferrer">Design Problems, Decisions, and Evidence in Agentic ...</a>
+      <p>A systematic mapping study published in Electronics (volume 15, issue 21, article 5121) surveys peer‑reviewed research on LLM‑based or foundation‑model‑based agentic systems. The study categorises problems, design decisions, operationalisations, and evidence across 112 papers, highlighting gaps in evaluation standards for prompting and workflow orchestration. By mapping the current evidence landscape, it aims to guide future research on robust agentic workflow techniques.</p>
+      <div class="source">MDPI</div>
     </div>
     
     <div class="item">
-      <a href="https://dev.to/serifcolakel/durable-execution-for-ai-agents-state-checkpointing-retries-and-human-in-the-loop-99f" target="_blank" rel="noopener noreferrer">Durable Execution for AI Agents: State, Checkpointing, Retries and Human-in-the-Loop - DEV Community</a>
-      <p>A Dev.to article titled "Durable Execution for AI Agents: State, Checkpointing, Retries and Human‑in‑the‑Loop" proposes a common pattern for making AI agents fault‑tolerant. The author outlines five core components—state persistence, checkpointing, retry logic, background execution, and approval mechanisms—and suggests that teams adopt a shared durable execution framework to reduce duplicated effort. The piece cites examples such as defining when an agent should run in‑memory versus off‑process to improve reliability.</p>
-      <div class="source">DEV</div>
+      <a href="https://www.digest.pro/news/multi-agent-orchestration" target="_blank" rel="noopener noreferrer">Multi-Agent Orchestration: Architecture, Patterns, Tools | Digest.Pro</a>
+      <p>Digest.Pro released a guide on "Multi‑Agent Orchestration: Architecture, Patterns, Tools" that outlines how to coordinate groups of AI agents for complex tasks. It discusses practical limits on the number of interaction rounds, noting that unbounded loops are non‑optimal and can degrade performance. The guide also presents patterns such as routing with follow‑up processing and evaluator‑optimizer loops to improve scalability and reliability.</p>
+      <div class="source">DIGEST</div>
     </div>
     
     <div class="item">
-      <a href="https://www.reddit.com/r/ClaudeWorkflows/comments/1xn5evp/workflow_rigorous_evaluation_of_multiagent_coding" target="_blank" rel="noopener noreferrer">Why Cheaper Subagents Often Fail to Beat Opus Alone : r ...</a>
-      <p>On Reddit’s r/ClaudeWorkflows, a community post examined the cost‑effectiveness of using cheap sub‑agents coordinated by the Opus orchestrator for coding tasks. The workflow demonstrated that while sub‑agents are less expensive per token, the combined cost sometimes exceeds using Opus alone, highlighting a trade‑off between price and performance. The discussion includes benchmark numbers showing a 1.8× increase in total token usage when routing through multiple sub‑agents.</p>
-      <div class="source">REDDIT</div>
+      <a href="https://www.sonarsource.com/resources/library/agentic-coding-loop-optimization" target="_blank" rel="noopener noreferrer">Agentic Coding Loop Optimization | AI Coding Agents | Sonar</a>
+      <p>SonarSource published an analysis titled "Agentic Coding Loop Optimization" that breaks down the typical coding agent workflow into a series of turns, often exceeding a dozen iterations to patch regressions from an initial draft. The report argues that shortening this loop can boost return on investment for platform engineering teams, recommending tighter verification steps and more efficient prompt engineering to reduce iteration count.</p>
+      <div class="source">SONARSOURCE</div>
     </div>
     
     <div class="item">
-      <a href="https://medium.com/javarevisited/ai-agents-explained-how-they-work-and-why-every-developer-should-care-d37dd04910fc" target="_blank" rel="noopener noreferrer">🥷AI Agents Explained: How They Work and Why Every Developer Should Care</a>
-      <p>A Medium article "AI Agents Explained: How They Work and Why Every Developer Should Care" breaks down the evolution of AI from static Q&A to autonomous agents that can invoke tools, make decisions, and complete multi‑step tasks. The author emphasizes that developers need to understand agent loops, tool usage, and prompt engineering to harness these capabilities, noting that agents can now automatically fill forms, call APIs, and debug code without human intervention.</p>
-      <div class="source">MEDIUM</div>
+      <a href="https://www.harness.io/blog/why-ai-coding-agents-lose-context-after-pr" target="_blank" rel="noopener noreferrer">Why AI Coding Agents Lose Context After the PR</a>
+      <p>Harness.io’s blog post "Why AI Coding Agents Lose Context After the PR" explains that without a governed agentic workflow, context is lost once code moves to pull‑request review. The post outlines a three‑step workflow that ties execution, policy gates, and continuous verification together, aiming toward an autonomous SDLC where delivery evidence feeds back into future engineering decisions.</p>
+      <div class="source">HARNESS</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.facebook.com/joyatrestech/videos/if-you-want-to-become-a-senior-ai-engineerlearn-these-20-ai-engineering-heuristi/28889632394020713" target="_blank" rel="noopener noreferrer">If you want to become a senior AI engineer learn these 20 ...</a>
+      <p>A Facebook video titled "If you want to become a senior AI engineer learn these 20..." highlights "Harness Engineering" as a discipline that treats the AI's surrounding environment—prompts, context, and verification—as first‑class concerns. It introduces "Loop Engineering," an iterative workflow pattern that repeatedly refines prompts and results until verification criteria are met, emphasizing its importance for building reliable agentic systems.</p>
+      <div class="source">FACEBOOK</div>
     </div>
     
   </div>
@@ -464,36 +483,42 @@
   
   
   <div class="side-box" id="papers">
-    <h3>AI/ML Research Papers <span class="count">5 stories</span></h3>
+    <h3>AI/ML Research Papers <span class="count">6 stories</span></h3>
     <div class="columns-3">
       
       <div class="side-item">
-        <a href="https://arxiv.org/html/2611.03595" target="_blank" rel="noopener noreferrer">DynaSolver: A Neural Operator for Autoregressive 4D Flow Prediction with Dynamic Boundaries</a>
-        <p>The paper introduces DynaSolver, a neural operator designed for autoregressive 4D flow prediction where the domain boundaries change over time. By encoding dynamic boundary conditions directly into the operator, the model can forecast fluid dynamics on datasets such as FlowBench (2025) that contain over 1,150 simulations and roughly 278,300 data points. Experiments show that DynaSolver reduces prediction error by up to 30% compared to static‑boundary baselines while using a model size of about 1 M parameters. This advance could enable more accurate real‑time simulations for aerospace and automotive aerodynamics where moving parts alter the flow field.</p>
+        <a href="https://arxiv.org/html/2611.04309v1" target="_blank" rel="noopener noreferrer">What Is the Influence of Task Order in Continual Learning? An Empirical Study and Order-Aware Evaluation for Motion Forecasting</a>
+        <p>The paper investigates how the order in which tasks are presented influences continual learning performance, focusing on motion forecasting as a testbed. The authors conduct an empirical study showing that certain task sequences cause order‑dependent forgetting, reducing retention of previously learned knowledge. They also propose an order‑aware evaluation metric that better reflects real‑world deployment scenarios. The results suggest that curriculum design can significantly affect model robustness in sequential learning settings.</p>
         <div class="source">ARXIV</div>
       </div>
       
       <div class="side-item">
-        <a href="https://arxiv.org/html/2611.02404" target="_blank" rel="noopener noreferrer">When Rewards Depend on the Group, GRPO Plays a Tournament</a>
-        <p>The study examines reinforcement‑learning scenarios where individual rewards depend on the performance of the whole group, proposing the GRPO tournament framework to preserve diversity. GRPO builds on prior work such as DARLING, which multiplies a response’s quality by its semantic distance to peers, and adds pairwise novelty bonuses to discourage mode collapse. On a suite of multi‑agent benchmarks, GRPO improves average return by 12% and maintains a higher entropy of policies (0.85 vs. 0.62 for standard PPO). The results highlight a scalable way to train agents that must cooperate or compete in shared environments.</p>
+        <a href="https://arxiv.org/html/2611.03301v2" target="_blank" rel="noopener noreferrer">An Axiomatic Framework for Reinforcement Learning in Open Multi-Agent Systems</a>
+        <p>This work introduces an axiomatic framework for reinforcement learning in open multi‑agent systems, where the set of agents can change over time. By extending earlier ad‑hoc teamwork models, the authors formalise properties such as fairness and incentive compatibility under dynamic participation. The framework is illustrated with theoretical results on equilibrium existence and convergence guarantees. It provides a principled basis for designing RL algorithms that remain robust when new agents join or leave the environment.</p>
         <div class="source">ARXIV</div>
       </div>
       
       <div class="side-item">
-        <a href="https://arxiv.org/html/2605.10727v2" target="_blank" rel="noopener noreferrer">Kernel-Gradient Drifting Models</a>
-        <p>Kernel‑Gradient Drifting Models are presented as a new class of generative models that replace the costly sequential ODE/​SDE solvers of traditional diffusion models with a single‑step kernel update. The authors show that the drift term can be expressed as a gradient of a learned kernel, enabling generation of high‑resolution images in just three steps while retaining FID scores of 9.2 on CIFAR‑10, comparable to 50‑step diffusion baselines. This approach bridges transport‑based theory with practical few‑step generation, potentially reducing inference time by an order of magnitude.</p>
+        <a href="https://arxiv.org/html/2608.29057v3" target="_blank" rel="noopener noreferrer">Sparse Koopman Autoencoders Identify Local Dynamical Regimes in Multibasin Systems</a>
+        <p>The authors present Sparse Koopman Autoencoders that automatically discover and isolate local dynamical regimes in multi‑basin physical systems. By imposing sparsity on the latent Koopman operators, the model can identify distinct attractor regions without supervision. Experiments on benchmark dynamical datasets demonstrate that the approach recovers regime boundaries with over 90% accuracy while using fewer than 0.1% of the parameters of a dense baseline. The research was supported by the Canada CIFAR AI Chairs program and leveraged compute resources from Mila.</p>
         <div class="source">ARXIV</div>
       </div>
       
       <div class="side-item">
-        <a href="https://arxiv.org/html/2611.03150v1" target="_blank" rel="noopener noreferrer">FlowBatt: Flow Matching for Probabilistic Battery Degradation Prediction</a>
-        <p>FlowBatt applies flow‑matching generative techniques to predict the probabilistic degradation trajectory of lithium‑ion batteries. Unlike deterministic end‑of‑life models, FlowBatt outputs a full distribution over capacity loss, achieving a mean absolute error of 3.4% across 1,200 charging cycles in the NASA Battery Dataset. The method leverages a continuous normalizing flow that respects the underlying physics of electrochemical aging, offering a tool for more reliable lifetime forecasting in electric‑vehicle fleets.</p>
+        <a href="https://arxiv.org/html/2611.04248v1" target="_blank" rel="noopener noreferrer">Navigating Runtime Dynamism in Semantic Query Serving</a>
+        <p>This paper tackles the challenge of runtime dynamism in semantic query serving, where machine‑learning and large‑language‑model inference must be interleaved with relational data processing. The authors analyse recent systems (e.g., Kakkar et al., 2023; Patel et al., 2025) that batch queries to improve hardware utilization, and propose a new architecture that dynamically adapts batch size based on query latency requirements. Their prototype achieves a 2.3× reduction in tail latency while maintaining comparable throughput. The work highlights the importance of flexible execution models for production AI‑augmented databases.</p>
         <div class="source">ARXIV</div>
       </div>
       
       <div class="side-item">
-        <a href="https://arxiv.org/html/2611.03032v1" target="_blank" rel="noopener noreferrer">Hybrid Federated Learning for Multimodal Fusion under Missing Modalities and Site Heterogeneity</a>
-        <p>The authors propose a hybrid federated learning algorithm for multimodal fusion that can handle missing modalities and heterogeneous data across sites. By combining a quadratic penalty with adaptive operator‑norm bounds (e.g., a maximum norm of 2 M + M R_w/ε), the method guarantees convergence even when local datasets have only partial sensor streams. Experiments on a medical imaging benchmark with three modalities and five participating hospitals show a 7% increase in AUROC over standard FedAvg, while preserving privacy.</p>
+        <a href="https://arxiv.org/html/2611.04108v1" target="_blank" rel="noopener noreferrer">Separating Common and Unique Directions for Model Merging</a>
+        <p>The study proposes a method for separating common and unique directions when merging neural network models, improving the quality of merged checkpoints. By decomposing weight updates into shared and exclusive components, the approach reduces destructive interference and yields higher post‑merge performance. Experiments on vision and language models report up to a 4.5% boost in accuracy over naive averaging. The research is funded by UKRI Future Leaders Fellowship grants MR/S017062/1 and MR/X011135/1.</p>
+        <div class="source">ARXIV</div>
+      </div>
+      
+      <div class="side-item">
+        <a href="https://arxiv.org/html/2611.02978v2" target="_blank" rel="noopener noreferrer">CAREFUL-Bench: Effect-Aware, Judge-Free Evaluationof Multi-Turn LLM Function Calling</a>
+        <p>CAREFUL‑Bench is a new benchmark suite for evaluating multi‑turn function calling by large language models without relying on human judges. It includes effect‑aware metrics and a suite of tools such as ToolSandbox, AppWorld, NESTful, and WorkBench to assess side‑effects, state consistency, and nested call handling. In baseline evaluations, GPT‑4‑Turbo achieved a 78% success rate on the benchmark, while earlier models fell below 60%. The benchmark aims to standardise systematic, reproducible testing of LLMs in interactive, tool‑using scenarios.</p>
         <div class="source">ARXIV</div>
       </div>
       
@@ -502,82 +527,56 @@
   
   
   
-  <div class="section-title" id="startups">AI Startups & Funding <span class="count">4 stories</span></div>
+  <div class="section-title" id="startups">AI Startups & Funding <span class="count">5 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://www.facebook.com/startup.pedia7/videos/trajectorylabs-has-launched-the-trajectory-platform-a-new-ai-post-training-solut/1720120249734425" target="_blank" rel="noopener noreferrer">1.3K views · 40 reactions | TrajectoryLabs has launched the Trajectory platform, a new AI post-training solution for companies to train, evaluate and deploy their own AI models using data generated through real-world product interactions.
-
-The platform combines training, evaluation and deployment in one product.
-
-Working with NVIDIA and Harvey, a Nemotron Lightning model achieved an 8.3% all-pass rate on Harvey's LAB benchmark, matching Opus 5.5 at 100x lower cost and 3.8x faster. 
-
-The platform intends to help businesses improve the performance of AI models by learning from user feedback, corrections and changes made to AI-generated responses.
-
-Announced on November 2, 2026, the platform is designed to make specialised AI model training more accessible to companies that may not have dedicated machine learning research teams.
-
-The launch comes as businesses increasingly look to customise AI systems for specialised applications across sectors such as legal services, finance, customer support and sales.
-
-The platform uses a software development kit (SDK) that companies can integrate into their existing AI applications.
-
-Alongside the platform launch, Trajectory announced that it had raised $45 million in a Series A funding round led by Sequoia.
-
-The startup says its platform is SOC 2 certified and gives companies control over which data is used for training.
-
-San Francisco-based Trajectory was launched in May 2026 in the United States by three Stanford classmates, Ronak Malde, Arjun Karanam and Michael Elabd. 
-
-#startuppedia #trendingnews #ai #startup | Startup.Pedia</a>
-      <p>TrajectoryLabs unveiled its Trajectory platform, a post‑training solution that lets companies fine‑tune, evaluate and deploy AI models using real‑world interaction data. The launch was accompanied by a $45 million Series A round led by Sequoia, giving the San Francisco startup fresh runway. In benchmark testing, a Nemotron Lightning model paired with the platform achieved an 8.3% all‑pass rate on Harvey’s LAB benchmark, matching Opus 5.5 while costing 100× less and running 3.8× faster. The move positions Trajectory to capture businesses seeking customized AI without deep in‑house ML teams.</p>
-      <div class="source">FACEBOOK</div>
+      <a href="https://www.bloomberg.com/news/articles/2026-11-03/ai-inference-startup-fal-raises-capital-at-16-billion-valuation" target="_blank" rel="noopener noreferrer">AI Inference Startup Fal Raises Capital at $16 Billion Valuation - Bloomberg</a>
+      <p>Fal, an AI inference startup that hosts image, video and audio models for creators and developers, announced a $1.3 billion financing round led by Bessemer Venture Partners, with participation from Nvidia, Sound Ventures and T. Rowe Price. The new round doubled Fal’s valuation to $16 billion, underscoring the soaring demand for generative‑AI infrastructure. The influx of capital is expected to accelerate Fal’s expansion of inference services and its roadmap for multi‑modal model hosting.</p>
+      <div class="source">BLOOMBERG</div>
     </div>
     
     <div class="item">
-      <a href="https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges" target="_blank" rel="noopener noreferrer">AI inference startup Fal doubles its valuation to $16B as demand surges | TechCrunch</a>
-      <p>AI inference specialist Fal disclosed a massive fundraising event, closing a combined $1.65 billion in Series E and Series F rounds and lifting its valuation to $16 billion. The latest Series F was led by Bessemer Venture Partners and included participants such as Nvidia and Sound Ventures. Fal reported that its revenue topped $800 million, reflecting surging demand for high‑throughput model serving for creators and developers. The capital infusion will fund expansion of its inference infrastructure to support more open‑source and proprietary models.</p>
-      <div class="source">TECHCRUNCH</div>
+      <a href="https://x.com/AGTPinsights/status/2118108717560336755" target="_blank" rel="noopener noreferrer">AGTP on X: "Cowboy just launched as an app store for AI agents, with $5M in seed funding. Here's what you need to know. The startup came out of stealth today. Alex Konrad of Upstarts Media broke the story as an exclusive. Cowboy's marketplace opens with 100 agents already listed. CEO Chad DePue sa… / X</a>
+      <p>Cowboy launched as an app store for AI agents, emerging from stealth with a $5 million seed round backed by Uncommon and Finn Murphy of Nebula. The marketplace debuted with 100 agents already listed and positions itself as a platform where developers can "build it, own it, get paid," allowing agents to run on users’ own keys and data. This model aims to reduce reliance on large providers like Anthropic or OpenAI, offering a decentralized avenue for AI agent distribution.</p>
+      <div class="source">X</div>
     </div>
     
     <div class="item">
-      <a href="https://financialit.net/news/fundraising-news/liberis-secures-112m?page=8" target="_blank" rel="noopener noreferrer">Fundraising News | Page 9 | Financial IT</a>
-      <p>Gradient Labs, which builds AI‑driven agents for the financial sector, announced an expansion of its Series A funding to $26 million. The round was led by Octopus Ventures and CommerzVentures, with continued participation from Redpoint Ventures and Exceptional Capital. The additional capital will accelerate product development for specialized financial agents and scale the company’s go‑to‑market efforts. Gradient Labs aims to deepen AI adoption in banking, insurance and asset management by providing domain‑specific automation tools.</p>
-      <div class="source">FINANCIALIT</div>
+      <a href="https://wmbdradio.com/2026/11/04/ai-sales-startup-nooks-secures-500-million-in-funding-for-expansion" target="_blank" rel="noopener noreferrer">AI sales startup Nooks secures $500 million in funding for expansion | 1470 & 100.3 WMBD</a>
+      <p>Nooks, an AI‑powered sales automation startup, secured a $500 million commitment from General Catalyst’s Customer Value Fund to fuel its sales and marketing expansion. The funding will support scaling of its Revenue Agent Platform, which claims to deliver a highly predictable revenue engine with strong unit economics. This large infusion highlights investor confidence in AI‑driven revenue generation tools for enterprise customers.</p>
+      <div class="source">WMBDRADIO</div>
     </div>
     
     <div class="item">
-      <a href="https://dealroom.co/news/169343-ai-visibility-startup-the-prompting-company-lands-6-5m-seed" target="_blank" rel="noopener noreferrer">AI-visibility startup The Prompting Company lands $6.5M seed | Dealroom News</a>
-      <p>The Prompting Company, an AI‑visibility startup focused on improving prompt engineering workflows, secured a $6.5 million seed round. Investors included early‑stage funds and angel backers who see value in tools that make large‑language‑model prompts more transparent and auditable. The funding will support product enhancements and a broader rollout to enterprise customers seeking better control over AI output. This seed round highlights growing interest in the infrastructure layer around generative AI.</p>
+      <a href="https://dealroom.co/news/169762-tiiny-ai-raises-30m-seed-for-personal-ai-devices-sits-in-singapores-top" target="_blank" rel="noopener noreferrer">Tiiny AI raises $30M seed for personal AI devices, sits in Singapore's top 1% | Dealroom News</a>
+      <p>Tiiny AI raised a $30 million seed round to accelerate its personal AI device line, including the Pocket device that runs optimized large language models on‑device. The company reports a waitlist of nearly 50,000 users despite no paid advertising, and its hardware‑software bundle retails for roughly $2,000. The investment will help scale production and expand the ecosystem of on‑device AI experiences.</p>
       <div class="source">DEALROOM</div>
     </div>
     
+    <div class="item">
+      <a href="https://finance.yahoo.com/technology/ai/articles/finpilot-raises-10-million-series-150000307.html" target="_blank" rel="noopener noreferrer">Finpilot Raises $10 Million Series A Led by Lobby Capital to Bring AI Agents to Institutional Investors</a>
+      <p>Finpilot announced a $10 million Series A financing led by Lobby Capital, with participation from Madrona, to grow its AI‑native operating system for institutional capital managers. The platform aims to automate information gathering so investment teams can focus on decision‑making, and the round signals growing interest in AI tools for the finance sector. The capital will be used to broaden product features and accelerate market adoption among large asset managers.</p>
+      <div class="source">FINANCE</div>
+    </div>
+    
   </div>
   
   
   
-  <div class="section-title" id="model_releases">New Model Releases <span class="count">4 stories</span></div>
+  <div class="section-title" id="model_releases">New Model Releases <span class="count">2 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
+      <a href="https://asia.nikkei.com/business/technology/artificial-intelligence/tencent-says-its-hy4-joins-top-tier-of-open-source-ai-models" target="_blank" rel="noopener noreferrer">Tencent says its Hy4 joins 'top-tier' of open-source AI models - Nikkei Asia</a>
+      <p>Tencent announced the release of its new large language model, Hy4, positioning it as a breakthrough into the "top tier" of open‑source AI models. The company highlighted Hy4’s competitive performance on emerging OpenRouter rankings, suggesting it can rival established commercial LLMs while being freely available. The announcement was made on a Wednesday and is framed as Tencent’s flagship AI offering, aiming to expand the ecosystem of high‑quality open‑source models.</p>
+      <div class="source">ASIA</div>
+    </div>
+    
+    <div class="item">
       <a href="https://mistral.ai/news/mistral-large-4-oss" target="_blank" rel="noopener noreferrer">Mistral Large 4 (Le Chonk) is now open weight | Mistral</a>
-      <p>Mistral announced the open‑weight release of Mistral Large 4, nicknamed "Le Chonk," making the 4‑billion‑parameter model freely available to the community. The model can be accessed through NVIDIA‑hosted endpoints and an optimized NVIDIA NIM container for vLLM serving. Developers can also customize it using the open‑source NeMo AutoModel library or the TensorRT LLM library for high‑throughput inference.</p>
+      <p>Mistral unveiled Mistral Large 4, nicknamed "Le Chonk," as an open‑weight model now available for developers to fine‑tune and deploy. The model can be accessed through NVIDIA‑hosted endpoints, including an optimized NVIDIA NIM container that runs with vLLM for high‑throughput serving. Mistral also released supporting tools such as the open‑source NeMo AutoModel library and TensorRT LLM library, enabling rapid customization of the 4‑parameter‑scale model.</p>
       <div class="source">MISTRAL</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://aiagentstore.ai/ai-models" target="_blank" rel="noopener noreferrer">AI Model Comparison 2026: LLM Benchmarks, Rankings & API Costs | AI Agent Store</a>
-      <p>AI Agent Store listed several newly announced models in its October 2026 release roundup. The Ling 3.1 Flash Base was released on 2026‑10‑27, and the Lumma‑Fev 0.6B v2 followed on 2026‑10‑30, both flagged as pending LiveBench validation. The entry highlights that these are smaller decision‑oriented models aimed at cost‑effective deployment.</p>
-      <div class="source">AIAGENTSTORE</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://lmmarketcap.com/new-ai-models" target="_blank" rel="noopener noreferrer">New AI Models 2026 - Latest Releases | LM Market Cap</a>
-      <p>LM Market Cap compiled a table of new AI model releases for early 2026, featuring Step 3.5 FlashStepFun from StepFun (66 score) released on Jan 29, 2026, and Kimi K2.5Moonshot AI from Moonshot AI (48 score) on Jan 27, 2026. Other entries include Solar Pro 3Upstage (40 score) and MiniMax M2‑herMiniMax (68 score). The list provides context counts and performance scores for each model.</p>
-      <div class="source">LMMARKETCAP</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.youtube.com/watch?v=RUFbeLpc3MA" target="_blank" rel="noopener noreferrer">New AI Models October 2026: What You Can Actually Use</a>
-      <p>A YouTube video titled "New AI Models October 2026: What You Can Actually Use" walks through the latest releases, mentioning a 27 billion‑parameter model introduced at the start. It highlights the D3 ultra repository from VLLM's semantic router, a decision model that supports text, image, and video inputs and outputs with scores, boxes, and tracks. The video also notes that the code and API are Apache‑licensed and freely documented.</p>
-      <div class="source">YOUTUBE</div>
     </div>
     
   </div>
@@ -588,33 +587,33 @@ San Francisco-based Trajectory was launched in May 2026 in the United States by 
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://www.techtimes.com/articles/329945/20261103/gdpx-benchmark-best-frontier-ai-scores-12-real-work-zero-finance-legal.htm" target="_blank" rel="noopener noreferrer">GDPx Benchmark: Best Frontier AI Scores 12% on Real Work, Zero on Finance and Legal</a>
-      <p>SemiAnalysis unveiled the GDPx benchmark, a sweeping agentic test that simulates high‑value professional work. The headline result shows the most capable frontier AI models complete just 12% of real‑world tasks, roughly one in eight, and score zero on finance and legal workloads. The study stresses a growing reliability gap between headline claims and actual performance, urging more rigorous evaluation before deployment.</p>
-      <div class="source">TECHTIMES</div>
+      <a href="https://llm-stats.com/benchmarks/terminal-bench-4.0-aa" target="_blank" rel="noopener noreferrer">Terminal-Bench 4.0-AA Leaderboard</a>
+      <p>The Terminal‑Bench 4.0‑AA leaderboard was released, showcasing an interactive timeline that tracks how four different models have progressed on the benchmark over time. The benchmark focuses on terminal‑style instruction following, and the new 4.0‑AA version adds a set of 150 fresh test cases. The page highlights the current state‑of‑the‑art frontier, letting researchers compare both open‑source and proprietary systems on a single visual chart.</p>
+      <div class="source">LLM-STATS</div>
     </div>
     
     <div class="item">
-      <a href="https://huggingface.co/blog/cwe-bench" target="_blank" rel="noopener noreferrer">CWE-bench v2: More coverage, quality, and transparency</a>
-      <p>Hugging Face announced CWE‑bench v2, an expanded benchmark for code security vulnerability detection. The new version adds broader coverage, improved quality checks, and a held‑out test set that ensures models are evaluated on unseen examples, with deterministic results that anyone can reproduce at no cost. The release aims to increase transparency and track progress on tasks models have never encountered before.</p>
-      <div class="source">HUGGINGFACE</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://arxiv.org/html/2611.03576v1" target="_blank" rel="noopener noreferrer">NitiBench+: A Temporal Thai LegalQuestion Answering Benchmark Across 17 Domains</a>
-      <p>Researchers released NitiBench+, a temporal Thai Legal Question‑Answering benchmark spanning 17 legal domains. The benchmark’s public leaderboard evaluates models on a held‑out test split of 500 items across three temporal settings, with results updated live as of 2 November 2026. It provides a focused evaluation of LLMs on evolving legal texts, highlighting gaps in multilingual legal reasoning.</p>
-      <div class="source">ARXIV</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://benchlm.ai/frontier-ai-models" target="_blank" rel="noopener noreferrer">Frontier AI Models: Live Top 10 Rankings, Evidence and Pricing (October 2026) | BenchLM.ai</a>
-      <p>BenchLM.ai published its October 2026 live Top 10 Frontier AI model rankings, featuring scores such as GPT‑6 Astra at 88.8, Claude Opus 5.5 at 87.8, and Claude Sonnet 5.5 at 83.4. The leaderboard combines performance evidence with pricing data, giving a snapshot of the current state‑of‑the‑art across a range of model families. These scores help stakeholders compare capabilities and cost efficiency in real time.</p>
+      <a href="https://benchlm.ai/benchmarks/toolsandbox" target="_blank" rel="noopener noreferrer">ToolSandbox Leaderboard & Scores — October 2026 | BenchLM.ai</a>
+      <p>BenchLM.ai published the October 2026 ToolSandbox leaderboard, a stateful, conversational benchmark that evaluates LLMs on tool‑use capabilities. The leaderboard notes that NVIDIA’s Nemotron 3.5 Bolt E4B achieved an average accuracy of 78.4 % in reasoning mode on the benchmark as of October 23, 2026. The benchmark is versioned "ToolSandbox 2024" and follows an annual refresh cadence to keep the evaluation set current.</p>
       <div class="source">BENCHLM</div>
     </div>
     
     <div class="item">
-      <a href="https://llm-stats.com/benchmarks/terminal-bench-4.0-aa" target="_blank" rel="noopener noreferrer">Terminal-Bench 4.0-AA Leaderboard</a>
-      <p>The Terminal‑Bench 4.0‑AA leaderboard was updated on LLM‑Stats, showcasing an interactive timeline of model performance evolution on this interactive terminal benchmark. Four models are currently listed, with the leaderboard highlighting the state‑of‑the‑art frontier and distinguishing between open and proprietary offerings. The platform allows researchers to track incremental gains as new models tackle complex command‑line tasks.</p>
-      <div class="source">LLM-STATS</div>
+      <a href="https://kili-technology.com/blog/data-story-impactbench-llm-judge-expert-audit" target="_blank" rel="noopener noreferrer">LLM Judge Agreement: What ImpactBench's Expert Audit Reveals</a>
+      <p>ImpactBench released an expert audit of LLM judge agreement, revealing how calibration of LLM judges depends heavily on the label source used for evaluation. Published on November 2, 2026, the analysis shows that decision‑model judges can be over‑confident by up to 15 percentage points when trained on proprietary annotations versus crowd‑sourced labels. The report argues that transparent label provenance is essential for trustworthy LLM evaluation.</p>
+      <div class="source">KILI-TECHNOLOGY</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://arxiv.org/html/2611.04546v1" target="_blank" rel="noopener noreferrer">Are LLM Assistants Regulatory Ready?Answers from regenold’s 2026 EU AI Act Q&A Challenge</a>
+      <p>The 2026 EU AI Act Q&A Challenge, organized by regenold, introduced a legal‑assistant benchmark where each question is paired with a detailed checklist of correctness criteria. The benchmark includes tasks from Harvey’s Legal Agent Benchmark, measuring both substantive task success and output form. Early results indicate that top models meet 68 % of the checklist items, highlighting a gap between current capabilities and regulatory readiness.</p>
+      <div class="source">ARXIV</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.globenewswire.com/news-release/2026/11/04/3395220/0/en/unizen-ai-publishes-an-auditable-asi-bench-result-just-under-80-in-local-evaluation-with-every-score-receipted-and-hash-chained-for-20-cents-on-a-laptop.html" target="_blank" rel="noopener noreferrer">Unizen AI Publishes an Auditable ASI-Bench Result: Just</a>
+      <p>Unizen AI announced an auditable ASI‑Bench result that scored just under 80 points in a local evaluation, with every score receipted and hash‑chained for verification. The benchmark run cost only 20 cents on a standard laptop, demonstrating a low‑cost, reproducible evaluation pipeline. The announcement emphasizes the importance of verifiable AI benchmarking for model risk management.</p>
+      <div class="source">GLOBENEWSWIRE</div>
     </div>
     
   </div>
@@ -625,77 +624,64 @@ San Francisco-based Trajectory was launched in May 2026 in the United States by 
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener noreferrer">AI News Today, November 3: Top Stories | AI Weekly</a>
-      <p>On November 2, four high‑profile agreements were signed between Abu Dhabi entities and OpenAI, as reported by AI Weekly. ADNOC will become the first energy firm to run OpenAI's Frontier model on UAE‑based inference hardware supplied by G42's Inception42. A separate Mubadala‑Inception42‑OpenAI partnership will apply AI to investment analysis and risk assessment, while the Abu Dhabi government launched a "machine‑readable government" pilot focused on food safety. These deals illustrate OpenAI's rapid expansion into the Middle East energy and public‑sector markets.</p>
+      <a href="https://blog.mean.ceo/latest-ai-announcements-news-november-2026" target="_blank" rel="noopener noreferrer">Latest AI announcements News | November, 2026 (STARTUP EDITION)</a>
+      <p>A weekly roundup published in November 2026 listed the latest AI model releases, including Claude Sonnet 4.6, Gemini 3.1 Pro, Grok 4.2, and Alibaba's Qwen3.5. The article notes that Microsoft also debuted its own AI models to directly compete with OpenAI and Google. By aggregating these launches, the piece highlights the accelerating pace of new generative AI offerings across the industry.</p>
+      <div class="source">BLOG</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener noreferrer">AI News Today, November 4: Top Stories | AI Weekly</a>
+      <p>At the World Internet Conference in Wuzhen on November 4, twenty organizations led by China's Ministry of Industry and Information Technology's research arm signed a national Self-Discipline Convention. The agreement covers eight areas of agent governance, such as trust systems, interconnection infrastructure, and user protection. This coordinated move signals a formal effort by Chinese tech giants to shape AI policy and industry standards.</p>
       <div class="source">AIWEEKLY</div>
     </div>
     
     <div class="item">
-      <a href="https://www.precedenceresearch.com/ai-automation-market" target="_blank" rel="noopener noreferrer">AI Automation Market Companies, Size & Trends 2026-2035</a>
-      <p>Precedence Research released a market forecast for the AI automation sector covering 2026‑2035, highlighting a surge in enterprise AI adoption. The report notes that OpenAI introduced AgentKit in October 2025 to streamline AI‑agent development, and Workato rolled out production‑ready Model Context Protocol Servers. Salesforce also announced the general availability of Agentforce 360 in October 2025. The analysis underscores a growing ecosystem of tools that could drive multi‑digit CAGR growth over the next decade.</p>
-      <div class="source">PRECEDENCERESEARCH</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.cbsnews.com/feature/ai-artificial-intelligence" target="_blank" rel="noopener noreferrer">Artificial Intelligence: The latest news, interviews and videos about AI - CBS News</a>
-      <p>CBS News reported that the U.S. Federal Trade Commission issued subpoenas to both Anthropic and OpenAI, seeking information about safety incidents involving frontier AI models. The move comes amid heightened regulatory scrutiny following Sam Altman's appearance at a United Nations Security Council meeting on AI risks. The FTC's action signals increasing governmental pressure on leading AI firms to improve safety oversight and transparency.</p>
-      <div class="source">CBSNEWS</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.facebook.com/yahoofinance/videos/amd-ceo-lisa-su-expects-the-companys-ai-data-center-and-cpu-business-to-double-b/1598750171406555" target="_blank" rel="noopener noreferrer">AMD CEO Lisa Su: Data Center Business to Double by 2027</a>
-      <p>AMD CEO Lisa Su told investors that the company's AI, data‑center, and CPU businesses are expected to double in size by 2027. The projection reflects AMD's strategic push into AI‑focused silicon, positioning the firm to capture a larger share of the booming AI hardware market. Su highlighted upcoming product roadmaps that aim to meet the growing demand for high‑performance AI compute.</p>
+      <a href="https://www.facebook.com/9NewsSydney/posts/software-giant-canva-is-the-latest-to-suffer-from-the-artificial-intelligence-bo/1547363334107051" target="_blank" rel="noopener noreferrer">Software giant Canva is the latest to suffer from the Artificial ...</a>
+      <p>Design platform Canva announced a major restructuring in response to the AI boom, indicating that the changes will come with a significant cost. The restructuring is aimed at adapting the company's workforce and operations to the rapid adoption of AI tools in the creative market. The announcement underscores how AI-driven market shifts are prompting established tech firms to reorganize.</p>
       <div class="source">FACEBOOK</div>
     </div>
     
     <div class="item">
-      <a href="https://finance.yahoo.com/video/ai-stocks-surge-tuesday-aehr-175713889.html" target="_blank" rel="noopener noreferrer">AI Stocks Surge on Tuesday: AEHR, Fabrinet, and Lattice Semiconductor All Jump More than 10%</a>
-      <p>Yahoo Finance highlighted a surge in AI‑related semiconductor stocks, with AEHR, Fabrinet, and Lattice Semiconductor each climbing more than 10% in a single day. Analysts cited a rapid increase in demand for advanced packaging and burn‑in testing equipment as AI chips become more complex. The report also noted that sales for these firms are projected to triple this year, reflecting the broader AI boom's impact on hardware supply chains.</p>
-      <div class="source">FINANCE</div>
+      <a href="https://tickeron.com/blogs/braiin-brai-stock-slides-31-over-30-days-as-agentic-ai-plans-meet-selling-pressure-26984" target="_blank" rel="noopener noreferrer">Braiin (BRAI) Stock Slides 31% Over 30 Days as Agentic AI Plans Meet Selling Pressure</a>
+      <p>Braiin (BRAI) shares plunged about 40% in a single session after the company unveiled an agentic‑AI expansion targeting the roughly $56.9 billion customer‑experience software market. Trading volume surged to roughly 80 times the prior average, reflecting investor concern over the ambitious upgrade to its RADIUS CX platform. The stock slide illustrates the market volatility that can accompany bold AI strategy announcements.</p>
+      <div class="source">TICKERON</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://www.etftrends.com/artificial-intelligence-content-hub/buying-future-ai-robotics-2026-ma-report" target="_blank" rel="noopener noreferrer">Who's Buying the Future of AI & Robotics: 2026 M&A Report</a>
+      <p>The 2026 M&A report on AI and robotics highlighted record private funding, with U.S. venture capital reaching $515.8 billion in the first nine months of the year—44% above the full‑year 2021 record. AI accounted for 82.7% of that total, underscoring the sector's dominance in venture investment. The report also notes large rounds for physical AI firms, such as Waymo’s $16 billion raise for autonomous driving.</p>
+      <div class="source">ETFTRENDS</div>
     </div>
     
   </div>
   
   
   
-  <div class="section-title" id="trends">Code Worth Adopting <span class="count">4 stories</span></div>
+  <div class="section-title" id="productivity">AI Productivity Tips <span class="count">4 stories</span></div>
   <div class="columns-3">
     
     <div class="item">
-      <a href="https://coderlegion.com/12779/the-rise-reusable-agent-skills-how-skills-and-anthropic-are-changing-claude-development" target="_blank" rel="noopener noreferrer">The Rise of Reusable AI Agent Skills: How skills.sh and Anthropic Are Changing Claude Development - Coder Legion</a>
-      <p>The article introduces skills.sh, a repository for reusable AI agent skills that developers can plug into Anthropic's Claude model. By packaging functionality as "skills," teams can avoid writing repetitive prompts and instead call modular actions, speeding up development cycles. The post notes that the approach lets Claude read and write .pptx files—something a generic web LLM cannot do without file system access. Launched in 2026, the platform already has a community of early adopters sharing over a dozen skill templates.</p>
-      <div class="source">CODERLEGION</div>
+      <a href="https://www.michigan.gov/libraryofmichigan/events/2026/11/04/our-chatbots-ourselves-practical-strategies-for-ai-use-in-libraries" target="_blank" rel="noopener noreferrer">Our Chatbots, Ourselves: Practical Strategies for AI Use in Libraries</a>
+      <p>The Michigan Library of Michigan hosted a session titled “Our Chatbots, Ourselves: Practical Strategies for AI Use in Libraries” on November 4, 2026. The talk emphasized that AI productivity isn’t just about technical skills like prompt writing, but also about mindset and attitudes toward the technology. Attendees received concrete tactics for integrating chatbots into library workflows, such as using AI to streamline reference queries and automate routine cataloging tasks.</p>
+      <div class="source">MICHIGAN</div>
     </div>
     
     <div class="item">
-      <a href="https://getknit.dev/blog/how-to-read-and-write-data-google-sheets-api" target="_blank" rel="noopener noreferrer">How to Read and Write Data: Google Sheets API | Knit</a>
-      <p>Knit’s unified API for Google Sheets, highlighted in a 2026 blog post, offers a streamlined way to read and write spreadsheet data via its Model Context Protocol (MCP) servers and integration agents. The service boasts a G2 rating of 4.9 out of 5 stars and was named a G2 Leader in Spring 2026, signalling strong market validation. Developers can use a single endpoint to perform CRUD operations, cutting integration time from hours to minutes, and the API supports batch updates of up to 10,000 rows per request.</p>
-      <div class="source">GETKNIT</div>
+      <a href="https://sellerity.co/blog/voice-ai-agent-version-control-managing-prompt-changes-safely-reddit" target="_blank" rel="noopener noreferrer">Voice AI Agent Version Control: Managing Prompt Changes Safely: Reddit Insights</a>
+      <p>A blog post on Sellerity titled “Voice AI Agent Version Control: Managing Prompt Changes Safely” (published November 5, 2026) outlines a version‑control workflow for AI‑driven voice agents. It recommends tracking prompt revisions in a Git‑like system and automatically testing each change against a 100% call‑scoring QA suite. The guide claims this approach reduces regression bugs by up to 30% in production deployments.</p>
+      <div class="source">SELLERITY</div>
     </div>
     
     <div class="item">
-      <a href="https://pasqualepillitteri.it/nl/news/30008/n8n-automatisering-ai-agents" target="_blank" rel="noopener noreferrer">Automatisering zonder code met AI-agents, wat er echt ...</a>
-      <p>A recent Dutch article examines n8n’s new AI‑agent nodes, showing how no‑code workflows can embed large language models for automated decision‑making. The author documents four distinct failure modes that arise when language models are embedded in classic automation pipelines, each now catalogued with mitigation guidelines. This makes n8n a compelling platform for engineers looking to adopt AI‑enhanced automation without writing code, and the guide provides ready‑to‑use templates for common tasks like ticket routing and data enrichment.</p>
-      <div class="source">PASQUALEPILLITTERI</div>
-    </div>
-    
-    <div class="item">
-      <a href="https://www.meetup.com/tampa-artificial-intelligence-meetup/events/317065309" target="_blank" rel="noopener noreferrer">Next-level AI: Upgrade your skills with agents, MCP, and more, Wed, Nov 4, 2026, 5:30 PM   | Meetup</a>
-      <p>The Tampa AI meetup (Nov 4, 2026) previewed upcoming development tools such as AI agents, tool integrations, and the Model Context Protocol (MCP). Attendees were promised a deep dive into how MCP can standardize context sharing between agents, potentially reducing integration overhead across services. The session aims to surface practical patterns that developers can adopt today, positioning MCP as a future‑proof protocol for building interoperable AI systems.</p>
-      <div class="source">MEETUP</div>
-    </div>
-    
-  </div>
-  
-  
-  
-  <div class="section-title" id="productivity">AI Productivity Tips <span class="count">1 stories</span></div>
-  <div class="columns-3">
-    
-    <div class="item">
-      <a href="https://www.eventbrite.com/e/practical-ai-for-executive-leaders-tickets-2002455141232?aff=odcleoeventsincollection" target="_blank" rel="noopener noreferrer">Practical AI for Executive Leaders Tickets, Wednesday 4 November  •  1 PM - 2:30 PM | Eventbrite</a>
-      <p>The "Practical AI for Executive Leaders" session, scheduled for Wednesday 4 November, is a 90‑minute in‑person workshop aimed at senior managers who have dabbled with tools like ChatGPT or Claude.  Organisers position it as a beginner‑friendly crash course that helps leaders identify concrete AI use cases that can streamline decision‑making, reduce workload, and free up capacity.  By focusing on real‑world productivity gains rather than theory, the event promises actionable takeaways that executives can apply immediately to their teams.  Attendees also receive access to an "Accelerator" app designed to track progress and embed AI‑driven workflows into daily operations.</p>
+      <a href="https://www.eventbrite.com/e/putting-ai-to-work-tickets-1994672621506" target="_blank" rel="noopener noreferrer">Putting AI to Work Tickets, Thursday, November 5  •  11 AM - 12:30 PM | Eventbrite</a>
+      <p>The “Putting AI to Work” event (Nov 5‑6, 2026) offers a practical introduction on how organizations can move from AI experiments to actionable productivity gains. Organizers highlight use‑cases such as automating decision‑making, information management, and predictive problem‑solving, and promise attendees a step‑by‑step framework to launch at least one AI‑powered workflow within 30 days.</p>
       <div class="source">EVENTBRITE</div>
+    </div>
+    
+    <div class="item">
+      <a href="https://aws.amazon.com/startups/events/ai-in-action-rag-chatbots-genai-infrastructure?lang=de" target="_blank" rel="noopener noreferrer">AI in Action: RAG Chatbots & GenAI Infrastructure | AWS Startups</a>
+      <p>AWS’s “AI in Action: RAG Chatbots & GenAI Infrastructure” startup event (Nov 5, 2026) includes a session called “From Build to Govern: Deploying and Securing AI Agents.” The program, kicking off at 6:00 pm with doors open and a keynote at 6:40 pm by Smriti Sridhar, teaches startups how to set up retrieval‑augmented generation (RAG) pipelines and embed governance controls that can cut deployment errors by an estimated 25%.</p>
+      <div class="source">AWS</div>
     </div>
     
   </div>
