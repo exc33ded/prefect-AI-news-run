@@ -1,5 +1,13 @@
 [
   {
+    "iso_date": "2026-11-13",
+    "date": "November 13, 2026",
+    "updated_at": "8:03 AM IST",
+    "headline": "GitHub - ruvnet/metaharness: \ud83d\udee0\ufe0f The meta-harness for AI agents \u2014 scaffold your own focused, branded agent harness with its own npx CLI, MCP server, memory, learning loop, and witness-signed releases. Works with Claude Code, Codex, pi.dev, Hermes, OpenClaw, and RVM (hardware-isolated sandbox). \u00b7 GitHub",
+    "volume_num": 5,
+    "issue": 13
+  },
+  {
     "iso_date": "2026-11-12",
     "date": "November 12, 2026",
     "updated_at": "8:04 AM IST",
