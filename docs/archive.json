@@ -1,5 +1,13 @@
 [
   {
+    "iso_date": "2026-11-24",
+    "date": "November 24, 2026",
+    "updated_at": "8:03 AM IST",
+    "headline": "Sandboxing AI Coding Agents: nono vs Docker Sandboxes vs Microsandbox vs OpenShell - Kudelski Security Research Center",
+    "volume_num": 5,
+    "issue": 24
+  },
+  {
     "iso_date": "2026-11-23",
     "date": "November 23, 2026",
     "updated_at": "8:03 AM IST",
